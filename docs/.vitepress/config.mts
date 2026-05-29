@@ -22,7 +22,15 @@ export default defineConfig({
     ['meta', { name: 'author', content: 'Leroi' }],
     ['meta', { name: 'robots', content: 'index,follow' }],
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
-    ['meta', { name: 'keywords', content: 'Leroi, 网站开发, 小程序开发, 微信小程序, 支付宝小程序, 抖音小程序, APP开发, 博客归档, 历史技术文章, TypeScript, TSConfig, Vite, Vite报错, Canvas, Konva.js, Fabric.js, Vue, 后台管理模板, vue-admin-template, vue-element-admin, mall-admin-web, Geeker Admin, iView UI v4, View UI, iview-admin, uni-app, uView UI, vk-uview-ui, uview-plus, ColorUI, Tailwind CSS, UnoCSS, Electron, Element UI, Element Plus, EasyWeChat, 微擎, Gin, ThinkPHP, ThinkPHP8高并发, Swoole, PHP开发, PHP版本演进, PHP5, PHP7, PHP8, PHP8.5, PHP升级, Go开发, Lua, WebSocket, HTTP轮询任务, PHP定时任务, crontab定时任务, OpenCV, SLAM, 视觉SLAM, 激光SLAM, VIO, 图像处理, 计算机视觉, MQTT, MQTT消息积压, EMQX, EMQX消息积压, Mosquitto, Arduino, ROS 2, ROS快速入门, OpenWrt, Auto.js, 逆向基础, Git操作, SSH密钥, Linux命令, Nginx配置, Apache配置, LNMP, 1Panel, 宝塔面板, OpenList, AList, Cloudflare Tunnel, ngrok, 内网穿透, Docker运维, Kubernetes, K8s, MySQL安装, MySQL索引, MySQL慢查询, EXPLAIN, 慢SQL, IP信息查询API, IP归属地, 纯真IP库, QQWry, ip2region, IP数据云, IPinfo, Ping0, InfluxDB, Elastic Stack, ELK, Elasticsearch, Logstash, Kibana, Grafana, Loki, 日志监控, 可观测性, MAMP, XAMPP, 运维命令, MinIO, rclone, 开发问题咨询' }]
+    ['meta', { name: 'keywords', content: 'Leroi, 网站开发, 小程序开发, 微信小程序, 支付宝小程序, 抖音小程序, APP开发, 博客归档, 历史技术文章, TypeScript, TSConfig, Vite, Vite报错, Canvas, Konva.js, Fabric.js, Vue, 后台管理模板, vue-admin-template, vue-element-admin, mall-admin-web, Geeker Admin, iView UI v4, View UI, iview-admin, uni-app, uView UI, vk-uview-ui, uview-plus, ColorUI, Tailwind CSS, UnoCSS, Electron, Element UI, Element Plus, EasyWeChat, 微擎, Gin, ThinkPHP, ThinkPHP8高并发, Swoole, PHP开发, PHP版本演进, PHP5, PHP7, PHP8, PHP8.5, PHP升级, Go开发, Lua, WebSocket, HTTP轮询任务, PHP定时任务, crontab定时任务, OpenCV, SLAM, 视觉SLAM, 激光SLAM, VIO, 图像处理, 计算机视觉, MQTT, MQTT消息积压, EMQX, EMQX消息积压, Mosquitto, Arduino, ROS 2, ROS快速入门, OpenWrt, Auto.js, 逆向基础, Git操作, SSH密钥, Linux命令, Nginx配置, Apache配置, LNMP, 1Panel, 宝塔面板, OpenList, AList, Cloudflare Tunnel, ngrok, 内网穿透, Docker运维, Kubernetes, K8s, MySQL安装, MySQL索引, MySQL慢查询, EXPLAIN, 慢SQL, IP信息查询API, IP归属地, 纯真IP库, QQWry, ip2region, IP数据云, IPinfo, Ping0, InfluxDB, Elastic Stack, ELK, Elasticsearch, Logstash, Kibana, Grafana, Loki, 日志监控, 可观测性, MAMP, XAMPP, 运维命令, MinIO, rclone, 开发问题咨询' }],
+    [
+      'script',
+      {
+        defer: true,
+        src: 'https://static.cloudflareinsights.com/beacon.min.js',
+        'data-cf-beacon': '{"token":"eb86ca03a5d640eeb74cdbf18ca9beb3"}'
+      }
+    ]
   ],
 
   themeConfig: {
