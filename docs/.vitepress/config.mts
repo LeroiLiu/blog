@@ -30,7 +30,7 @@ export default defineConfig({
 
     nav: [
       { text: '文档', link: '/documents/' },
-      { text: '技术博客', link: '/blog/' },
+      { text: '技术博客', link: '/' },
       { text: '业务服务', link: '/services' },
       {
         text: '前端',
@@ -494,7 +494,7 @@ export default defineConfig({
           items: [
             { text: '首页', link: '/' },
             { text: '文档库', link: '/documents/' },
-            { text: '技术博客归档', link: '/blog/' },
+            { text: '技术博客归档', link: '/' },
             { text: '业务服务', link: '/services' },
             { text: '技术分类', link: '/articles/' },
             { text: 'FAQ', link: '/faq/' },
