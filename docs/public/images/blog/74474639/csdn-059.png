@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+
+
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="icon" href="//cloudcache.tencent-cloud.cn/open_proj/proj_qcloud_v2/tc-console/dnspod/gateway/css/img/dnspod.ico" type="image/x-icon" />
+  <link rel="stylesheet"
+    href="//cloudcache.tencent-cloud.cn/open_proj/proj_qcloud_v2/tc-console/dnspod/gateway/css/global/global-202206131300.css?max_age=31536000" />
+  <link rel="stylesheet"
+    href="//cloudcache.tencent-cloud.cn/qcloud/ui/dnspod/build/console/tea-style/dist/css/tea-202208011534.css?max_age=31536000" />
+  <link rel="stylesheet"
+    href="//cloudcache.tencent-cloud.cn/qcloud/ui/dnspod/build/console/break/css/break-202208031102.css" />
+
+  <script>
+    window.ERROR_CODE = 404;
+  </script>
+
+  <style>
+    body {
+      overflow-y: scroll;
+    }
+    .tea-layout {
+      height: auto;
+    }
+  </style>
+
+  
+  
+</head>
+
+<body id="dp-mobile">
+  
+  
+  <div class="tea-layout">
+    <main class="tea-layout__body">
+      <section class="tea-layout__content">
+        <div class="tea-layout__content-inner">
+          <div class="tea-layout__content-body">
+            <div class="tea-layout__content-body-inner">
+              <div class="tea-errorpage dp-errorpage">
+                <div class="tea-errorpage__panel">
+                  <div class="tea-errorpage__unit">
+                    <div class="tea-errorpage__head">
+                      <img
+                        src="//cloudcache.tencent-cloud.cn/qcloud/ui/static/other_external_resource/8dd0ee58-44cd-4bce-b470-3d581129e30f.png"
+                        alt="" />
+                    </div>
+                    <div class="tea-errorpage__content">
+                      <div class="tea-errorpage__title">
+                        糟糕，页面好像去火星了......
+                      </div>
+                      <div class="tea-errorpage__reasons">
+                        <div class="tea-errorpage__text">
+                          错误原因：页面未找到
+                        </div>
+                        
+                      </div>
+                      <div class="tea-errorpage__recommend">
+                        
+                          <p>请试试以下办法：</p>
+                        
+                        <div class="tea-errorpage__action">
+                          
+                            <a id="to-home-btn"><button class="tea-btn tea-mr-2n">返回首页</button></a>
+                          
+                          
+                            <a id="to-console-btn"><button class="tea-btn tea-btn--weak tea-mr-2n">前往控制台</button></a>
+                          
+                          
+                            <a id="to-help-btn"><button class="tea-btn tea-btn--weak tea-mr-2n">获取帮助</button></a>
+                          
+                        </div>
+                        
+                          <div class="tea-form--search">
+                            <div class="tea-search">
+                              <div class="tea-search__inner">
+                                <input id="search-input" type="search" placeholder="输入要搜索的文档"
+                                  class="tea-input tea-input--search" value="" />
+                              </div>
+                              <button id="to-search-btn" class="tea-btn tea-btn--icon tea-btn--search" type="button">
+                                <i class="tea-icon tea-icon-search" role="img" aria-label="search"></i>
+                              </button>
+                            </div>
+                          </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://beaconcdn.qq.com/sdk/3.3.1/beacon_web.min.js"></script>
+
+  <script type="text/javascript">
+    (function () {
+      // 兼容一些拦截插件，可能导致JS加载失败的情况
+      if (typeof BeaconAction === "function") {
+        // 数据上报
+        var beacon = new BeaconAction({
+          appkey: '0WEB02IPX747BDRE',
+          delay: 1000,
+          sessionDuration: 60 * 1000
+        });
+        beacon.onUserAction('error_page_visit', {
+          code: window.ERROR_CODE + ''
+        });
+      }
+
+      // 前往控制台
+      
+        document.querySelector('#to-console-btn').addEventListener('click', function () {
+          window.location.href = 'https://console.dnspod.cn';
+        });
+      
+
+      // 获取帮助
+      
+        document.querySelector('#to-help-btn').addEventListener('click', function () {
+          window.location.href = 'https://support.dnspod.cn';
+        });
+      
+
+      // 返回首页
+      
+        document.querySelector('#to-home-btn').addEventListener('click', function () {
+          window.location.href = 'https://www.dnspod.cn';
+        });
+      
+
+      // 搜索
+      
+        document.querySelector('#to-search-btn').addEventListener('click', function () {
+          const value = document.querySelector('#search-input').value;
+          const url = 'https://docs.dnspod.cn/search/?keywords=' + value;
+          window.open(url);
+        });
+      
+    })();
+  </script>
+
+  
+  
+</body>
+
+</html>

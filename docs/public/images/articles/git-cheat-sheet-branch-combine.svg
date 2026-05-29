@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="780" viewBox="0 0 1120 780" role="img" aria-labelledby="title desc">
+  <title id="title">Git 分支合并速查示意图</title>
+  <desc id="desc">展示 rebase、merge、squash merge、fast-forward 和 cherry-pick 的提交变化。</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f7fb; }
+      .panel { fill: #ffffff; stroke: #d9deea; stroke-width: 1.5; }
+      .title { fill: #243043; font: 700 24px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .label { fill: #526070; font: 600 15px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .small { fill: #697586; font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .cmd { fill: #1f2937; font: 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      .line-main { stroke: #2f80ed; stroke-width: 4; fill: none; stroke-linecap: round; }
+      .line-topic { stroke: #f2994a; stroke-width: 4; fill: none; stroke-linecap: round; }
+      .line-merge { stroke: #7b61ff; stroke-width: 4; fill: none; stroke-linecap: round; }
+      .dot-main { fill: #2f80ed; stroke: #ffffff; stroke-width: 3; }
+      .dot-topic { fill: #f2994a; stroke: #ffffff; stroke-width: 3; }
+      .dot-merge { fill: #7b61ff; stroke: #ffffff; stroke-width: 3; }
+      .arrow { stroke: #a5adba; stroke-width: 2; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#a5adba"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1120" height="780" rx="24"/>
+  <text class="title" x="40" y="50">Git 分支合并速查图</text>
+  <text class="small" x="40" y="76">蓝色为 main，橙色为功能分支，紫色为合并或复制后的提交。</text>
+
+  <g transform="translate(40 110)">
+    <rect class="panel" width="500" height="180" rx="16"/>
+    <text class="label" x="24" y="34">Rebase：把功能分支接到 main 最新提交后面</text>
+    <text class="cmd" x="24" y="62">git switch feature</text>
+    <text class="cmd" x="24" y="84">git rebase main</text>
+    <path class="line-main" d="M44 128 H190"/>
+    <circle class="dot-main" cx="44" cy="128" r="9"/><circle class="dot-main" cx="94" cy="128" r="9"/><circle class="dot-main" cx="144" cy="128" r="9"/><circle class="dot-main" cx="190" cy="128" r="9"/>
+    <path class="line-topic" d="M94 128 C126 96 158 96 190 96"/>
+    <circle class="dot-topic" cx="145" cy="96" r="9"/><circle class="dot-topic" cx="190" cy="96" r="9"/>
+    <line class="arrow" x1="235" y1="112" x2="280" y2="112"/>
+    <path class="line-main" d="M315 128 H410"/>
+    <circle class="dot-main" cx="315" cy="128" r="9"/><circle class="dot-main" cx="360" cy="128" r="9"/><circle class="dot-main" cx="410" cy="128" r="9"/>
+    <path class="line-topic" d="M410 128 H460"/>
+    <circle class="dot-topic" cx="460" cy="128" r="9"/>
+    <text class="small" x="24" y="158">历史更直，但会改写功能分支提交。</text>
+  </g>
+
+  <g transform="translate(580 110)">
+    <rect class="panel" width="500" height="180" rx="16"/>
+    <text class="label" x="24" y="34">Merge：保留分叉历史，生成合并提交</text>
+    <text class="cmd" x="24" y="62">git switch main</text>
+    <text class="cmd" x="24" y="84">git merge feature</text>
+    <path class="line-main" d="M44 128 H190"/>
+    <circle class="dot-main" cx="44" cy="128" r="9"/><circle class="dot-main" cx="94" cy="128" r="9"/><circle class="dot-main" cx="144" cy="128" r="9"/><circle class="dot-main" cx="190" cy="128" r="9"/>
+    <path class="line-topic" d="M94 128 C126 96 158 96 190 96"/>
+    <circle class="dot-topic" cx="145" cy="96" r="9"/><circle class="dot-topic" cx="190" cy="96" r="9"/>
+    <line class="arrow" x1="235" y1="112" x2="280" y2="112"/>
+    <path class="line-main" d="M315 128 H410"/>
+    <path class="line-topic" d="M360 128 C388 96 418 96 450 96"/>
+    <path class="line-merge" d="M450 96 C460 110 462 122 470 128"/>
+    <circle class="dot-main" cx="315" cy="128" r="9"/><circle class="dot-main" cx="360" cy="128" r="9"/><circle class="dot-main" cx="410" cy="128" r="9"/><circle class="dot-topic" cx="450" cy="96" r="9"/><circle class="dot-merge" cx="470" cy="128" r="9"/>
+    <text class="small" x="24" y="158">适合保留真实协作历史。</text>
+  </g>
+
+  <g transform="translate(40 330)">
+    <rect class="panel" width="500" height="180" rx="16"/>
+    <text class="label" x="24" y="34">Squash merge：多个提交压成一个提交</text>
+    <text class="cmd" x="24" y="62">git merge --squash feature</text>
+    <text class="cmd" x="24" y="84">git commit</text>
+    <path class="line-main" d="M44 128 H190"/>
+    <circle class="dot-main" cx="44" cy="128" r="9"/><circle class="dot-main" cx="94" cy="128" r="9"/><circle class="dot-main" cx="144" cy="128" r="9"/><circle class="dot-main" cx="190" cy="128" r="9"/>
+    <path class="line-topic" d="M94 128 C126 96 158 96 190 96"/>
+    <circle class="dot-topic" cx="145" cy="96" r="9"/><circle class="dot-topic" cx="190" cy="96" r="9"/>
+    <line class="arrow" x1="235" y1="112" x2="280" y2="112"/>
+    <path class="line-main" d="M315 128 H435"/>
+    <circle class="dot-main" cx="315" cy="128" r="9"/><circle class="dot-main" cx="360" cy="128" r="9"/><circle class="dot-main" cx="405" cy="128" r="9"/><circle class="dot-merge" cx="450" cy="128" r="9"/>
+    <text class="small" x="24" y="158">适合把小步开发整理成一个业务提交。</text>
+  </g>
+
+  <g transform="translate(580 330)">
+    <rect class="panel" width="500" height="180" rx="16"/>
+    <text class="label" x="24" y="34">Fast-forward：main 直接前进到分支顶端</text>
+    <text class="cmd" x="24" y="62">git switch main</text>
+    <text class="cmd" x="24" y="84">git merge feature</text>
+    <path class="line-main" d="M44 128 H144"/>
+    <path class="line-topic" d="M144 128 H220"/>
+    <circle class="dot-main" cx="44" cy="128" r="9"/><circle class="dot-main" cx="94" cy="128" r="9"/><circle class="dot-main" cx="144" cy="128" r="9"/><circle class="dot-topic" cx="185" cy="128" r="9"/><circle class="dot-topic" cx="220" cy="128" r="9"/>
+    <line class="arrow" x1="250" y1="128" x2="305" y2="128"/>
+    <path class="line-main" d="M330 128 H455"/>
+    <circle class="dot-main" cx="330" cy="128" r="9"/><circle class="dot-main" cx="375" cy="128" r="9"/><circle class="dot-main" cx="420" cy="128" r="9"/><circle class="dot-main" cx="455" cy="128" r="9"/>
+    <text class="small" x="24" y="158">没有新合并提交，历史保持一条直线。</text>
+  </g>
+
+  <g transform="translate(40 550)">
+    <rect class="panel" width="1040" height="170" rx="16"/>
+    <text class="label" x="24" y="34">Cherry-pick：把某个提交复制到当前分支</text>
+    <text class="cmd" x="24" y="62">git cherry-pick &lt;commit&gt;</text>
+    <path class="line-main" d="M64 118 H260"/>
+    <circle class="dot-main" cx="64" cy="118" r="9"/><circle class="dot-main" cx="124" cy="118" r="9"/><circle class="dot-main" cx="184" cy="118" r="9"/><circle class="dot-main" cx="260" cy="118" r="9"/>
+    <path class="line-topic" d="M124 118 C170 82 228 82 292 82"/>
+    <circle class="dot-topic" cx="215" cy="82" r="9"/><circle class="dot-topic" cx="292" cy="82" r="9"/>
+    <line class="arrow" x1="330" y1="100" x2="460" y2="100"/>
+    <path class="line-main" d="M505 118 H720"/>
+    <circle class="dot-main" cx="505" cy="118" r="9"/><circle class="dot-main" cx="565" cy="118" r="9"/><circle class="dot-main" cx="625" cy="118" r="9"/><circle class="dot-merge" cx="700" cy="118" r="9"/>
+    <path class="line-topic" d="M565 118 C610 82 668 82 735 82"/>
+    <circle class="dot-topic" cx="655" cy="82" r="9"/><circle class="dot-topic" cx="735" cy="82" r="9"/>
+    <text class="small" x="770" y="103">只复制选中的提交，原分支不变。</text>
+  </g>
+</svg>

@@ -1,0 +1,79 @@
+name: Deploy VitePress
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Setup pnpm
+        run: corepack enable
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Resolve site path
+        shell: bash
+        env:
+          SITE_URL_VAR: ${{ vars.SITE_URL }}
+          BASE_PATH_VAR: ${{ vars.BASE_PATH }}
+        run: |
+          repo="${GITHUB_REPOSITORY#*/}"
+
+          if [ -n "${SITE_URL_VAR:-}" ]; then
+            echo "SITE_URL=${SITE_URL_VAR%/}" >> "$GITHUB_ENV"
+          else
+            echo "SITE_URL=https://${GITHUB_REPOSITORY_OWNER}.github.io" >> "$GITHUB_ENV"
+          fi
+
+          if [ -n "${BASE_PATH_VAR:-}" ]; then
+            echo "BASE_PATH=${BASE_PATH_VAR}" >> "$GITHUB_ENV"
+          elif [ "${repo}" = "${GITHUB_REPOSITORY_OWNER}.github.io" ]; then
+            echo "BASE_PATH=/" >> "$GITHUB_ENV"
+          else
+            echo "BASE_PATH=/${repo}/" >> "$GITHUB_ENV"
+          fi
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build docs
+        run: pnpm run docs:build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
