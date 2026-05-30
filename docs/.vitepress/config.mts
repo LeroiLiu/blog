@@ -451,7 +451,14 @@ export default defineConfig({
           text: '安全与逆向',
           items: [
             { text: '专题总览', link: '/security/' },
-            { text: '逆向基础知识', link: '/security/reverse-engineering-basics' }
+            { text: '逆向基础知识', link: '/security/reverse-engineering-basics' },
+            { text: '小红书 iOS 接口清单', link: '/security/xhs-ios-request-observation' },
+            { text: '小红书 Web 接口清单', link: '/security/xhs-web-request-observation' },
+            { text: '小红书 Android 接口清单', link: '/security/xhs-android-request-observation' },
+            { text: '抖音 Web 接口清单', link: '/security/douyin-web-request-observation' },
+            { text: '抖音 Web X-Bogus 逆向分析', link: '/security/douyin-x-bogus-reverse-notes' },
+            { text: 'Android 微信朋友圈发布流程', link: '/security/wechat-android-moments-reverse-notes' },
+            { text: 'PC 微信消息撤回机制', link: '/security/wechat-pc-message-recall-reverse-notes' }
           ]
         }
       ],

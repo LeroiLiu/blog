@@ -10,7 +10,7 @@ description: 后端技术总览，整理 PHP 版本演进、PHP、ThinkPHP、Thi
 ## 技术栈入口
 
 | 分组 | 入口 | 内容 |
-| --- | --- |
+| --- | --- | --- |
 | 总览 | [后端常见报错](/backend/common-errors) | 500、502、数据库连接、权限、上传、跨域、接口超时 |
 | PHP | [PHP 总览](/php/) | PHP 常见问题、Composer、扩展、权限、上传、部署和性能排查 |
 | PHP | [PHP 版本演进](/php/php-version-history) | PHP 5.0 到 PHP 8.5 的升级变化、语法示例、兼容问题和老项目升级路线 |

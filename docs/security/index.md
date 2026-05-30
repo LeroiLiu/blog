@@ -12,6 +12,13 @@ description: 安全基础、逆向工程入门、工具认知、合法分析流�
 | 页面 | 内容 |
 | --- | --- |
 | [逆向基础知识](/security/reverse-engineering-basics) | 静态分析、动态分析、文件格式、调试、反汇编、常见工具和问题 |
+| [小红书 iOS 接口清单](/security/xhs-ios-request-observation) | iOS 相关接口方法、路径和用途整理 |
+| [小红书 Web 接口清单](/security/xhs-web-request-observation) | PC Web 相关接口方法、路径和用途整理 |
+| [小红书 Android 接口清单](/security/xhs-android-request-observation) | Android 相关接口方法、路径和用途整理 |
+| [抖音 Web 接口清单](/security/douyin-web-request-observation) | 抖音 PC Web 相关接口方法、路径和用途整理 |
+| [抖音 Web X-Bogus 逆向分析](/security/douyin-x-bogus-reverse-notes) | X-Bogus 参数断点定位、补环境、算法分析和乱码生成 |
+| [Android 微信朋友圈发布流程逆向学习笔记](/security/wechat-android-moments-reverse-notes) | Android 客户端页面、点击事件、文本输入和发布链路分析 |
+| [PC 微信消息撤回机制逆向学习笔记](/security/wechat-pc-message-recall-reverse-notes) | PC 客户端消息显示、内存变化、调用链定位和版本差异分析 |
 
 ## 学习边界
 

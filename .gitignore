@@ -21,6 +21,11 @@ pnpm-debug.log*
 .env.*
 !.env.example
 
+# Local packet captures and private request samples
+douyin/
+wechat/
+xhs/
+
 # Editor and system files
 .DS_Store
 **/.DS_Store
