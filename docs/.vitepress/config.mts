@@ -431,6 +431,10 @@ export default defineConfig({
           items: [
             { text: '专题总览', link: '/iot/' },
             { text: 'Arduino 基础', link: '/iot/arduino' },
+            { text: 'ESP8266 MQTT 实战', link: '/iot/esp8266-arduino-mqtt' },
+            { text: 'ESP8266 TCP 实战', link: '/iot/esp8266-tcp-client-server' },
+            { text: 'ESP8266 UDP 实战', link: '/iot/esp8266-udp-discovery' },
+            { text: 'ESP8266 综合案例', link: '/iot/esp8266-sensor-relay-project' },
             { text: 'ROS 2 快速入门', link: '/iot/ros2-quickstart' },
             { text: 'SLAM 算法', link: '/iot/slam-algorithms' },
             { text: 'OpenWrt', link: '/iot/openwrt' }
@@ -452,6 +456,13 @@ export default defineConfig({
           items: [
             { text: '专题总览', link: '/security/' },
             { text: '逆向基础知识', link: '/security/reverse-engineering-basics' },
+            { text: 'Frida 使用指南与常见问题', link: '/security/frida-usage-guide' },
+            { text: 'Frida 实战脚本模板', link: '/security/frida-practical-recipes' },
+            { text: 'Ghidra 使用指南', link: '/security/ghidra-usage-guide' },
+            { text: 'radare2 使用指南', link: '/security/radare2-usage-guide' },
+            { text: 'Wireshark 使用指南', link: '/security/wireshark-usage-guide' },
+            { text: 'iOS 应用分析与砸壳概念', link: '/security/ios-app-analysis-guide' },
+            { text: '常见移动 App URL Scheme', link: '/security/mobile-app-url-schemes' },
             { text: '小红书 iOS 接口清单', link: '/security/xhs-ios-request-observation' },
             { text: '小红书 Web 接口清单', link: '/security/xhs-web-request-observation' },
             { text: '小红书 Android 接口清单', link: '/security/xhs-android-request-observation' },

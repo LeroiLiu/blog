@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="320" viewBox="0 0 920 320" role="img" aria-labelledby="title desc">
+  <title id="title">Wireshark troubleshooting workflow</title>
+  <desc id="desc">A network troubleshooting workflow from DNS to TCP, TLS and HTTP.</desc>
+  <rect width="920" height="320" fill="#f8fafc"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <style>
+      .box{fill:#fff;stroke:#94a3b8;stroke-width:1.4;rx:8}
+      .warn{fill:#fff7ed;stroke:#ea580c;stroke-width:1.5;rx:8}
+      .ok{fill:#ecfdf5;stroke:#059669;stroke-width:1.5;rx:8}
+      .text{font-family:Arial,Helvetica,sans-serif;font-size:15px;fill:#172033}
+      .small{font-family:Arial,Helvetica,sans-serif;font-size:12px;fill:#53616f}
+      .line{stroke:#334155;stroke-width:1.5;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="box" x="34" y="70" width="130" height="72"/>
+  <text class="text" x="69" y="102">DNS</text>
+  <text class="small" x="56" y="124">rcode / 解析 IP</text>
+  <rect class="box" x="214" y="70" width="130" height="72"/>
+  <text class="text" x="250" y="102">TCP</text>
+  <text class="small" x="232" y="124">SYN / RST / 重传</text>
+  <rect class="box" x="394" y="70" width="130" height="72"/>
+  <text class="text" x="430" y="102">TLS</text>
+  <text class="small" x="410" y="124">SNI / Alert / 证书</text>
+  <rect class="box" x="574" y="70" width="130" height="72"/>
+  <text class="text" x="610" y="102">HTTP</text>
+  <text class="small" x="592" y="124">状态码 / body</text>
+  <rect class="ok" x="754" y="70" width="130" height="72"/>
+  <text class="text" x="790" y="102">结论</text>
+  <text class="small" x="778" y="124">定位故障层级</text>
+  <path class="line" d="M164 106H214"/>
+  <path class="line" d="M344 106H394"/>
+  <path class="line" d="M524 106H574"/>
+  <path class="line" d="M704 106H754"/>
+  <rect class="warn" x="80" y="206" width="760" height="56"/>
+  <text class="text" x="112" y="239">排查顺序：先确认域名解析，再看 TCP 是否通，再看 TLS 握手，最后看 HTTP 业务状态码</text>
+</svg>

@@ -12,6 +12,10 @@ description: Arduino、ROS 2、SLAM 算法、OpenWrt、MQTT、MQTT 消息积压�
 | 页面 | 内容 |
 | --- | --- |
 | [Arduino 基础](/iot/arduino) | 开发板、IDE、串口、引脚、Blink、库管理和常见问题 |
+| [ESP8266 MQTT 实战](/iot/esp8266-arduino-mqtt) | ESP8266 连接 Wi-Fi 与 MQTT，温湿度上报、LED 控制、掉线重连和 JSON 消息 |
+| [ESP8266 TCP 实战](/iot/esp8266-tcp-client-server) | ESP8266 TCP Client、TCP Server、心跳、命令下发和本地控制 |
+| [ESP8266 UDP 实战](/iot/esp8266-udp-discovery) | ESP8266 UDP 局域网发现、广播控制、单播响应和丢包处理 |
+| [ESP8266 综合案例](/iot/esp8266-sensor-relay-project) | 温湿度、继电器、MQTT 控制、本地按钮和离线兜底 |
 | [ROS 2 快速入门](/iot/ros2-quickstart) | ROS 2 发行版选择、安装、环境变量、命令、工作空间和常见报错 |
 | [SLAM 算法快速入门](/iot/slam-algorithms) | SLAM 概念、视觉 SLAM、激光 SLAM、VIO、后端优化、回环检测和常见问题 |
 | [OpenWrt](/iot/openwrt) | 路由器固件、LuCI、SSH、软件包、UCI、网络、防火墙和升级问题 |

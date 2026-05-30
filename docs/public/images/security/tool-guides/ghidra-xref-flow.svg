@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="300" viewBox="0 0 920 300" role="img" aria-labelledby="title desc">
+  <title id="title">Ghidra string xref workflow</title>
+  <desc id="desc">A workflow diagram for finding a function from strings in Ghidra.</desc>
+  <rect width="920" height="300" fill="#f8fafc"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2f5f75"/>
+    </marker>
+    <style>
+      .box{fill:#fff;stroke:#94a3b8;stroke-width:1.4;rx:8}
+      .key{fill:#ecfeff;stroke:#0891b2;stroke-width:1.6;rx:8}
+      .text{font-family:Arial,Helvetica,sans-serif;font-size:15px;fill:#172033}
+      .small{font-family:Arial,Helvetica,sans-serif;font-size:12px;fill:#53616f}
+      .line{stroke:#2f5f75;stroke-width:1.6;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="box" x="40" y="92" width="130" height="76"/>
+  <text class="text" x="74" y="124">导入样本</text>
+  <text class="small" x="62" y="146">Auto Analyze</text>
+  <rect class="key" x="220" y="72" width="150" height="116"/>
+  <text class="text" x="258" y="110">字符串</text>
+  <text class="small" x="244" y="136">"invalid token"</text>
+  <text class="small" x="246" y="156">"config.json"</text>
+  <rect class="box" x="420" y="92" width="130" height="76"/>
+  <text class="text" x="456" y="124">Xrefs</text>
+  <text class="small" x="444" y="146">按 X 查看引用</text>
+  <rect class="box" x="600" y="72" width="150" height="116"/>
+  <text class="text" x="632" y="110">目标函数</text>
+  <text class="small" x="620" y="136">重命名</text>
+  <text class="small" x="620" y="156">修正签名/类型</text>
+  <rect class="box" x="790" y="92" width="100" height="76"/>
+  <text class="text" x="818" y="124">结论</text>
+  <text class="small" x="808" y="146">证据链记录</text>
+  <path class="line" d="M170 130H220"/>
+  <path class="line" d="M370 130H420"/>
+  <path class="line" d="M550 130H600"/>
+  <path class="line" d="M750 130H790"/>
+  <rect class="key" x="240" y="226" width="420" height="42"/>
+  <text class="text" x="262" y="253">关键点：不要直接硬读全程序，从字符串、导入函数和调用链建立证据</text>
+</svg>
