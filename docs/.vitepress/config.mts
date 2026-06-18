@@ -40,6 +40,7 @@ export default defineConfig({
       { text: '文档', link: '/documents/' },
       { text: '技术博客', link: '/blog/' },
       { text: '业务服务', link: '/services' },
+      { text: '简历', link: '/resume' },
       {
         text: '前端',
         items: [
