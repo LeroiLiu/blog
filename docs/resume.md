@@ -3,6 +3,10 @@ title: 刘立陈简历
 description: 刘立陈 / Leroi 的 AI 产品负责人、AI 产品技术负责人、产品技术负责人方向简历。
 ---
 
+<script setup>
+import { withBase } from 'vitepress'
+</script>
+
 # 刘立陈 / Leroi
 
 **求职方向：AI 产品负责人 / AI 产品技术负责人 / 产品技术负责人**
@@ -13,12 +17,12 @@ description: 刘立陈 / Leroi 的 AI 产品负责人、AI 产品技术负责人
     <p style="margin:0 0 12px;color:#334155;">可下载 PDF 简历，也可以点击或扫码查看我的博客文档。</p>
     <p style="margin:0 0 12px;color:#334155;">博客地址：<a href="https://leroiliu.github.io/blog/" style="color:#0369a1;font-weight:700;">https://leroiliu.github.io/blog/</a></p>
     <p style="margin:0;">
-      <a href="/assets/resume/resume-ai-product-lead.pdf" style="display:inline-block;margin-right:10px;padding:6px 12px;border-radius:999px;background:#0f766e;color:#fff;text-decoration:none;font-weight:700;">下载 PDF 简历</a>
+      <a :href="withBase('/assets/resume/resume-ai-product-lead.pdf')" style="display:inline-block;margin-right:10px;padding:6px 12px;border-radius:999px;background:#0f766e;color:#fff;text-decoration:none;font-weight:700;">下载 PDF 简历</a>
       <a href="https://leroiliu.github.io/blog/" style="display:inline-block;padding:6px 12px;border:1px solid #38bdf8;border-radius:999px;background:#eff6ff;color:#0369a1;text-decoration:none;font-weight:700;">点击访问博客文档</a>
     </p>
   </div>
   <div style="text-align:center;color:#475569;font-size:13px;">
-    <img src="/assets/resume/blog-qr.svg" alt="博客二维码" width="118" height="118" style="display:block;padding:8px;border:1px solid #bae6fd;border-radius:8px;background:#fff;" />
+    <img :src="withBase('/assets/resume/blog-qr.svg')" alt="博客二维码" width="118" height="118" style="display:block;padding:8px;border:1px solid #bae6fd;border-radius:8px;background:#fff;" />
     <div style="margin-top:6px;">扫码查看博客</div>
   </div>
 </div>
