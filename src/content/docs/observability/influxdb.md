@@ -5,12 +5,12 @@ description: InfluxDB 3 Core、InfluxDB 2.x、时序数据库、Docker、Line Pr
 
 InfluxDB 是时序数据库，适合存储随时间持续变化的数据，比如设备温度、电流、接口耗时、服务器 CPU、网络流量、传感器数据和业务指标。
 
-:::note[官方入口]
-- [InfluxDB 3 Core 文档](https://docs.influxdata.com/influxdb3/core/)
-- [InfluxDB 3 Core 安装](https://docs.influxdata.com/influxdb3/core/install/)
-- [InfluxDB 2.x 文档](https://docs.influxdata.com/influxdb/v2/)
-- [InfluxDB Docker 镜像](https://hub.docker.com/_/influxdb)
-:::
+> **官方入口**
+>
+> - [InfluxDB 3 Core 文档](https://docs.influxdata.com/influxdb3/core/)
+> - [InfluxDB 3 Core 安装](https://docs.influxdata.com/influxdb3/core/install/)
+> - [InfluxDB 2.x 文档](https://docs.influxdata.com/influxdb/v2/)
+> - [InfluxDB Docker 镜像](https://hub.docker.com/_/influxdb)
 
 ## 版本怎么选
 
@@ -20,9 +20,9 @@ InfluxDB 是时序数据库，适合存储随时间持续变化的数据，比�
 | InfluxDB 2.x | 现有项目、Grafana/Telegraf 生态、Bucket/Token/Flux 使用较多 |
 | InfluxDB 1.x | 历史项目维护，不建议新项目从 1.x 开始 |
 
-:::caution[注意 Docker 标签]
-从 `2026-05-27` 开始，`influxdb:latest` 会指向 InfluxDB 3 Core。生产环境不要使用 `latest`，请写明确版本，例如 `influxdb:2.9`、`influxdb:3-core`。
-:::
+> **注意 Docker 标签**
+>
+> 从 `2026-05-27` 开始，`influxdb:latest` 会指向 InfluxDB 3 Core。生产环境不要使用 `latest`，请写明确版本，例如 `influxdb:2.9`、`influxdb:3-core`。
 
 ## 核心概念
 

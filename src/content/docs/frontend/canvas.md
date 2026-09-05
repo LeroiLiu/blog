@@ -5,11 +5,11 @@ description: JavaScript Canvas 基础绘制、高清屏适配、动画、事件�
 
 Canvas 适合做图形编辑、海报生成、小游戏、可视化、签名板、截图合成和图片处理。它和普通 DOM 最大的区别是：Canvas 是一块位图画布，画上去的内容不会自动变成可选择、可点击的 DOM 节点。
 
-:::note[文档入口]
-- [MDN Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
-- [MDN Canvas 教程](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial)
-- [MDN requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame)
-:::
+> **文档入口**
+>
+> - [MDN Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
+> - [MDN Canvas 教程](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial)
+> - [MDN requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame)
 
 ## 基础模板
 

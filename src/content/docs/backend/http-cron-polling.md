@@ -33,9 +33,9 @@ crontab -> curl 请求 ThinkPHP 内部接口 -> Service 从 MySQL 领取任务 -
 | 可控制 | 每次只处理固定批次，避免单次请求跑太久 |
 | 可观察 | 记录处理次数、错误信息、完成时间和日志 |
 
-:::caution[重点]
-HTTP 只是触发方式，不是防重复的关键。真正防重复要靠数据库任务状态、唯一键、锁和业务幂等。
-:::
+> **重点**
+>
+> HTTP 只是触发方式，不是防重复的关键。真正防重复要靠数据库任务状态、唯一键、锁和业务幂等。
 
 ## 为什么不用一个死循环 PHP 脚本
 
@@ -172,9 +172,9 @@ JOB_TOKEN=change_me_to_long_random_string
 * * * * * sleep 40; /usr/bin/curl -fsS -m 18 -X POST "https://example.com/internal/jobs/run?token=change_me_to_long_random_string" >/dev/null 2>&1
 ```
 
-:::caution[安全注意]
-这个 HTTP 接口不能直接裸奔。至少要加 token、IP 白名单、内网访问限制，最好只允许服务器本机或固定出口访问。
-:::
+> **安全注意**
+>
+> 这个 HTTP 接口不能直接裸奔。至少要加 token、IP 白名单、内网访问限制，最好只允许服务器本机或固定出口访问。
 
 ## Controller：只负责触发
 

@@ -7,12 +7,12 @@ ROS 2 是机器人软件开发里常见的基础框架，用来组织节点、�
 
 如果只是做普通物联网设备，MQTT、HTTP、串口协议可能已经足够；如果项目里有传感器融合、运动控制、地图、导航、机械臂、仿真、多个进程协同，ROS 2 会更合适。
 
-:::note[官方入口]
-- [ROS 2 官方文档](https://docs.ros.org/)
-- [ROS 2 Lyrical 安装](https://docs.ros.org/en/lyrical/Installation/Ubuntu-Install-Debs.html)
-- [ROS 2 Jazzy 安装](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html)
-- [ROS 2 Beginner Tutorials](https://docs.ros.org/en/jazzy/Tutorials.html)
-:::
+> **官方入口**
+>
+> - [ROS 2 官方文档](https://docs.ros.org/)
+> - [ROS 2 Lyrical 安装](https://docs.ros.org/en/lyrical/Installation/Ubuntu-Install-Debs.html)
+> - [ROS 2 Jazzy 安装](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html)
+> - [ROS 2 Beginner Tutorials](https://docs.ros.org/en/jazzy/Tutorials.html)
 
 ## 版本怎么选
 

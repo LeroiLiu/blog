@@ -5,11 +5,11 @@ description: Grafana 仪表盘、数据源、Docker、InfluxDB、Prometheus、Lo
 
 Grafana 是常用的可视化和告警平台，本身不负责长期存储数据，主要连接 InfluxDB、Prometheus、Loki、Elasticsearch、MySQL 等数据源，然后做仪表盘、查询和告警。
 
-:::note[官方入口]
-- [Grafana 文档](https://grafana.com/docs/grafana/latest/)
-- [Grafana Docker 安装](https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/)
-- [Grafana + Prometheus 入门](https://grafana.com/docs/grafana/latest/fundamentals/getting-started/first-dashboards/get-started-grafana-prometheus/)
-:::
+> **官方入口**
+>
+> - [Grafana 文档](https://grafana.com/docs/grafana/latest/)
+> - [Grafana Docker 安装](https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/)
+> - [Grafana + Prometheus 入门](https://grafana.com/docs/grafana/latest/fundamentals/getting-started/first-dashboards/get-started-grafana-prometheus/)
 
 ## Docker 快速启动
 

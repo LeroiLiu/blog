@@ -5,11 +5,11 @@ description: Grafana Loki 日志系统、Docker、LogQL、标签设计、日志�
 
 Loki 是 Grafana 生态里的日志系统。它和 Elasticsearch 最大的区别是：Loki 不默认给日志全文建立复杂索引，而是主要索引标签，因此成本更低，但查询方式也更依赖标签设计。
 
-:::note[官方入口]
-- [Loki 文档](https://grafana.com/docs/loki/latest/)
-- [Loki 入门](https://grafana.com/docs/loki/latest/get-started/)
-- [Loki Docker 安装](https://grafana.com/docs/loki/latest/setup/install/docker/)
-:::
+> **官方入口**
+>
+> - [Loki 文档](https://grafana.com/docs/loki/latest/)
+> - [Loki 入门](https://grafana.com/docs/loki/latest/get-started/)
+> - [Loki Docker 安装](https://grafana.com/docs/loki/latest/setup/install/docker/)
 
 ## Loki 适合什么
 

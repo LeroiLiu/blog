@@ -5,11 +5,11 @@ description: Konva.js 舞台、图层、节点、拖拽、Transformer、导出�
 
 Konva.js 是基于 Canvas 的 2D 图形交互框架。它把图形抽象成对象节点，适合做流程图、标注工具、画板、拖拽编辑器、平面设计编辑器和可视化交互。
 
-:::note[官方入口]
-- [Konva 文档](https://konvajs.org/docs/)
-- [Konva API](https://konvajs.org/api/Konva.html)
-- [Konva Vue 绑定](https://konvajs.org/docs/vue/)
-:::
+> **官方入口**
+>
+> - [Konva 文档](https://konvajs.org/docs/)
+> - [Konva API](https://konvajs.org/api/Konva.html)
+> - [Konva Vue 绑定](https://konvajs.org/docs/vue/)
 
 ## 核心概念
 

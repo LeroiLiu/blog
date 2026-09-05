@@ -1,0 +1,51 @@
+---
+import type { GetStaticPaths } from "astro";
+import { render } from "astro:content";
+
+import PostLayout from "../layouts/PostLayout.astro";
+import {
+  getAdjacentPosts,
+  getDocuments,
+  getPublishedPosts,
+  isBlogPost,
+  type Post,
+} from "../utils/posts";
+
+export const getStaticPaths = (async () => {
+  const [documents, posts] = await Promise.all([
+    getDocuments(),
+    getPublishedPosts(),
+  ]);
+
+  return documents
+    .filter(
+      (document) =>
+        !["index", "404", "blog", "blog/index"].includes(document.id),
+    )
+    .map((document) => {
+      const slug = document.id.replace(/(?:^|\/)index$/, "");
+      return {
+        params: { slug },
+        props: {
+          post: document,
+          ...(isBlogPost(document)
+            ? getAdjacentPosts(posts, document.id)
+            : {}),
+        },
+      };
+    });
+}) satisfies GetStaticPaths;
+
+interface Props {
+  post: Post;
+  previous?: Post;
+  next?: Post;
+}
+
+const { post, previous, next } = Astro.props;
+const { Content, headings } = await render(post);
+---
+
+<PostLayout post={post} headings={headings} previous={previous} next={next}>
+  <Content />
+</PostLayout>

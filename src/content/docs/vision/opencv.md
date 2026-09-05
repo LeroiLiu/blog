@@ -5,11 +5,11 @@ description: OpenCV Python 快速入门，整理安装、图片读写、视频�
 
 OpenCV 是常用的计算机视觉库，适合做图片处理、视频分析、摄像头采集、目标检测、二维码识别、工业视觉、机器人视觉和服务端图像处理。
 
-:::note[官方入口]
-- [OpenCV 文档](https://docs.opencv.org/4.x/)
-- [OpenCV-Python Tutorials](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html)
-- [opencv-python PyPI](https://pypi.org/project/opencv-python/)
-:::
+> **官方入口**
+>
+> - [OpenCV 文档](https://docs.opencv.org/4.x/)
+> - [OpenCV-Python Tutorials](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html)
+> - [opencv-python PyPI](https://pypi.org/project/opencv-python/)
 
 ## 安装选择
 

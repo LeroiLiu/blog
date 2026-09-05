@@ -5,10 +5,10 @@ description: Cloudflare Tunnel、cloudflared、本地服务公网访问、DNS �
 
 Cloudflare Tunnel 可以让内网服务通过 `cloudflared` 主动连接到 Cloudflare，再由 Cloudflare 把公网域名流量转发到本地服务。它不需要在路由器上做端口映射，适合内网 Web 服务、测试环境、面板服务和临时项目预览。
 
-:::note[官方入口]
-- [Cloudflare Tunnel 文档](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/)
-- [cloudflared 下载与安装](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/)
-:::
+> **官方入口**
+>
+> - [Cloudflare Tunnel 文档](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/)
+> - [cloudflared 下载与安装](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/)
 
 ## 基本流程
 

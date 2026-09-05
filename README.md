@@ -1,55 +1,70 @@
-# Leroi Docs
+# Leroi Blog
 
-这是 Leroi / 刘立陈基于 Astro 与 Starlight 构建的文档站，用来整理业务服务、前端、Vue、uni-app、微信小程序、Electron、Element UI、PHP、ThinkPHP、Swoole、Go、Gin、Lua、WebSocket、MQTT、Arduino、OpenWrt、Auto.js、逆向基础、Git、Docker、Kubernetes、MySQL、运维命令、FAQ 和开发问题记录。
+这是 Leroi / 刘立陈使用 Astro 7 与 [Sumi](https://github.com/kpab/astro-sumi) 主题构建的个人技术博客和文档站。
 
-主要内容在：
+## 内容结构
+
+所有正文都使用 Markdown，统一放在：
 
 ```txt
 src/content/docs/
 ```
 
-当前项目使用 Astro 官方文档工具 Starlight。内容以 Markdown 编写，构建后生成静态 HTML，适合发布到 GitHub Pages 并被搜索引擎收录。
+文件路径就是页面路径。例如：
 
-## 目录
+```txt
+src/content/docs/php/swoole.md        -> /php/swoole/
+src/content/docs/blog/php/72934027.md -> /blog/php/72934027/
+src/content/docs/resume.md            -> /resume/
+```
 
-- `src/content/docs/index.md`：首页
-- `src/content/docs/services.md`：业务服务与联系方式
-- `src/content/docs/articles/`：技术分类入口
-- `src/content/docs/frontend/`：Vue、uni-app、微信小程序、Electron、Element UI 和 Element Plus
-- `src/content/docs/php/`：PHP 常见问题、Swoole 和 ThinkPHP 各版本
-- `src/content/docs/go/`：Go 常见问题和 Gin 各版本
-- `src/content/docs/backend/`：后端总览、Lua、WebSocket 和常见报错
-- `src/content/docs/git/`：Git 常见操作和问题
-- `src/content/docs/ops/`：Linux、Docker、Kubernetes、Nginx、Apache、LNMP、1Panel、宝塔、MinIO、rclone、curl/wget 等
-- `src/content/docs/database/`：MySQL 安装测试、索引、查询和数据库相关内容
-- `src/content/docs/iot/`：Arduino、OpenWrt、MQTT、EMQX、Mosquitto 和设备通信
-- `src/content/docs/security/`：安全与逆向基础
-- `src/content/docs/tools/`：Mac 本地环境、MAMP、XAMPP、Auto.js、Auto.js-Pro-Ext、开发工具和字体资源
-- `src/content/docs/faq/`：常见问题和常见报错索引
-- `astro.config.mjs`：Astro 与 Starlight 配置
+Markdown Frontmatter 支持：
 
-## 本地预览
+```yaml
+---
+title: 页面标题
+description: 页面摘要
+date: 2026-09-06
+tags: [Astro, PHP]
+draft: false
+---
+```
 
-如需本地预览，可运行：
+`title` 必填；其他字段可选。位于 `src/content/docs/blog/`、包含发布日期且不是分类首页的内容，会进入博客时间线、标签页和 RSS。
+
+## 项目结构
+
+- `src/config.ts`：站点名称、导航、作者和 Sumi 主题配置
+- `src/content.config.ts`：Astro 内容集合规则
+- `src/content/docs/`：Markdown 内容
+- `src/components/`、`src/layouts/`：Sumi 主题组件与布局
+- `src/styles/`：Sumi 设计令牌、字体和正文样式
+- `public/`：图片、字体、二维码和 PDF 等静态资源
+- `astro.config.ts`：Astro、GitHub Pages 基础路径与 Markdown 配置
+
+## 本地开发
 
 ```sh
+pnpm install
 pnpm run dev
 ```
 
-## 部署到 GitHub Pages
+类型检查和完整构建：
 
-1. 将项目推送到 GitHub 仓库。
-2. 在仓库设置中打开 `Settings -> Pages`。
-3. 将 `Build and deployment -> Source` 设置为 `GitHub Actions`。
-4. 推送到 `master` 或 `main` 分支后，工作流会构建并部署 `dist`。
+```sh
+pnpm run check
+pnpm run build
+```
 
-如果使用自定义域名，可以在仓库 `Settings -> Secrets and variables -> Actions -> Variables` 中设置：
+## GitHub Pages
 
-- `SITE_URL`：站点域名，例如 `https://docs.example.com`
-- `BASE_PATH`：站点路径，根域名通常为 `/`
+仓库 Pages 的 Source 设为 `GitHub Actions`。推送到 `master` 或 `main` 后，工作流会构建并部署 `dist`。
 
-## 新增内容
+可通过 Actions Variables 覆盖：
 
-新增页面时，在 `src/content/docs/` 下创建 Markdown 文件。分类侧边栏会根据目录自动生成。
+- `SITE_URL`：站点域名，默认 `https://leroiliu.github.io`
+- `BASE_PATH`：站点基础路径，默认由工作流设置为仓库名 `/blog`
 
-当前项目仅使用 Astro 与 Starlight，页面内容统一以 Markdown 维护。
+## 主题许可
+
+Sumi 主题采用 MIT 许可，原始许可保存在 `THIRD_PARTY_LICENSES/SUMI-LICENSE`；字体许可保存在 `public/fonts/LICENSE.txt`。

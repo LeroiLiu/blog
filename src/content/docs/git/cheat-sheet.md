@@ -126,9 +126,9 @@ git stash
 git stash pop
 ```
 
-:::caution[注意]
-`git reset --hard` 和 `git clean` 都可能删除本地改动。执行前先确认没有重要文件。
-:::
+> **注意**
+>
+> `git reset --hard` 和 `git clean` 都可能删除本地改动。执行前先确认没有重要文件。
 
 ## 修改历史
 

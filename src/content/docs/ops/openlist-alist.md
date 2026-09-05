@@ -5,11 +5,11 @@ description: OpenList、AList 文件列表程序的 Docker 部署、端口、管
 
 OpenList 和 AList 都常用于把本地目录、网盘、对象存储等资源整理成一个 Web 文件列表。适合个人文件管理、素材预览、临时分享和 WebDAV 场景。
 
-:::note[官方入口]
-- [OpenList 文档](https://openlistteam.github.io/OpenList-Docs/)
-- [OpenList GitHub](https://github.com/OpenListTeam/OpenList)
-- [AList 文档](https://alistgo.com/)
-:::
+> **官方入口**
+>
+> - [OpenList 文档](https://openlistteam.github.io/OpenList-Docs/)
+> - [OpenList GitHub](https://github.com/OpenListTeam/OpenList)
+> - [AList 文档](https://alistgo.com/)
 
 ## 选型说明
 

@@ -5,11 +5,11 @@ description: Fabric.js Canvas 对象模型、图片编辑、文本、选择框�
 
 Fabric.js 是 Canvas API 之上的对象模型和交互层。它适合做海报编辑器、图片编辑器、在线设计工具、标注工具、签名和简单的图形排版。
 
-:::note[官方入口]
-- [Fabric.js 文档](https://fabricjs.com/docs/)
-- [Fabric.js API](https://fabricjs.com/api/)
-- [Fabric.js Demos](https://fabricjs.com/demos/)
-:::
+> **官方入口**
+>
+> - [Fabric.js 文档](https://fabricjs.com/docs/)
+> - [Fabric.js API](https://fabricjs.com/api/)
+> - [Fabric.js Demos](https://fabricjs.com/demos/)
 
 ## 核心概念
 

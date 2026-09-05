@@ -5,11 +5,11 @@ description: EasyWeChat 微信公众号、小程序、支付、消息回调、JS
 
 EasyWeChat 是 PHP 微信开发 SDK，常用于公众号、小程序、微信支付、企业微信、开放平台等对接。它能减少签名、加解密、`access_token`、消息回调等重复代码。
 
-:::note[官方入口]
-- [EasyWeChat 首页](https://easywechat.com/)
-- [EasyWeChat 6.x 文档](https://easywechat.com/6.x/)
-- [EasyWeChat 5.x 文档](https://easywechat.com/5.x/)
-:::
+> **官方入口**
+>
+> - [EasyWeChat 首页](https://easywechat.com/)
+> - [EasyWeChat 6.x 文档](https://easywechat.com/6.x/)
+> - [EasyWeChat 5.x 文档](https://easywechat.com/5.x/)
 
 ## 安装
 

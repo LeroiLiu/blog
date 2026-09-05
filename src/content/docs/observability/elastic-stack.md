@@ -5,13 +5,13 @@ description: Elastic Stack、ELK、Elasticsearch、Logstash、Kibana、索引、
 
 ELK 通常指 `Elasticsearch + Logstash + Kibana`。现在更完整的名字是 Elastic Stack，常见组件还包括 Beats、Elastic Agent、APM 等。
 
-:::note[官方入口]
-- [Elastic Stack 文档](https://www.elastic.co/docs/get-started/the-stack)
-- [Elasticsearch 安装](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/installing-elasticsearch)
-- [Elasticsearch Docker 快速启动](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-docker-basic)
-- [Logstash 入门](https://www.elastic.co/docs/reference/logstash/getting-started-with-logstash)
-- [Kibana Docker 安装](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-kibana-with-docker)
-:::
+> **官方入口**
+>
+> - [Elastic Stack 文档](https://www.elastic.co/docs/get-started/the-stack)
+> - [Elasticsearch 安装](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/installing-elasticsearch)
+> - [Elasticsearch Docker 快速启动](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-docker-basic)
+> - [Logstash 入门](https://www.elastic.co/docs/reference/logstash/getting-started-with-logstash)
+> - [Kibana Docker 安装](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-kibana-with-docker)
 
 ## 组件职责
 
@@ -77,9 +77,9 @@ Kibana：
 http://localhost:5601
 ```
 
-:::caution[本地配置不要直接用于生产]
-上面的示例关闭了安全认证，只适合本地学习。生产环境必须开启安全认证、TLS、权限控制和备份。
-:::
+> **本地配置不要直接用于生产**
+>
+> 上面的示例关闭了安全认证，只适合本地学习。生产环境必须开启安全认证、TLS、权限控制和备份。
 
 ## 写入一条测试数据
 

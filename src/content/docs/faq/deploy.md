@@ -15,7 +15,7 @@ description: GitHub Pages 和静态文档站部署中的常见问题。
 
 解决：
 
-本项目的工作流会自动根据仓库名设置 `BASE_PATH`。如果你手动部署，请确保 VitePress 的 `base` 与最终访问路径一致。
+本项目的工作流会自动根据仓库名设置 `BASE_PATH`。如果你手动部署，请确保 Astro 的 `base` 与最终访问路径一致。
 
 ## 搜索引擎为什么还搜不到
 
@@ -34,11 +34,11 @@ description: GitHub Pages 和静态文档站部署中的常见问题。
 部署完成后，站点地图通常在：
 
 ```txt
-https://<owner>.github.io/<repo>/sitemap.xml
+https://<owner>.github.io/<repo>/sitemap-index.xml
 ```
 
 如果使用自定义域名，则是：
 
 ```txt
-https://docs.example.com/sitemap.xml
+https://docs.example.com/sitemap-index.xml
 ```

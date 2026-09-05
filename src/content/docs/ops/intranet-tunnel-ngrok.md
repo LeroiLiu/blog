@@ -5,11 +5,11 @@ description: 内网穿透、ngrok、HTTP/TCP 隧道、Webhook 调试、远程访
 
 内网穿透的核心是让公网用户访问内网服务。常见场景包括微信支付回调、公众号消息回调、本地接口联调、远程演示、临时文件服务和远程调试。
 
-:::note[官方入口]
-- [ngrok 文档](https://ngrok.com/docs/)
-- [ngrok HTTP Endpoints](https://ngrok.com/docs/http/)
-- [ngrok Agent 配置](https://ngrok.com/docs/agent/)
-:::
+> **官方入口**
+>
+> - [ngrok 文档](https://ngrok.com/docs/)
+> - [ngrok HTTP Endpoints](https://ngrok.com/docs/http/)
+> - [ngrok Agent 配置](https://ngrok.com/docs/agent/)
 
 ## 常见方案对比
 
