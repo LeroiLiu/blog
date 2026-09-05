@@ -4,8 +4,7 @@ node_modules/
 
 # Build output
 dist/
-docs/.vitepress/dist/
-docs/.vitepress/cache/
+.astro/
 .vite/
 .cache/
 

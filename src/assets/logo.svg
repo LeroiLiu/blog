@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Leroi Docs</title>
+  <desc id="desc">A bright cartoon L mark for Leroi Docs.</desc>
+  <defs>
+    <linearGradient id="bg" x1="20" y1="12" x2="140" y2="148" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00a8ff"/>
+      <stop offset="0.42" stop-color="#00d1b2"/>
+      <stop offset="0.72" stop-color="#ffcf33"/>
+      <stop offset="1" stop-color="#ff5c8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="32" fill="#fff7d6"/>
+  <path d="M24 38c20-24 58-28 88-16 28 12 45 42 35 72-11 34-43 52-80 45-31-6-54-30-56-59-1-16 3-30 13-42z" fill="url(#bg)"/>
+  <path d="M60 42v66h42" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M57 120h50" stroke="#17324d" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="116" cy="42" r="10" fill="#ffffff"/>
+  <circle cx="36" cy="102" r="8" fill="#ffffff"/>
+</svg>

@@ -1,4 +1,4 @@
-name: Deploy VitePress
+name: Deploy Astro
 
 on:
   push:
@@ -25,12 +25,12 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Setup pnpm
         run: |
           corepack enable
-          corepack prepare pnpm@9 --activate
+          corepack prepare pnpm@11.8.0 --activate
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -61,12 +61,12 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build docs
-        run: pnpm run docs:build
+        run: pnpm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist
+          path: dist
 
   deploy:
     environment:
