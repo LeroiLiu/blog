@@ -1,184 +1,140 @@
 ---
-import FluidInk from "../components/FluidInk.astro";
-import PostCard from "../components/PostCard.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { BLOG, INK, SITE } from "../config";
-import { sitePath } from "../utils/paths";
-import { getPublishedPosts } from "../utils/posts";
+import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import IconRss from "@/assets/icons/IconRss.svg";
+import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Socials from "@/components/Socials.astro";
+import Card from "@/components/Card.astro";
+import LinkButton from "@/components/LinkButton.astro";
+import { getSortedPosts } from "@/utils/getSortedPosts";
+import { useTranslations } from "@/i18n";
+import config from "@/config";
 
-const posts = (await getPublishedPosts()).slice(0, BLOG.postsOnHome);
+const { socials, posts: postsConfig } = config;
+
+const locale = Astro.currentLocale ?? config.site.lang;
+const t = useTranslations(locale);
+
+const posts = await getCollection("posts");
+const sortedPosts = getSortedPosts(posts);
+const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
+const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
+const homePath = getRelativeLocaleUrl(locale, "");
 ---
 
-<BaseLayout overlayHeader>
-  <FluidInk variant="hero" enabled={INK.hero}>
-    <div class="hero">
-      <p class="hero__eyebrow">产品 · 技术 · AI</p>
-      <h1 class="hero__title">{SITE.title}</h1>
-      <p class="hero__lede">{SITE.tagline}</p>
-      <p class="hero__cta">
-        <a href={sitePath("/documents/")}>浏览文档 ↓</a>
+<Layout>
+  <Header />
+  <main
+    id="main-content"
+    data-layout="index"
+    data-home-path={homePath}
+    class="app-layout my-1"
+  >
+    <section id="hero" class="border-border border-b pt-8 pb-6">
+      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
+        Leroi
+      </h1>
+      <a
+        target="_blank"
+        href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}rss.xml`}
+        class="inline-block"
+        aria-label="RSS Feed"
+        title="RSS Feed"
+      >
+        <IconRss
+          width={20}
+          height={20}
+          class="stroke-accent scale-125 stroke-3 rtl:-rotate-90"
+        />
+        <span class="sr-only">RSS Feed</span>
+      </a>
+
+      <p>技术、产品与实践记录。</p>
+      <p class="mt-2">
+        这里整理 PHP、Go、前端、物联网、数据库、运维与 AI 产品实践。可以浏览{" "}
+        <LinkButton
+          class="hover:text-accent underline decoration-dashed underline-offset-4"
+          href={getRelativeLocaleUrl(locale, "documents")}
+        >
+          技术文档
+        </LinkButton>
+        ，也可以查看{" "}
+        <LinkButton
+          class="hover:text-accent underline decoration-dashed underline-offset-4"
+          href={getRelativeLocaleUrl(locale, "resume")}
+        >
+          个人简历
+        </LinkButton>
+        。
       </p>
-    </div>
+      {
+        socials.length > 0 && (
+          <div class="mt-4 flex max-sm:flex-col sm:items-center">
+            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">
+              {t.home.socialLinks}:
+            </div>
+            <Socials />
+          </div>
+        )
+      }
+    </section>
 
     {
-      SITE.titleMark && (
-        <p class="hero__rail tategaki" aria-hidden="true">
-          技术与实践 — BUILD AND LEARN
-        </p>
+      featuredPosts.length > 0 && (
+        <section
+          id="featured"
+          class:list={[
+            "pt-12 pb-6",
+            { "border-border border-b": recentPosts.length > 0 },
+          ]}
+        >
+          <h2 class="text-2xl font-semibold tracking-wide">
+            {t.home.featured}
+          </h2>
+          <ul>
+            {featuredPosts.map(data => (
+              <Card variant="h3" {...data} />
+            ))}
+          </ul>
+        </section>
       )
     }
 
     {
-      INK.hero && (
-        <p class="hero__notes" aria-hidden="true">
-          <span>PHP / GO / AI / IOT</span>
-          <span class="hero__notes-mid">向下浏览 ↓</span>
-          <span>移动光标 — 搅动墨迹</span>
-        </p>
+      recentPosts.length > 0 && (
+        <section id="recent-posts" class="pt-12 pb-6">
+          <h2 class="text-2xl font-semibold tracking-wide">
+            {t.home.recentPosts}
+          </h2>
+          <ul>
+            {recentPosts.slice(0, postsConfig.perIndex).map(data => (
+              <Card variant="h3" {...data} />
+            ))}
+          </ul>
+        </section>
       )
     }
-  </FluidInk>
 
-  <section class="section wrap">
-    <div class="latest__head">
-      <h2 class="eyebrow">最近更新</h2>
-      <a class="latest__all label" href={sitePath("/blog/")}>全部文章 →</a>
+    <div class="my-8 text-center">
+      <LinkButton href={getRelativeLocaleUrl(locale, "blog")}>
+        {t.home.allPosts}
+        <IconArrowRight class="inline-block rtl:-rotate-180" />
+      </LinkButton>
     </div>
+  </main>
+  <Footer />
+</Layout>
 
-    <div class="latest__list">
-      {posts.map((post) => <PostCard post={post} />)}
-    </div>
-  </section>
-
-  {
-    INK.divider && (
-      <FluidInk variant="divider" strength={INK.strength * 0.7}>
-        <p class="divider__label label">墨 — 保持记录，持续实践</p>
-      </FluidInk>
-    )
-  }
-</BaseLayout>
-
-<style>
-  .hero {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-6);
-    padding: var(--space-24) var(--gutter);
-    text-align: center;
-  }
-
-  .hero__eyebrow {
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    letter-spacing: var(--tracking-wide);
-    text-transform: uppercase;
-    color: var(--color-accent);
-  }
-
-  .hero__title {
-    font-family: var(--font-mono);
-    font-size: var(--text-hero);
-    font-weight: 600;
-    line-height: 0.9;
-    letter-spacing: var(--tracking-hero);
-    text-transform: uppercase;
-  }
-
-  .hero__lede {
-    max-width: 32rem;
-    font-size: var(--text-md);
-    color: var(--color-fg-muted);
-  }
-
-  .hero__cta a {
-    display: inline-block;
-    padding: var(--space-3) var(--space-6);
-    border: var(--rule-width) solid var(--color-accent);
-    border-radius: var(--radius);
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    letter-spacing: var(--tracking-label);
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--color-accent);
-    transition:
-      background var(--duration-fast) var(--ease-out),
-      color var(--duration-fast) var(--ease-out);
-  }
-
-  .hero__cta a:hover {
-    background: var(--color-accent);
-    color: var(--color-accent-fg);
-  }
-
-  .hero__rail {
-    position: absolute;
-    top: 50%;
-    right: var(--gutter);
-    translate: 0 -50%;
-  }
-
-  /* These describe the simulation, so they only appear once it has actually
-     started — not when it declined for reduced motion or missing WebGL2. The
-     element tags itself with data-ink-active on boot. */
-  .hero__notes {
-    display: none;
-    position: absolute;
-    inset-inline: var(--gutter);
-    bottom: var(--space-6);
-    justify-content: space-between;
-    gap: var(--space-4);
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    letter-spacing: var(--tracking-label);
-    text-transform: uppercase;
-    color: var(--color-fg-faint);
-  }
-
-  :global(.ink:has([data-ink-active])) .hero__notes {
-    display: flex;
-  }
-
-  .latest__head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: var(--space-4);
-    padding-bottom: var(--space-6);
-    border-bottom: var(--rule-width) solid var(--color-rule);
-  }
-
-  .latest__all {
-    text-decoration: none;
-  }
-
-  .latest__all:hover {
-    color: var(--color-accent);
-  }
-
-  .latest__list :global(.post-card:last-child) {
-    border-bottom: none;
-  }
-
-  .divider__label {
-    margin: auto;
-    text-align: center;
-  }
-
-  @media (max-width: 55rem) {
-    .hero__rail,
-    .hero__notes-mid {
-      display: none;
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const indexLayout = (document.querySelector("#main-content") as HTMLElement)
+      ?.dataset;
+    const baseRoot = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+    if (indexLayout?.layout) {
+      sessionStorage.setItem("backUrl", indexLayout.homePath ?? baseRoot);
     }
-  }
-
-  @media (max-width: 34rem) {
-    :global(.ink:has([data-ink-active])) .hero__notes {
-      display: none;
-    }
-  }
-</style>
+  });
+</script>

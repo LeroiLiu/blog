@@ -1,124 +1,36 @@
 ---
-import "../styles/prose.css";
+import { getEntry, render } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Main from "@/components/Main.astro";
+import Footer from "@/components/Footer.astro";
+import config from "@/config";
 
-import PageHeader from "../components/PageHeader.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { AUTHOR, SOCIAL } from "../config";
+const about = await getEntry("pages", "about");
 
-const colophon = [
-  { term: "框架", value: "Astro 7 · 静态输出" },
-  { term: "主题", value: "Sumi 墨" },
-  { term: "内容", value: "Markdown" },
-  { term: "城市", value: "上海" },
-];
+if (!about) {
+  throw new Error(
+    "Missing content entry: `about.md` or `about.mdx` in `src/content/pages/`"
+  );
+}
+
+const { Content } = await render(about);
 ---
 
-<BaseLayout title="关于" description={AUTHOR.bio}>
-  <div class="wrap">
-    <PageHeader eyebrow="About" title="关于我" lede={AUTHOR.bio} />
+<Layout
+  title={`${about.data.title} | ${config.site.title}`}
+  description={about.data.description}
+  ogImage={about.data.ogImage}
+  canonicalURL={about.data.canonicalURL}
+>
+  <Header />
 
-    <div class="about">
-      <div class="prose about__body">
-        <p>
-          我是刘立陈，持续参与软件开发、软硬件协作、项目交付和团队管理，目前希望在 AI 产品方向继续深入。
-        </p>
+  <Breadcrumb />
 
-        <p>
-          这个站点用于沉淀工作中的技术实践、开发问题与历史文章。完整经历和联系方式可在个人简历页面查看。
-        </p>
+  <Main pageTitle={about.data.title} class="app-prose">
+    <Content />
+  </Main>
 
-        <h2>内容方向</h2>
-
-        <p>
-          内容覆盖 PHP、MySQL、前端与小程序、Go、物联网、运维部署、数据维护和 AI 产品实践。
-        </p>
-
-        <p>
-          所有正文都使用 Markdown 维护，并通过 Astro 内容集合完成构建与发布。
-        </p>
-
-        <h2>其他地址</h2>
-
-        <ul>
-          {
-            SOCIAL.map((link) => (
-              <li>
-                <a href={link.href} rel="noopener">
-                  {link.label}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-
-      <aside class="about__aside">
-        <p class="tategaki about__rail" aria-hidden="true">
-          技术与实践 — BUILD AND LEARN
-        </p>
-
-        <dl class="about__colophon">
-          {
-            colophon.map((row) => (
-              <div class="about__row">
-                <dt class="label">{row.term}</dt>
-                <dd>{row.value}</dd>
-              </div>
-            ))
-          }
-        </dl>
-      </aside>
-    </div>
-  </div>
-</BaseLayout>
-
-<style>
-  .about {
-    display: grid;
-    grid-template-columns: minmax(0, var(--width-prose)) 13rem;
-    gap: clamp(var(--space-8), 6vw, var(--space-16));
-    justify-content: center;
-    align-items: start;
-    padding-block: var(--space-12);
-  }
-
-  .about__aside {
-    display: flex;
-    gap: var(--space-6);
-  }
-
-  .about__rail {
-    height: 12rem;
-  }
-
-  .about__colophon {
-    flex: 1;
-    margin: 0;
-  }
-
-  .about__row + .about__row {
-    margin-top: var(--space-6);
-  }
-
-  .about__row dd {
-    margin: var(--space-2) 0 0;
-    font-size: var(--text-sm);
-    line-height: var(--leading-snug);
-    color: var(--color-fg-muted);
-  }
-
-  @media (max-width: 60rem) {
-    .about {
-      grid-template-columns: minmax(0, 1fr);
-    }
-
-    .about__aside {
-      padding-top: var(--space-8);
-      border-top: var(--rule-width) solid var(--color-rule);
-    }
-
-    .about__rail {
-      display: none;
-    }
-  }
-</style>
+  <Footer />
+</Layout>

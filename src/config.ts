@@ -1,62 +1,41 @@
-export interface NavItem {
-  label: string;
-  href: string;
-}
+/**
+ * Internal resolved configuration used throughout the codebase.
+ *
+ * Prefer editing `astro-paper.config.ts` instead of this file. This module exists to
+ * apply defaults and expose a fully-resolved config shape (`ResolvedAstroPaperConfig`).
+ */
+import userConfig from "@/astro-paper.config";
+import type { ResolvedAstroPaperConfig } from "./types/config";
+import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
 
-export interface SocialLink {
-  label: string;
-  href: string;
-}
+const DEFAULT_OG_IMAGE = "default-og.jpg";
 
-export const SITE = {
-  url: "https://leroiliu.github.io",
-  title: "Leroi",
-  titleMark: "墨",
-  tagline: "技术、产品与实践记录",
-  description:
-    "Leroi 的个人技术博客，记录 PHP、Go、前端、物联网、数据库、运维与 AI 产品实践。",
-  lang: "zh-CN",
-  locale: "zh_CN",
-  defaultOgImage: "/favicon.svg",
-} as const;
+const config: ResolvedAstroPaperConfig = {
+  site: {
+    ...userConfig.site,
+    ogImage: userConfig.site.ogImage ?? DEFAULT_OG_IMAGE,
+    lang: userConfig.site.lang ?? "en",
+    timezone: userConfig.site.timezone ?? "UTC",
+    dir: userConfig.site.dir ?? "ltr",
+    googleVerification:
+      userConfig.site.googleVerification || PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
+  posts: {
+    perPage: userConfig.posts?.perPage ?? 4,
+    perIndex: userConfig.posts?.perIndex ?? 4,
+    scheduledPostMargin:
+      userConfig.posts?.scheduledPostMargin ?? 15 * 60 * 1000,
+  },
+  features: {
+    lightAndDarkMode: userConfig.features?.lightAndDarkMode ?? true,
+    dynamicOgImage: userConfig.features?.dynamicOgImage ?? true,
+    showArchives: userConfig.features?.showArchives ?? true,
+    showBackButton: userConfig.features?.showBackButton ?? true,
+    editPost: userConfig.features?.editPost ?? { enabled: false },
+    search: userConfig.features?.search ?? "pagefind",
+  },
+  socials: userConfig.socials ?? [],
+  shareLinks: userConfig.shareLinks ?? [],
+};
 
-export const AUTHOR = {
-  name: "刘立陈",
-  url: "https://leroiliu.github.io/blog/resume/",
-  bio: "产品技术负责人，长期参与软件开发、软硬件协作、团队管理与 AI 产品实践。",
-} as const;
-
-export const NAV: NavItem[] = [
-  { label: "首页", href: "/" },
-  { label: "文档", href: "/documents/" },
-  { label: "博客", href: "/blog/" },
-  { label: "标签", href: "/tags/" },
-  { label: "简历", href: "/resume/" },
-];
-
-export const SOCIAL: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com/LeroiLiu/blog" },
-];
-
-export const BLOG = {
-  postsPerPage: 10,
-  postsOnHome: 5,
-  wordsPerMinute: 300,
-  showReadingTime: true,
-  showTableOfContents: true,
-  tocMinHeadings: 3,
-} as const;
-
-export const INK = {
-  hero: true,
-  divider: true,
-  strength: 0.85,
-  autoFlow: true,
-} as const;
-
-// 中文文章暂不生成 Sumi 的拉丁字体社交卡片。
-export const OG = {
-  enabled: false,
-  width: 1200,
-  height: 630,
-} as const;
+export default config;
