@@ -1,0 +1,103 @@
+title: Leroi 的技术博客
+subtitle: 记录实践、排查与工程思考
+description: 刘立陈的个人技术博客，整理 PHP、前端、数据库、服务器运维、架构与开发工具实践。
+keywords:
+  - PHP
+  - MySQL
+  - 前端开发
+  - 系统运维
+  - 软件架构
+author: 刘立陈
+language: zh-CN
+timezone: Asia/Shanghai
+favicon: /favicon.svg
+
+url: https://leroiliu.github.io/blog
+root: /blog/
+permalink: posts/:name/
+pretty_urls:
+  trailing_index: false
+  trailing_html: false
+
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+  - images/**/*
+  - styles/**/*
+
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: post
+  exclude: []
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+highlight:
+  auto_detect: true
+  line_number: true
+  wrap: true
+  hljs: false
+
+index_generator:
+  path: ""
+  per_page: 10
+  order_by: -date
+
+archive_generator:
+  enabled: true
+  per_page: 20
+  yearly: true
+  monthly: false
+  daily: false
+category_generator:
+  per_page: 15
+tag_generator:
+  per_page: 15
+
+category_map:
+  PHP 与 ThinkPHP: php
+  前端与 JavaScript: frontend
+  数据库: database
+  服务器与运维: operations
+  架构与中间件: architecture
+  算法与基础: algorithms
+  开发工具与效率: tools
+  综合笔记: notes
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 30
+  content: true
+sitemap:
+  path: sitemap.xml
+
+marked:
+  gfm: true
+  breaks: false
+  headerIds: true
+  lazyload: true
+  figcaption: false
+  prependRoot: false
+  postAsset: false
+  disableNunjucks: true
+
+inject:
+  head:
+    - '<link rel="stylesheet" href="/blog/styles/custom.css">'
+
+theme: stellar
+
+deploy:
+  type: ""

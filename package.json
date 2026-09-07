@@ -1,57 +1,33 @@
 {
-  "name": "leroi-astropaper-blog",
-  "version": "0.2.0",
+  "name": "leroi-hexo-stellar-blog",
+  "version": "0.1.0",
   "private": true,
-  "type": "module",
+  "description": "Leroi's technical blog built with Hexo and the Stellar theme.",
   "packageManager": "pnpm@11.8.0",
-  "description": "Leroi's AstroPaper-based technical blog and documentation site.",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro check && astro build && pagefind --site dist",
-    "preview": "astro preview",
-    "check": "astro check",
-    "format:check": "prettier --check .",
-    "format": "prettier --write .",
-    "lint": "eslint ."
-  },
-  "keywords": [
-    "blog",
-    "astro",
-    "astropaper",
-    "github-pages"
-  ],
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22"
+  },
+  "hexo": {
+    "version": "8.1.2"
+  },
+  "scripts": {
+    "clean": "hexo clean",
+    "dev": "hexo server",
+    "check": "node tools/validate-content.mjs",
+    "build": "pnpm run check && hexo generate && node tools/validate-output.mjs",
+    "import:blog": "node tools/import-legacy-blog.mjs"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.2.0",
-    "@astrojs/mdx": "^7.0.0",
-    "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.3",
-    "@shikijs/transformers": "^4.3.0",
-    "@tailwindcss/vite": "^4.3.2",
-    "astro": "^7.3.1",
-    "dayjs": "^1.11.21",
-    "lodash.kebabcase": "^4.1.1",
-    "rehype-callouts": "^2.2.0",
-    "remark-collapse": "^0.1.2",
-    "remark-toc": "^9.0.0",
-    "sharp": "^0.35.4",
-    "slugify": "^1.6.9",
-    "tailwindcss": "^4.3.2"
-  },
-  "devDependencies": {
-    "@astrojs/check": "^0.9.10",
-    "@pagefind/default-ui": "^1.5.2",
-    "@tailwindcss/typography": "^0.5.20",
-    "@types/lodash.kebabcase": "^4.1.9",
-    "@typescript-eslint/parser": "^8.62.0",
-    "eslint": "^10.6.0",
-    "eslint-plugin-astro": "^2.1.1",
-    "pagefind": "^1.5.2",
-    "prettier": "3.9.3",
-    "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "^0.8.0",
-    "typescript": "^6.0.3"
+    "hexo": "8.1.2",
+    "hexo-front-matter": "4.2.1",
+    "hexo-generator-archive": "2.0.0",
+    "hexo-generator-category": "2.0.0",
+    "hexo-generator-feed": "4.0.0",
+    "hexo-generator-index": "4.0.0",
+    "hexo-generator-sitemap": "3.0.1",
+    "hexo-generator-tag": "2.0.0",
+    "hexo-renderer-marked": "7.0.1",
+    "hexo-server": "3.0.0",
+    "hexo-theme-stellar": "1.44.0"
   }
 }

@@ -2,32 +2,23 @@
 node_modules/
 .pnpm-store/
 
-# Build output
-dist/
+# Hexo output and cache
+public/
+db.json
+.deploy_git/
 .astro/
-.vite/
-.cache/
+dist/
 
 # Logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 pnpm-debug.log*
+npm-debug.log*
 
-# Environment
+# Environment and local files
 .env
 .env.*
 !.env.example
-
-# Local packet captures and private request samples
-douyin/
-wechat/
-xhs/
-
-# Editor and system files
 .DS_Store
-**/.DS_Store
 ._*
 Thumbs.db
 .idea/
@@ -40,12 +31,3 @@ tmp/
 temp/
 .tmp/
 .temp/
-
-# Test and tool cache
-coverage/
-*.tsbuildinfo
-.eslintcache
-
-# Hosting provider cache
-.vercel/
-.netlify/

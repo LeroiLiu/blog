@@ -1,5 +1,2 @@
-storeDir: .pnpm-store/v11
-
 allowBuilds:
-  esbuild: true
-  sharp: true
+  hexo-util: true

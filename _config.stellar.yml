@@ -1,0 +1,135 @@
+logo:
+  avatar: "[/blog/images/brand.svg](/about/)"
+  title: "[Leroi](/blog/)"
+  subtitle: 技术实践 | 工程笔记
+
+structured_data:
+  links:
+    - https://github.com/leroiliu
+    - https://blog.csdn.net/Leroi_Liu
+
+menubar:
+  items:
+    - { id: post, theme: "#159A91", icon: default:documents, title: 文章, url: / }
+    - { id: categories, theme: "#2F7DD1", icon: default:category, title: 分类, url: /categories/ }
+    - { id: tags, theme: "#E67828", icon: default:hashtag, title: 标签, url: /tags/ }
+    - { id: archives, theme: "#D64B72", icon: default:calendar, title: 归档, url: /archives/ }
+    - { id: about, theme: "#6B62C5", icon: default:shield-user, title: 关于, url: /about/ }
+
+site_tree:
+  home:
+    leftbar: recent
+    rightbar: tagcloud
+    comments:
+  index_blog:
+    base_dir: ""
+    menu_id: post
+    leftbar: recent
+    rightbar: tagcloud
+  post:
+    menu_id: post
+    leftbar: related, recent
+    rightbar: toc
+  page:
+    leftbar: recent
+    rightbar: toc
+
+article:
+  type: tech
+  indent: false
+  card_style: classic
+  auto_excerpt: 160
+  category_color:
+    PHP 与 ThinkPHP: "#7756C8"
+    前端与 JavaScript: "#2F7DD1"
+    数据库: "#159A91"
+    服务器与运维: "#4F8F3A"
+    架构与中间件: "#D64B72"
+    算法与基础: "#D99216"
+    开发工具与效率: "#E67828"
+    综合笔记: "#657180"
+  license: 本文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。
+  share: [wechat, email, link]
+  related_posts:
+    enable: false
+    max_count: 5
+  reading_time: true
+  card_tags: true
+  tags: true
+
+search:
+  service: local_search
+  local_search:
+    field: all
+    path: /search.json
+    content: true
+    lazy_load: false
+    cache_ttl: 3600
+
+comments:
+  service:
+
+footer:
+  social:
+    github: { icon: default:github, url: https://github.com/leroiliu }
+    rss: { icon: default:rss, url: /atom.xml }
+  sitemap:
+    - title: 浏览博客
+      items:
+        - "[近期发布](/)"
+        - "[分类](/categories/)"
+        - "[标签](/tags/)"
+        - "[归档](/archives/)"
+    - title: 个人链接
+      items:
+        - "[GitHub](https://github.com/leroiliu)"
+        - "[原 CSDN 博客](https://blog.csdn.net/Leroi_Liu)"
+  content: |
+    本站由刘立陈使用 [Hexo](https://hexo.io/) 与 [Stellar](https://github.com/xaoxuu/hexo-theme-stellar) 构建。
+    除特别声明外，文章采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议。
+
+plugins:
+  preload:
+    enable: true
+    service: flying_pages
+    flying_pages: https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js
+  fancybox:
+    enable: true
+    mode: auto
+    selector: ".md-text img:not([class])"
+  scrollreveal:
+    enable: false
+  copycode:
+    enable: true
+    default_text: 复制
+    success_text: 已复制
+    toast: 复制成功
+
+style:
+  prefers_theme: auto
+  page_transition: { enable: true }
+  font-size: { root: 16px, code: 88%, codeblock: 0.8125rem }
+  font-family:
+    body: 'system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'
+    code: '"SFMono-Regular", Consolas, "Liberation Mono", monospace'
+    codeblock: '"SFMono-Regular", Consolas, "Liberation Mono", monospace'
+  text-align: left
+  border-radius:
+    card-l: 8px
+    card: 8px
+    card-s: 6px
+    bar: 6px
+    image-l: 8px
+    image: 8px
+    image-s: 6px
+  corner-shape: round
+  color:
+    theme: "hsl(176 76% 34%)"
+    accent: "hsl(24 79% 53%)"
+    link: "hsl(211 64% 50%)"
+  animated_avatar: { animate: auto }
+  leftbar:
+    ui-style: card
+    background-color-light: var(--card)
+    background-color-dark: var(--card)
+  header_prefix: { h2: "#", h3: "=", h4: "|", h5: ":" }

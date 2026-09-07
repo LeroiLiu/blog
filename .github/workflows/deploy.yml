@@ -1,4 +1,4 @@
-name: Deploy Astro
+name: Deploy Hexo
 
 on:
   push:
@@ -35,41 +35,16 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Resolve site path
-        shell: bash
-        env:
-          SITE_URL_VAR: ${{ vars.SITE_URL }}
-          BASE_PATH_VAR: ${{ vars.BASE_PATH }}
-        run: |
-          repo="${GITHUB_REPOSITORY#*/}"
-
-          if [ -n "${SITE_URL_VAR:-}" ]; then
-            echo "SITE_URL=${SITE_URL_VAR%/}" >> "$GITHUB_ENV"
-          else
-            echo "SITE_URL=https://${GITHUB_REPOSITORY_OWNER}.github.io" >> "$GITHUB_ENV"
-          fi
-
-          if [ -n "${BASE_PATH_VAR:-}" ]; then
-            echo "BASE_PATH=${BASE_PATH_VAR}" >> "$GITHUB_ENV"
-          elif [ "${repo}" = "${GITHUB_REPOSITORY_OWNER}.github.io" ]; then
-            echo "BASE_PATH=/" >> "$GITHUB_ENV"
-          else
-            echo "BASE_PATH=/${repo}/" >> "$GITHUB_ENV"
-          fi
-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Check Astro
-        run: pnpm run check
-
-      - name: Build docs
+      - name: Validate and build site
         run: pnpm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: public
 
   deploy:
     environment:
