@@ -95,6 +95,7 @@ marked:
   disableNunjucks: true
 
 theme: stellar
+meta_generator: false
 
 deploy:
   type: ""

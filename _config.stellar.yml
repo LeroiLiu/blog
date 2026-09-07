@@ -78,6 +78,14 @@ profiles:
   page:
     active_menu: null
 
+settings:
+  about:
+    items:
+      - key: 站点
+        value: Leroi 的技术博客
+      - key: 维护者
+        value: 刘立陈（Leroi）
+
 article:
   style: story
   listing:

@@ -34,6 +34,12 @@ for (const file of htmlFiles) {
   const normalizedHtml = html.replaceAll("&#x2F;", "/").replaceAll("&#47;", "/");
 
   if (normalizedHtml.includes("/blog/blog/")) errors.push(`${relativeFile}: 含有重复的 /blog/blog/ 路径`);
+  if (/<meta\s+name=["'](?:generator|hexo-theme)["']/i.test(normalizedHtml)) {
+    errors.push(`${relativeFile}: 仍公开博客框架或主题元信息`);
+  }
+  if (/[?&]v=\d+\.\d+\.\d+(?:-[^&"'\s]+)?/i.test(normalizedHtml)) {
+    errors.push(`${relativeFile}: 静态资源 URL 仍公开主题版本号`);
+  }
 
   const attributePattern = /\b(?:href|src|data-src)="([^"]+)"/g;
   for (const match of normalizedHtml.matchAll(attributePattern)) {
