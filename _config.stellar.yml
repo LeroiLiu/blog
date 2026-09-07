@@ -1,135 +1,244 @@
-logo:
-  avatar: "[/blog/images/brand.svg](/about/)"
-  title: "[Leroi](/blog/)"
-  subtitle: 技术实践 | 工程笔记
+topbar:
+  enabled: false
 
-structured_data:
-  links:
-    - https://github.com/leroiliu
-    - https://blog.csdn.net/Leroi_Liu
+leftbar:
+  enabled: true
+  default_state: expanded
+  brand:
+    style: regular
+    image:
+      src: /blog/images/brand.svg
+      variant: avatar
+    name: Leroi
+    tagline: 技术实践 | 工程笔记
+    href: /
+  menu:
+    - id: post
+      title: 文章
+      icon: default:documents
+      url: /
+      accent: "#0E9F9A"
+    - id: categories
+      title: 分类
+      icon: default:category
+      url: /categories/
+      accent: "#2F7DD1"
+    - id: tags
+      title: 标签
+      icon: default:hashtag
+      url: /tags/
+      accent: "#E67828"
+    - id: archives
+      title: 归档
+      icon: default:calendar
+      url: /archives/
+      accent: "#D64B72"
+    - id: about
+      title: 关于
+      icon: default:profile
+      url: /about/
+      accent: "#6B62C5"
+    - type: search
+  widgets: []
+  footer:
+    actions:
+      - type: link
+        title: GitHub
+        icon: default:github
+        url: https://github.com/leroiliu
+      - type: link
+        title: RSS
+        icon: default:rss
+        url: /atom.xml
 
-menubar:
-  items:
-    - { id: post, theme: "#159A91", icon: default:documents, title: 文章, url: / }
-    - { id: categories, theme: "#2F7DD1", icon: default:category, title: 分类, url: /categories/ }
-    - { id: tags, theme: "#E67828", icon: default:hashtag, title: 标签, url: /tags/ }
-    - { id: archives, theme: "#D64B72", icon: default:calendar, title: 归档, url: /archives/ }
-    - { id: about, theme: "#6B62C5", icon: default:shield-user, title: 关于, url: /about/ }
+rightbar:
+  enabled: true
+  widgets: []
 
-site_tree:
+footer:
+  content: |
+    本站由刘立陈使用 [Hexo](https://hexo.io/) 与 [Stellar](https://github.com/xaoxuu/hexo-theme-stellar) 构建。
+    除特别声明外，文章采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议。
+  sections:
+    - title: 浏览博客
+      items:
+        - { title: 近期发布, url: / }
+        - { title: 分类, url: /categories/ }
+        - { title: 标签, url: /tags/ }
+        - { title: 归档, url: /archives/ }
+    - title: 个人链接
+      items:
+        - { title: GitHub, url: https://github.com/leroiliu }
+        - { title: 原 CSDN 博客, url: https://blog.csdn.net/Leroi_Liu }
+
+profiles:
   home:
-    leftbar: recent
-    rightbar: tagcloud
+    active_menu: post
+    leftbar:
+      widgets:
+        - recent
+    rightbar:
+      widgets:
+        - tagcloud
     comments:
-  index_blog:
-    base_dir: ""
-    menu_id: post
-    leftbar: recent
-    rightbar: tagcloud
+      enabled: false
+  blog_index:
+    path: /
+    active_menu: post
+    leftbar:
+      widgets:
+        - recent
+    rightbar:
+      widgets:
+        - tagcloud
+    listing_nav:
+      enabled: true
+      tabs: []
   post:
-    menu_id: post
-    leftbar: related, recent
-    rightbar: toc
+    active_menu: post
+    leftbar:
+      widgets:
+        - recent
+    rightbar:
+      widgets:
+        - toc
   page:
-    leftbar: recent
-    rightbar: toc
+    active_menu: about
+    leftbar:
+      widgets:
+        - recent
+    rightbar:
+      widgets:
+        - toc
+  error:
+    path: /404.html
+    active_menu: post
+    leftbar:
+      widgets:
+        - recent
+    rightbar:
+      widgets: []
 
 article:
-  type: tech
-  indent: false
-  card_style: classic
-  auto_excerpt: 160
-  category_color:
+  style: tech
+  paragraph_indent: never
+  listing:
+    pinned_layout: carousel
+    card_layout: hero
+    cover_ratio: 2
+    excerpt_length: 160
+    show_tags: true
+  category_colors:
     PHP 与 ThinkPHP: "#7756C8"
     前端与 JavaScript: "#2F7DD1"
-    数据库: "#159A91"
+    数据库: "#0E9F9A"
     服务器与运维: "#4F8F3A"
     架构与中间件: "#D64B72"
     算法与基础: "#D99216"
     开发工具与效率: "#E67828"
     综合笔记: "#657180"
-  license: 本文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。
-  share: [wechat, email, link]
-  related_posts:
-    enable: false
-    max_count: 5
-  reading_time: true
-  card_tags: true
-  tags: true
+  banner:
+    ratio: 2.5
+  show_reading_time: true
+  related_posts_limit: 0
+  footer:
+    license: 本文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。
+    share:
+      - wechat
+      - email
+      - link
+      - system
+    show_tags: true
+
+appearance:
+  preset: glass
+  color_scheme: auto
+  colors:
+    primary: hsl(192 98% 55%)
+    accent: hsl(14 100% 57%)
+    link: hsl(207 90% 54%)
+  gradients:
+    primary_action: linear-gradient(to right, hsl(215, 95%, 64%), hsl(195, 95%, 60%), hsl(165, 95%, 56%), hsl(195, 95%, 60%), hsl(215, 95%, 64%))
+    search_bar: "linear-gradient(to right, #04f3ff, #08ffc6, #ddf730, #ffbd19, #ff1fe0, #c418ff, #3b5bff, #04f3ff)"
+  typography:
+    font_family:
+      body: 'system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'
+      code: '"SFMono-Regular", Consolas, "Liberation Mono", monospace'
+    font_size:
+      root: 16px
+      inline_code: 88%
+      code_block: 0.8125rem
+    content_align: left
+    heading_prefixes:
+      h2: "#"
+      h3: "="
+      h4: "|"
+      h5: ":"
+  shape:
+    corner: superellipse(1.25)
+    radius:
+      card_large: 24px
+      card: 16px
+      card_small: 12px
+      bar: 12px
+      image_large: 24px
+      image: 16px
+      image_small: 8px
+  backgrounds:
+    leftbar:
+      type: gradient
+      image:
+      gradient:
+        light:
+          - hsl(210 32% 84%)
+          - hsl(188 44% 84%)
+          - hsl(12 64% 73%)
+          - hsl(35 100% 82%)
+        dark:
+          - hsl(210 16% 48%)
+          - hsl(188 18% 50%)
+          - hsl(12 30% 42%)
+          - hsl(35 36% 49%)
+      opacity: 1
+      backdrop:
+        radius: 100px
+    page:
+      image:
+      backdrop:
+        radius: 100px
+        overlay: var(--bg-a75)
+        saturation: 300%
+  code_block:
+    scrollbar_width: 4px
+    highlight_stylesheet: https://gcore.jsdelivr.net/gh/highlightjs/cdn-release@11.9/build/styles/atom-one-dark.min.css
 
 search:
-  service: local_search
-  local_search:
-    field: all
-    path: /search.json
-    content: true
-    lazy_load: false
-    cache_ttl: 3600
+  provider: local
+  local:
+    scope: all
+    include_content: true
+    cache_ttl_seconds: 3600
 
 comments:
-  service:
+  provider:
 
-footer:
-  social:
-    github: { icon: default:github, url: https://github.com/leroiliu }
-    rss: { icon: default:rss, url: /atom.xml }
-  sitemap:
-    - title: 浏览博客
-      items:
-        - "[近期发布](/)"
-        - "[分类](/categories/)"
-        - "[标签](/tags/)"
-        - "[归档](/archives/)"
-    - title: 个人链接
-      items:
-        - "[GitHub](https://github.com/leroiliu)"
-        - "[原 CSDN 博客](https://blog.csdn.net/Leroi_Liu)"
-  content: |
-    本站由刘立陈使用 [Hexo](https://hexo.io/) 与 [Stellar](https://github.com/xaoxuu/hexo-theme-stellar) 构建。
-    除特别声明外，文章采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议。
-
-plugins:
-  preload:
-    enable: true
-    service: flying_pages
-    flying_pages: https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js
-  fancybox:
-    enable: true
-    mode: auto
+features:
+  color_scheme_switch:
+    enabled: true
+  lazy_loading:
+    transition: fade
+    auto_aspect_ratio: true
+  lightbox:
+    enabled: true
     selector: ".md-text img:not([class])"
-  scrollreveal:
-    enable: false
-  copycode:
-    enable: true
-    default_text: 复制
-    success_text: 已复制
-    toast: 复制成功
+  link_prefetch:
+    enabled: true
+  reveal:
+    enabled: true
+  card_hover:
+    enabled: true
+  heti:
+    enabled: false
 
-style:
-  prefers_theme: auto
-  page_transition: { enable: true }
-  font-size: { root: 16px, code: 88%, codeblock: 0.8125rem }
-  font-family:
-    body: 'system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'
-    code: '"SFMono-Regular", Consolas, "Liberation Mono", monospace'
-    codeblock: '"SFMono-Regular", Consolas, "Liberation Mono", monospace'
-  text-align: left
-  border-radius:
-    card-l: 8px
-    card: 8px
-    card-s: 6px
-    bar: 6px
-    image-l: 8px
-    image: 8px
-    image-s: 6px
-  corner-shape: round
-  color:
-    theme: "hsl(176 76% 34%)"
-    accent: "hsl(24 79% 53%)"
-    link: "hsl(211 64% 50%)"
-  animated_avatar: { animate: auto }
-  leftbar:
-    ui-style: card
-    background-color-light: var(--card)
-    background-color-dark: var(--card)
-  header_prefix: { h2: "#", h3: "=", h4: "|", h5: ":" }
+preconnect:
+  - https://gcore.jsdelivr.net

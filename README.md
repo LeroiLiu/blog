@@ -1,6 +1,6 @@
 # Leroi Blog
 
-这是刘立陈（Leroi）使用 Hexo 8 与 [Stellar](https://github.com/xaoxuu/hexo-theme-stellar) 构建的个人技术博客。
+这是刘立陈（Leroi）使用 Hexo 8 与 [Stellar 2](https://github.com/xaoxuu/hexo-theme-stellar/tree/2.0.0-rc.1) 构建的个人技术博客。
 
 ## 内容结构
 

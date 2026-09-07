@@ -32,11 +32,12 @@ if (postFiles.length !== 94) errors.push(`应生成 94 个文章页面，实际�
 for (const file of htmlFiles) {
   const relativeFile = path.relative(outputDir, file);
   const html = await fs.readFile(file, "utf8");
+  const normalizedHtml = html.replaceAll("&#x2F;", "/").replaceAll("&#47;", "/");
 
-  if (html.includes("/blog/blog/")) errors.push(`${relativeFile}: 含有重复的 /blog/blog/ 路径`);
+  if (normalizedHtml.includes("/blog/blog/")) errors.push(`${relativeFile}: 含有重复的 /blog/blog/ 路径`);
 
   const attributePattern = /\b(?:href|src|data-src)="([^"]+)"/g;
-  for (const match of html.matchAll(attributePattern)) {
+  for (const match of normalizedHtml.matchAll(attributePattern)) {
     const url = match[1];
     if (!url.startsWith("/")) continue;
     if (!url.startsWith(siteRoot)) {

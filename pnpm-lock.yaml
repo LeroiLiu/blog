@@ -39,8 +39,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0
       hexo-theme-stellar:
-        specifier: 1.44.0
-        version: 1.44.0
+        specifier: 2.0.0-rc.1
+        version: 2.0.0-rc.1
 
 packages:
 
@@ -562,8 +562,9 @@ packages:
     resolution: {integrity: sha512-u4s0ty9Aew6jV+a9oMrXBwhrRpUQ0U8PWM/88a5aHgDru58VY81mVrxOFxs788NAsWQ8OvsJtF5m7mnXoRnSIA==}
     engines: {node: '>=12.13.0'}
 
-  hexo-theme-stellar@1.44.0:
-    resolution: {integrity: sha512-NsnCIuoZBLxEtktYlw+Mp2AXIwPnrLhHy+pWUlh9r9DaUU6ki2vnsOHyoKpX4LJXNxsXpeJX+j99XJKggimGWQ==}
+  hexo-theme-stellar@2.0.0-rc.1:
+    resolution: {integrity: sha512-ZS8BQ2IVa2IIhVPLq0X2K6txzeBOov6FNrAImP3BznVNtGObO3Gdn9LrTn1dy8DaiFYujGXq0X9lx+uoT54OIg==}
+    engines: {node: '>=22'}
 
   hexo-util@2.7.0:
     resolution: {integrity: sha512-hQM3h34nhDg0bSe/Tg1lnpODvNkz7h2u0+lZGzlKL0Oufp+5KCAEUX9wal7/xC7ax3/cwEn8IuoU75kNpZLpJQ==}
@@ -1732,13 +1733,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  hexo-theme-stellar@1.44.0:
+  hexo-theme-stellar@2.0.0-rc.1:
     dependencies:
       cheerio: 1.2.0
       glob: 10.5.0
       hexo-pagination: 3.0.0
       hexo-renderer-ejs: 2.0.0
       hexo-renderer-stylus: 3.0.1
+      js-yaml: 4.3.2
       probe-image-size: 7.4.0
     transitivePeerDependencies:
       - supports-color

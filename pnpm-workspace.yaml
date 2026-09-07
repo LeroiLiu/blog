@@ -1,2 +1,4 @@
 allowBuilds:
   hexo-util: true
+minimumReleaseAgeExclude:
+  - hexo-theme-stellar@2.0.0-rc.1

@@ -2,7 +2,8 @@
 title: 关于
 date: 2026-09-07
 layout: page
-comments: false
+comments:
+  enabled: false
 ---
 
 这里是刘立陈（Leroi）的个人技术博客，主要记录 PHP、MySQL、前端开发、服务器运维、软件架构及工程实践。
