@@ -13,6 +13,8 @@ tags:
 
 这是一份适合日常开发快速查命令的 Git 速查表，按高频开发场景重新整理。
 
+如果希望按仓库初始化、分支协作和推送流程逐步操作，可以阅读：[Git 常见操作](/blog/posts/git-common-commands/)。
+
 ![Git 分支合并速查图](/blog/images/articles/git-cheat-sheet-branch-combine.svg)
 
 ## 开始使用
