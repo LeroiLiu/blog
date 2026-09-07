@@ -1,0 +1,13 @@
+name: 可观测性系统实践
+tagline: 指标、日志、检索与可视化工具链
+description: 使用 InfluxDB、Grafana、Elastic Stack 和 Loki 构建可观测性基础能力。
+tags:
+  - 可观测性
+  - 监控
+route:
+  path: /topic/observability/
+  start: observability-influxdb
+listing:
+  sort:
+    field: date
+    direction: asc

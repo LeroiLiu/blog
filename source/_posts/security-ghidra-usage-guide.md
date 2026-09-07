@@ -2,7 +2,10 @@
 title: Ghidra 使用指南：从导入样本到脚本分析
 description: Ghidra 逆向分析入门，覆盖项目创建、样本导入、自动分析、反编译、函数重命名、交叉引用、结构体、脚本和常见问题。
 excerpt: Ghidra 逆向分析入门，覆盖项目创建、样本导入、自动分析、反编译、函数重命名、交叉引用、结构体、脚本和常见问题。
-date: '2026-05-31T01:01:05'
+date: '2026-05-31T01:02:04'
+collection:
+  profile: topic
+  id: mobile-analysis-toolchain
 categories:
   - 安全与逆向工程
 tags:

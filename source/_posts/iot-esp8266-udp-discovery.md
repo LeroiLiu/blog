@@ -2,7 +2,10 @@
 title: ESP8266 UDP 实战：局域网发现、广播控制与传感器上报
 description: 使用 Arduino 编写 ESP8266 UDP 案例，实现局域网设备发现、广播命令、单播响应、UDP 传感器上报和丢包处理。
 excerpt: 使用 Arduino 编写 ESP8266 UDP 案例，实现局域网设备发现、广播命令、单播响应、UDP 传感器上报和丢包处理。
-date: '2026-05-31T01:01:05'
+date: '2026-05-31T01:01:02'
+collection:
+  profile: topic
+  id: mqtt-device
 categories:
   - 物联网与机器人
 tags:

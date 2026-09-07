@@ -2,7 +2,10 @@
 title: Git 常见问题
 description: Git 冲突、认证失败、远程地址错误、误提交、换行符、分支同步和推送失败排查。
 excerpt: Git 冲突、认证失败、远程地址错误、误提交、换行符、分支同步和推送失败排查。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:41:54'
+collection:
+  profile: topic
+  id: git-workflow
 categories:
   - 开发工具与效率
 tags:

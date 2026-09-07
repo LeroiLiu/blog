@@ -2,7 +2,10 @@
 title: ESP8266 TCP 实战：设备上报、命令下发与本地 TCP Server
 description: 使用 Arduino 编写 ESP8266 TCP Client 和 TCP Server 案例，实现传感器数据上报、服务端命令控制、心跳、断线重连和简单文本协议。
 excerpt: 使用 Arduino 编写 ESP8266 TCP Client 和 TCP Server 案例，实现传感器数据上报、服务端命令控制、心跳、断线重连和简单文本协议。
-date: '2026-05-31T01:01:05'
+date: '2026-05-31T01:01:03'
+collection:
+  profile: topic
+  id: mqtt-device
 categories:
   - 物联网与机器人
 tags:

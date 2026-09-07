@@ -2,7 +2,10 @@
 title: MySQL 安装与测试
 description: MySQL 在 Linux 服务器上的安装、初始化、安全配置、连接测试、远程访问和常见报错排查。
 excerpt: MySQL 在 Linux 服务器上的安装、初始化、安全配置、连接测试、远程访问和常见报错排查。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:42:01'
+collection:
+  profile: topic
+  id: mysql-practice
 categories:
   - 数据库与存储
 tags:

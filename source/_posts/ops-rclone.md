@@ -4,7 +4,7 @@ description: 使用 rclone 在 MinIO、阿里云 OSS 等 S3 兼容对象存储�
 excerpt: 使用 rclone 在 MinIO、阿里云 OSS 等 S3 兼容对象存储之间同步和迁移数据。
 date: '2026-05-29T10:41:59'
 categories:
-  - 服务器与运维
+  - 数据库与存储
 tags:
   - MinIO
   - Rclone

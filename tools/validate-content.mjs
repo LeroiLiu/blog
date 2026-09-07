@@ -18,9 +18,20 @@ const expectedCategories = new Set([
   "安全与逆向工程",
   "计算机视觉",
 ]);
+const expectedTopicSizes = new Map([
+  ["git-workflow", 4],
+  ["mysql-practice", 4],
+  ["go-gin", 3],
+  ["mqtt-device", 8],
+  ["miniprogram-cross-platform", 9],
+  ["observability", 4],
+  ["mobile-analysis-toolchain", 7],
+  ["cloud-native", 5],
+]);
 const errors = [];
 const seenIds = new Set();
 const referencedAssets = new Set();
+const topicSizes = new Map();
 const postFiles = await listMarkdownFiles(postsDir);
 
 for (const file of postFiles) {
@@ -58,6 +69,15 @@ for (const file of postFiles) {
   }
   if (Object.hasOwn(parsed, "category")) errors.push(`${relativeFile}: 仍在使用旧的 category 字段`);
 
+  if (parsed.collection != null) {
+    const topicId = parsed.collection?.id;
+    if (parsed.collection?.profile !== "topic" || !expectedTopicSizes.has(topicId)) {
+      errors.push(`${relativeFile}: collection 必须引用已登记的 Topic`);
+    } else {
+      topicSizes.set(topicId, (topicSizes.get(topicId) || 0) + 1);
+    }
+  }
+
   const content = parsed._content ?? "";
   if (!content.trim()) errors.push(`${relativeFile}: 正文为空`);
   validateFences(content, relativeFile);
@@ -82,6 +102,11 @@ for (const file of postFiles) {
       errors.push(`${relativeFile}: 本地资源不存在 ${assetPath}`);
     }
   }
+}
+
+for (const [topicId, expectedSize] of expectedTopicSizes) {
+  const actualSize = topicSizes.get(topicId) || 0;
+  if (actualSize !== expectedSize) errors.push(`专栏 ${topicId} 应包含 ${expectedSize} 篇文章，实际为 ${actualSize}`);
 }
 
 if (postFiles.length !== 203) errors.push(`文章数量应为 203，实际为 ${postFiles.length}`);

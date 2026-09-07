@@ -2,7 +2,10 @@
 title: Go 常见问题
 description: Go 开发中 Go Module、环境变量、交叉编译、错误处理、并发、部署和性能相关常见问题。
 excerpt: Go 开发中 Go Module、环境变量、交叉编译、错误处理、并发、部署和性能相关常见问题。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:43:01'
+collection:
+  profile: topic
+  id: go-gin
 categories:
   - 后端开发
 tags:

@@ -2,7 +2,10 @@
 title: ColorUI 使用文档与常见问题
 description: ColorUI、ColorUI3.x、MP-CU 在 uni-app 和微信小程序项目中的使用、样式体系、组件迁移、主题维护和常见问题整理。
 excerpt: ColorUI、ColorUI3.x、MP-CU 在 uni-app 和微信小程序项目中的使用、样式体系、组件迁移、主题维护和常见问题整理。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:45:09'
+collection:
+  profile: topic
+  id: miniprogram-cross-platform
 categories:
   - 前端开发
 tags:

@@ -1,0 +1,9 @@
+publish_list:
+  - git-workflow
+  - mysql-practice
+  - go-gin
+  - mqtt-device
+  - miniprogram-cross-platform
+  - observability
+  - mobile-analysis-toolchain
+  - cloud-native

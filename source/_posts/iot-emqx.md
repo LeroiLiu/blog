@@ -2,7 +2,10 @@
 title: EMQX
 description: EMQX MQTT Broker 安装、Docker 启动、常用端口、Dashboard、认证、桥接、日志和常见问题。
 excerpt: EMQX MQTT Broker 安装、Docker 启动、常用端口、Dashboard、认证、桥接、日志和常见问题。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:44:03'
+collection:
+  profile: topic
+  id: mqtt-device
 categories:
   - 物联网与机器人
 tags:

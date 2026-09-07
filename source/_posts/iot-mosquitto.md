@@ -2,7 +2,10 @@
 title: Mosquitto
 description: Eclipse Mosquitto MQTT Broker 安装、Docker、配置文件、密码认证、发布订阅测试和常见问题。
 excerpt: Eclipse Mosquitto MQTT Broker 安装、Docker、配置文件、密码认证、发布订阅测试和常见问题。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:44:02'
+collection:
+  profile: topic
+  id: mqtt-device
 categories:
   - 物联网与机器人
 tags:

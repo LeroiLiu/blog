@@ -2,7 +2,10 @@
 title: 微信小程序开发常见问题与解决方法
 description: 整理微信小程序开发中的 request 域名、登录、手机号、支付、订阅消息、分包、setData、组件样式、审核和真机调试问题。
 excerpt: 整理微信小程序开发中的 request 域名、登录、手机号、支付、订阅消息、分包、setData、组件样式、审核和真机调试问题。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:45:02'
+collection:
+  profile: topic
+  id: miniprogram-cross-platform
 categories:
   - 前端开发
 tags:

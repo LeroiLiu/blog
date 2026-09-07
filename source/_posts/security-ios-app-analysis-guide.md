@@ -2,7 +2,10 @@
 title: iOS 应用分析与砸壳概念入门
 description: iOS 应用静态分析、Mach-O、IPA 结构、符号、Objective-C 类信息、授权样本解密概念、Frida 调试和常见问题。
 excerpt: iOS 应用静态分析、Mach-O、IPA 结构、符号、Objective-C 类信息、授权样本解密概念、Frida 调试和常见问题。
-date: '2026-05-31T01:01:05'
+date: '2026-05-31T01:02:06'
+collection:
+  profile: topic
+  id: mobile-analysis-toolchain
 categories:
   - 安全与逆向工程
 tags:

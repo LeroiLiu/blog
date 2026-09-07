@@ -2,7 +2,10 @@
 title: ESP8266 MQTT 实战：温湿度上报与远程控制
 description: 使用 Arduino 开发 ESP8266，连接 Wi-Fi 与 MQTT Broker，实现 DHT11 温湿度上报、LED 远程控制、掉线重连和 JSON 消息处理。
 excerpt: 使用 Arduino 开发 ESP8266，连接 Wi-Fi 与 MQTT Broker，实现 DHT11 温湿度上报、LED 远程控制、掉线重连和 JSON 消息处理。
-date: '2026-05-31T01:01:05'
+date: '2026-05-31T01:01:01'
+collection:
+  profile: topic
+  id: mqtt-device
 categories:
   - 物联网与机器人
 tags:

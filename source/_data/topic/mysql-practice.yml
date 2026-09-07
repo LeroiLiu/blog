@@ -1,0 +1,13 @@
+name: MySQL 开发与排障
+tagline: 从环境验证到查询与性能问题定位
+description: 串联 MySQL 安装测试、索引设计、Join 查询和慢查询排查。
+tags:
+  - MySQL
+  - 数据库
+route:
+  path: /topic/mysql-practice/
+  start: database-mysql-install-test
+listing:
+  sort:
+    field: date
+    direction: asc

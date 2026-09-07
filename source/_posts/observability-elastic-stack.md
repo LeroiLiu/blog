@@ -2,7 +2,10 @@
 title: Elastic Stack / ELK 快速入门与常见问题
 description: Elastic Stack、ELK、Elasticsearch、Logstash、Kibana、索引、日志采集、Docker、搜索分析和常见报错整理。
 excerpt: Elastic Stack、ELK、Elasticsearch、Logstash、Kibana、索引、日志采集、Docker、搜索分析和常见报错整理。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:46:03'
+collection:
+  profile: topic
+  id: observability
 categories:
   - 服务器与运维
 tags:

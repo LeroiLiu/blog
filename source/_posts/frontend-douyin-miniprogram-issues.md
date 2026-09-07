@@ -2,7 +2,10 @@
 title: 抖音小程序开发常见问题与解决方法
 description: 整理抖音小程序开发中的 tt.request、tt.login、tt.pay、分包、真机调试、宿主差异、审核、隐私协议和接口联调常见问题。
 excerpt: 整理抖音小程序开发中的 tt.request、tt.login、tt.pay、分包、真机调试、宿主差异、审核、隐私协议和接口联调常见问题。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:45:03'
+collection:
+  profile: topic
+  id: miniprogram-cross-platform
 categories:
   - 前端开发
 tags:

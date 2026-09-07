@@ -4,7 +4,7 @@ description: 使用 Docker 安装 MinIO，对象存储数据目录、控制台�
 excerpt: 使用 Docker 安装 MinIO，对象存储数据目录、控制台端口、账号密码和 Nginx 反向代理配置说明。
 date: '2026-05-29T10:41:59'
 categories:
-  - 服务器与运维
+  - 数据库与存储
 tags:
   - Nginx
   - Docker

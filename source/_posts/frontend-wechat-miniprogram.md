@@ -2,7 +2,10 @@
 title: 微信小程序常见问题
 description: 微信小程序基础库、登录、支付、订阅消息、分包、域名、审核和开发者工具常见问题。
 excerpt: 微信小程序基础库、登录、支付、订阅消息、分包、域名、审核和开发者工具常见问题。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:45:01'
+collection:
+  profile: topic
+  id: miniprogram-cross-platform
 categories:
   - 前端开发
 tags:

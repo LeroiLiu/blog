@@ -2,7 +2,10 @@
 title: uni-app 常见问题
 description: uni-app Vue2、Vue3、H5、App、微信小程序端差异、条件编译、分包、生命周期和调试常见问题。
 excerpt: uni-app Vue2、Vue3、H5、App、微信小程序端差异、条件编译、分包、生命周期和调试常见问题。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:45:05'
+collection:
+  profile: topic
+  id: miniprogram-cross-platform
 categories:
   - 前端开发
 tags:

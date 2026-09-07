@@ -2,7 +2,10 @@
 title: MySQL 慢查询常见问题
 description: MySQL 慢查询日志、EXPLAIN、索引失效、分页、锁等待、连接打满、CPU 飙高和常见慢 SQL 排查方法。
 excerpt: MySQL 慢查询日志、EXPLAIN、索引失效、分页、锁等待、连接打满、CPU 飙高和常见慢 SQL 排查方法。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:42:04'
+collection:
+  profile: topic
+  id: mysql-practice
 categories:
   - 数据库与存储
 tags:

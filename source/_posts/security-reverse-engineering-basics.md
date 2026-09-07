@@ -2,7 +2,10 @@
 title: 逆向基础知识
 description: 逆向工程入门概念、静态分析、动态分析、文件格式、调试工具、常见问题和合法学习边界。
 excerpt: 逆向工程入门概念、静态分析、动态分析、文件格式、调试工具、常见问题和合法学习边界。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:47:01'
+collection:
+  profile: topic
+  id: mobile-analysis-toolchain
 categories:
   - 安全与逆向工程
 tags:

@@ -2,7 +2,10 @@
 title: 支付宝小程序开发常见问题与解决方法
 description: 整理支付宝小程序开发中的 my.request、my.getAuthCode、授权、支付、页面跳转、样式、真机调试、分包和审核常见问题。
 excerpt: 整理支付宝小程序开发中的 my.request、my.getAuthCode、授权、支付、页面跳转、样式、真机调试、分包和审核常见问题。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:45:04'
+collection:
+  profile: topic
+  id: miniprogram-cross-platform
 categories:
   - 前端开发
 tags:

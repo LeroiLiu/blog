@@ -2,7 +2,10 @@
 title: Git 常见操作
 description: Git 用户配置、初始化仓库、远程仓库、分支、提交、推送、标签和暂存区常用命令。
 excerpt: Git 用户配置、初始化仓库、远程仓库、分支、提交、推送、标签和暂存区常用命令。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:41:51'
+collection:
+  profile: topic
+  id: git-workflow
 categories:
   - 开发工具与效率
 tags:

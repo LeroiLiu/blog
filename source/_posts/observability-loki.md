@@ -2,7 +2,10 @@
 title: Loki 快速入门与常见问题
 description: Grafana Loki 日志系统、Docker、LogQL、标签设计、日志采集、Grafana 数据源、Promtail、Alloy 和常见问题整理。
 excerpt: Grafana Loki 日志系统、Docker、LogQL、标签设计、日志采集、Grafana 数据源、Promtail、Alloy 和常见问题整理。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:46:04'
+collection:
+  profile: topic
+  id: observability
 categories:
   - 服务器与运维
 tags:

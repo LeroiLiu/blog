@@ -2,7 +2,10 @@
 title: MQTT 消息积压处理：EMQX + ThinkPHP 8 实战
 description: 讲解 MQTT 消息积压的原因、排查思路和处理方案，以 EMQX + ThinkPHP 8 + MySQL 为例，整理 Webhook 入库、ThinkPHP Command 共享订阅、幂等、批处理、失败重试和削峰方案。
 excerpt: 讲解 MQTT 消息积压的原因、排查思路和处理方案，以 EMQX + ThinkPHP 8 + MySQL 为例，整理 Webhook 入库、ThinkPHP Command 共享订阅、幂等、批处理、失败重试和削峰方案。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:44:04'
+collection:
+  profile: topic
+  id: mqtt-device
 categories:
   - 物联网与机器人
 tags:

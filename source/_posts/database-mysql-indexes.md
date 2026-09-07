@@ -2,7 +2,10 @@
 title: MySQL 索引
 description: MySQL 索引基础、B+Tree、联合索引、最左前缀、EXPLAIN、慢查询和常见优化问题。
 excerpt: MySQL 索引基础、B+Tree、联合索引、最左前缀、EXPLAIN、慢查询和常见优化问题。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:42:02'
+collection:
+  profile: topic
+  id: mysql-practice
 categories:
   - 数据库与存储
 tags:

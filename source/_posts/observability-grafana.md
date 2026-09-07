@@ -2,7 +2,10 @@
 title: Grafana 快速入门与常见问题
 description: Grafana 仪表盘、数据源、Docker、InfluxDB、Prometheus、Loki、面板、变量、告警、反向代理和常见问题整理。
 excerpt: Grafana 仪表盘、数据源、Docker、InfluxDB、Prometheus、Loki、面板、变量、告警、反向代理和常见问题整理。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:46:02'
+collection:
+  profile: topic
+  id: observability
 categories:
   - 服务器与运维
 tags:

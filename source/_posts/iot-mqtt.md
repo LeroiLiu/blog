@@ -2,7 +2,10 @@
 title: MQTT 基础
 description: MQTT Broker、Client、Topic、QoS、Retain、Will、Clean Session、认证、端口和常见问题。
 excerpt: MQTT Broker、Client、Topic、QoS、Retain、Will、Clean Session、认证、端口和常见问题。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:44:01'
+collection:
+  profile: topic
+  id: mqtt-device
 categories:
   - 物联网与机器人
 tags:

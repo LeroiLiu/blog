@@ -2,7 +2,10 @@
 title: MySQL join 图解
 description: MySQL inner join、left join、right join 的区别、图解、示例和使用建议。
 excerpt: MySQL inner join、left join、right join 的区别、图解、示例和使用建议。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:42:03'
+collection:
+  profile: topic
+  id: mysql-practice
 categories:
   - 数据库与存储
 tags:

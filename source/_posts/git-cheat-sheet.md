@@ -2,7 +2,10 @@
 title: Git 速查表
 description: Git 常用命令速查表，整理初始化、暂存、提交、分支、diff、撤销、历史、合并、远程、配置和重要文件。
 excerpt: Git 常用命令速查表，整理初始化、暂存、提交、分支、diff、撤销、历史、合并、远程、配置和重要文件。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:41:52'
+collection:
+  profile: topic
+  id: git-workflow
 categories:
   - 开发工具与效率
 tags:

@@ -2,7 +2,10 @@
 title: uview-plus 使用文档与常见问题
 description: uview-plus 在 uni-app Vue3 项目中的安装、配置、组件使用、主题、类型提示、多端兼容和常见问题整理。
 excerpt: uview-plus 在 uni-app Vue3 项目中的安装、配置、组件使用、主题、类型提示、多端兼容和常见问题整理。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:45:08'
+collection:
+  profile: topic
+  id: miniprogram-cross-platform
 categories:
   - 前端开发
 tags:

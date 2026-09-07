@@ -2,7 +2,10 @@
 title: Gin 使用指南
 description: Gin 路由、中间件、参数绑定、统一响应、错误处理和项目结构建议。
 excerpt: Gin 路由、中间件、参数绑定、统一响应、错误处理和项目结构建议。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:43:02'
+collection:
+  profile: topic
+  id: go-gin
 categories:
   - 后端开发
 tags:

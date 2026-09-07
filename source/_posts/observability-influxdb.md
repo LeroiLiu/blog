@@ -2,7 +2,10 @@
 title: InfluxDB 快速入门与常见问题
 description: InfluxDB 3 Core、InfluxDB 2.x、时序数据库、Docker、Line Protocol、Bucket、Token、Flux、SQL、Grafana 和常见问题。
 excerpt: InfluxDB 3 Core、InfluxDB 2.x、时序数据库、Docker、Line Protocol、Bucket、Token、Flux、SQL、Grafana 和常见问题。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:46:01'
+collection:
+  profile: topic
+  id: observability
 categories:
   - 服务器与运维
 tags:

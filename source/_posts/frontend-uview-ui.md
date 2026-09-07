@@ -2,7 +2,10 @@
 title: uView UI 使用文档与常见问题
 description: uView UI 在 uni-app 项目中的安装、配置、表单、主题、组件使用、多端兼容和常见报错整理。
 excerpt: uView UI 在 uni-app 项目中的安装、配置、表单、主题、组件使用、多端兼容和常见报错整理。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:45:06'
+collection:
+  profile: topic
+  id: miniprogram-cross-platform
 categories:
   - 前端开发
 tags:

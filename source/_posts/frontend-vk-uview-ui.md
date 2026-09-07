@@ -2,7 +2,10 @@
 title: vk-uview-ui 使用文档与常见问题
 description: vk-uview-ui 在 uni-app 项目中的安装、迁移、Vue2/Vue3 兼容、组件使用、维护建议和常见问题整理。
 excerpt: vk-uview-ui 在 uni-app 项目中的安装、迁移、Vue2/Vue3 兼容、组件使用、维护建议和常见问题整理。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:45:07'
+collection:
+  profile: topic
+  id: miniprogram-cross-platform
 categories:
   - 前端开发
 tags:

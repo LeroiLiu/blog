@@ -1,0 +1,13 @@
+name: 移动应用分析工具链
+tagline: 从网络协议观察到动态与静态分析
+description: 介绍逆向基础、Wireshark、Frida、Ghidra、radare2 和 iOS 应用分析方法。
+tags:
+  - 安全分析
+  - 逆向工程
+route:
+  path: /topic/mobile-analysis-toolchain/
+  start: security-reverse-engineering-basics
+listing:
+  sort:
+    field: date
+    direction: asc

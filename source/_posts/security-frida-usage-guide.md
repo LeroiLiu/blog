@@ -2,7 +2,10 @@
 title: Frida 使用指南与常见问题
 description: Frida 动态插桩的安装连接、脚本结构、Android Java Hook、Native Hook、RPC 调用、日志调试和常见问题排查。
 excerpt: Frida 动态插桩的安装连接、脚本结构、Android Java Hook、Native Hook、RPC 调用、日志调试和常见问题排查。
-date: '2026-05-31T01:01:05'
+date: '2026-05-31T01:02:02'
+collection:
+  profile: topic
+  id: mobile-analysis-toolchain
 categories:
   - 安全与逆向工程
 tags:

@@ -2,7 +2,10 @@
 title: radare2 使用指南：命令行逆向入门
 description: radare2 逆向分析入门，覆盖文件打开、自动分析、函数列表、字符串、交叉引用、调试、patch、r2pipe 和常见问题。
 excerpt: radare2 逆向分析入门，覆盖文件打开、自动分析、函数列表、字符串、交叉引用、调试、patch、r2pipe 和常见问题。
-date: '2026-05-31T01:01:05'
+date: '2026-05-31T01:02:05'
+collection:
+  profile: topic
+  id: mobile-analysis-toolchain
 categories:
   - 安全与逆向工程
 tags:

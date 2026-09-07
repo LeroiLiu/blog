@@ -2,7 +2,10 @@
 title: ESP8266 综合案例：温湿度、继电器、MQTT 控制与本地兜底
 description: 一个更完整的 ESP8266 小项目，使用 DHT11、继电器、MQTT、按钮和离线兜底逻辑，实现温湿度上报、远程开关、本地按钮控制和安全限制。
 excerpt: 一个更完整的 ESP8266 小项目，使用 DHT11、继电器、MQTT、按钮和离线兜底逻辑，实现温湿度上报、远程开关、本地按钮控制和安全限制。
-date: '2026-05-31T01:01:05'
+date: '2026-05-31T01:01:04'
+collection:
+  profile: topic
+  id: mqtt-device
 categories:
   - 物联网与机器人
 tags:

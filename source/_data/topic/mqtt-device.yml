@@ -1,0 +1,14 @@
+name: MQTT 设备接入实战
+tagline: 从消息协议和 Broker 到 ESP8266 设备闭环
+description: 覆盖 MQTT 基础、Broker 选型、消息积压处理以及 ESP8266 通信与控制案例。
+tags:
+  - MQTT
+  - ESP8266
+  - 物联网
+route:
+  path: /topic/mqtt-device/
+  start: iot-mqtt
+listing:
+  sort:
+    field: date
+    direction: asc

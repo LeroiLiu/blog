@@ -2,7 +2,10 @@
 title: Frida 实战脚本模板：Android 与 Native 常用场景
 description: Frida 实战补充，整理 Android 网络、加密、SharedPreferences、WebView、动态加载、Native 函数和日志过滤脚本模板。
 excerpt: Frida 实战补充，整理 Android 网络、加密、SharedPreferences、WebView、动态加载、Native 函数和日志过滤脚本模板。
-date: '2026-05-31T01:01:05'
+date: '2026-05-31T01:02:03'
+collection:
+  profile: topic
+  id: mobile-analysis-toolchain
 categories:
   - 安全与逆向工程
 tags:

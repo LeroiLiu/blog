@@ -2,7 +2,10 @@
 title: Git 忽略文件权限变化
 description: 解决 Git 因文件权限变化导致 status 一直显示 modified 的问题。
 excerpt: 解决 Git 因文件权限变化导致 status 一直显示 modified 的问题。
-date: '2026-05-29T10:41:59'
+date: '2026-05-29T10:41:53'
+collection:
+  profile: topic
+  id: git-workflow
 categories:
   - 开发工具与效率
 tags:
