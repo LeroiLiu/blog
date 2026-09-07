@@ -47,9 +47,7 @@ leftbar:
         url: /atom.xml
 
 footer:
-  content: |
-    本站由刘立陈使用 [Hexo](https://hexo.io/) 与 [Stellar {theme.version}]({theme.tree}) 构建。
-    除特别声明外，文章采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议。
+  content: ''
   sections:
     - title: 浏览博客
       items:
