@@ -75,6 +75,8 @@ category_map:
   开发工具与效率: tools
   计算机基础: fundamentals
   产品与行业观察: product-industry
+  安全与逆向工程: security
+  计算机视觉: computer-vision
 
 feed:
   type: atom

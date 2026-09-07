@@ -15,6 +15,8 @@ const expectedCategories = new Set([
   "开发工具与效率",
   "计算机基础",
   "产品与行业观察",
+  "安全与逆向工程",
+  "计算机视觉",
 ]);
 const errors = [];
 const seenIds = new Set();
@@ -34,7 +36,9 @@ for (const file of postFiles) {
     continue;
   }
 
-  if (!/^\d+$/.test(id)) errors.push(`${relativeFile}: 文件名必须是数字文章 ID`);
+  if (!/^(?:\d+|[a-z0-9]+(?:-[a-z0-9]+)*)$/.test(id)) {
+    errors.push(`${relativeFile}: 文件名必须是数字 ID 或小写 kebab-case`);
+  }
   if (seenIds.has(id)) errors.push(`${relativeFile}: 文章 ID ${id} 重复`);
   seenIds.add(id);
 
@@ -66,6 +70,12 @@ for (const file of postFiles) {
   if (/\]\(\/images\//.test(searchableContent)) {
     errors.push(`${relativeFile}: 图片路径缺少 /blog 基础路径`);
   }
+  if (/^\s*:{3,}(?:\s|$)/m.test(searchableContent)) {
+    errors.push(`${relativeFile}: 仍含有 VitePress 专用提示容器`);
+  }
+  if (/\]\(\/(?:backend|database|documents|faq|frontend|git|go|iot|observability|ops|php|security|tools|vision)\//.test(searchableContent)) {
+    errors.push(`${relativeFile}: 仍含有迁移前的文档站链接`);
+  }
 
   for (const assetPath of findLocalAssets(searchableContent)) {
     referencedAssets.add(assetPath);
@@ -80,7 +90,7 @@ for (const file of postFiles) {
   }
 }
 
-if (postFiles.length !== 94) errors.push(`文章数量应为 94，实际为 ${postFiles.length}`);
+if (postFiles.length !== 217) errors.push(`文章数量应为 217，实际为 ${postFiles.length}`);
 
 if (errors.length) {
   console.error(`内容检查失败，共 ${errors.length} 项：`);
