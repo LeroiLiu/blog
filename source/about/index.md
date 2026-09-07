@@ -35,4 +35,5 @@ comments:
 - GitHub：[leroiliu](https://github.com/leroiliu)
 - Gitee（码云）：[leroiliu](https://gitee.com/leroiliu)
 - 邮箱：[leroiliu1995@gmail.com](mailto:leroiliu1995@gmail.com)
+- 微信：Leroi-Liu
 - CSDN：[Leroi_Liu](https://blog.csdn.net/Leroi_Liu)
