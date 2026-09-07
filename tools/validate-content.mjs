@@ -127,6 +127,9 @@ function validateMarkdownLayout(content, relativeFile) {
 
     if (heading) {
       const level = heading[1].length;
+      if (/^(?:\[?TOC\]?|目录|本文目录)$/i.test(heading[2].trim())) {
+        errors.push(`${relativeFile}:${lineNumber}: Stellar 已自动生成目录，不应在正文中重复添加`);
+      }
       if (level === 1) errors.push(`${relativeFile}:${lineNumber}: 正文不应重复使用一级标题`);
       if (level > previousHeadingLevel + 1) errors.push(`${relativeFile}:${lineNumber}: 标题层级从 H${previousHeadingLevel} 跳到 H${level}`);
       if (/!\[[^\]]*\]\(/.test(heading[2])) errors.push(`${relativeFile}:${lineNumber}: 图片不应放在标题中`);

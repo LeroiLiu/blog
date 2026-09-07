@@ -90,6 +90,7 @@ function normalizeLines(lines) {
       normalized.push("");
       continue;
     }
+    if (/^\\={3,}$/.test(line.trim())) continue;
 
     line = line.replace(/<code>([^<>`\n]+)<\/code>/gi, (_, code) => `\`${code.trim()}\``);
     line = line.replace(/\*\*([^*\n]+?)([，。；：！？]+)\*\*/g, "**$1**$2");
