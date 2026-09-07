@@ -63,8 +63,12 @@ footer:
       items:
         - title: GitHub
           url: https://github.com/leroiliu
-        - title: 原 CSDN 博客
+        - title: Gitee
+          url: https://gitee.com/leroiliu
+        - title: CSDN
           url: https://blog.csdn.net/Leroi_Liu
+        - title: 邮箱
+          url: mailto:leroiliu1995@gmail.com
 
 profiles:
   blog_index:
