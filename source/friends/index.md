@@ -7,10 +7,16 @@ comments:
   enabled: false
 ---
 
-## 我的链接
+## 个人主页
 
-- [GitHub](https://github.com/leroiliu) - 开源项目与代码实践
-- [CSDN](https://blog.csdn.net/Leroi_Liu) - 早期技术文章归档
+- [GitHub · leroiliu](https://github.com/leroiliu) - 开源项目、代码实践与技术探索
+- [Gitee · leroiliu](https://gitee.com/leroiliu) - 国内代码托管与项目主页
+- [CSDN · Leroi_Liu](https://blog.csdn.net/Leroi_Liu) - 早期技术文章归档
+
+## 联系方式
+
+- 邮箱：[leroiliu1995@gmail.com](mailto:leroiliu1995@gmail.com)
+- 微信：Leroi-Liu
 
 ## 友情站点
 
