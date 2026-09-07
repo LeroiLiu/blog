@@ -2,6 +2,7 @@
 title: 关于
 date: 2026-09-07
 layout: page
+active_menu: about
 comments:
   enabled: false
 ---

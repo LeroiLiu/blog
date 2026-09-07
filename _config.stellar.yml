@@ -11,27 +11,27 @@ leftbar:
       variant: avatar
   menu:
     - id: post
-      title: 文章
+      title: 博客
       icon: default:documents
       url: /
-    - id: categories
-      title: 分类
-      icon: default:category
-      url: /categories/
+    - id: projects
+      title: 项目
+      icon: site:project
+      url: /wiki/
       accent: '#3DC550'
-    - id: tags
-      title: 标签
-      icon: default:hashtag
-      url: /tags/
+    - id: explore
+      title: 探索
+      icon: site:explore
+      url: /notes/
       accent: '#FA6400'
-    - id: archives
-      title: 归档
-      icon: default:calendar
-      url: /archives/
+    - id: friends
+      title: 友链
+      icon: site:friends
+      url: /friends/
       accent: '#F44336'
     - id: about
       title: 关于
-      icon: default:profile
+      icon: site:about
       url: /about/
       accent: '#b92ed1'
     - type: search
@@ -74,7 +74,7 @@ profiles:
     listing_nav:
       enabled: true
   page:
-    active_menu: about
+    active_menu: null
 
 article:
   style: story
