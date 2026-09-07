@@ -39,7 +39,8 @@ if (!changedFiles.length) {
 }
 
 function formatContent(content, title) {
-  const sourceLines = unwrapOverquotedContent(content.replaceAll("\r\n", "\n").split("\n"));
+  const relocatedContent = relocateLegacyNotice(content.replaceAll("\r\n", "\n"));
+  const sourceLines = unwrapOverquotedContent(relocatedContent.split("\n"));
   const normalizedLines = normalizeLines(sourceLines);
   const semanticLines = normalizeSemanticBlocks(normalizedLines, title);
   const structuredLines = normalizeHeadingLevels(semanticLines, title);
@@ -47,6 +48,16 @@ function formatContent(content, title) {
   const deduplicatedLines = removeAdjacentDuplicateParagraphs(accessibleLines);
   const spacedLines = normalizeBlockSpacing(deduplicatedLines);
   return `${spacedLines.join("\n").trim()}\n`;
+}
+
+function relocateLegacyNotice(content) {
+  const noticePattern =
+    /(?:^|\n)> \*\*历史博客说明\*\*\n>\n> 本文为 Leroi 的历史博客文章，原发布于 CSDN，现迁移并重新整理到本站。\n>\n> 原博客地址（CSDN）：\[[^\]]+\]\(([^)]+)\)\n*/;
+  const match = content.match(noticePattern);
+  if (!match) return content;
+
+  const article = content.replace(noticePattern, "\n").trim();
+  return `${article}\n\n---\n\n来源：本文迁移自原 CSDN 博客，已重新整理。[查看原文](${match[1]})\n`;
 }
 
 function normalizeLines(lines) {

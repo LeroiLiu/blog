@@ -64,7 +64,18 @@ function normalizeContent(content) {
     /(原博客地址（CSDN）：[^\n]+\n)(?!\n<!-- more -->)/,
     "$1\n<!-- more -->\n",
   );
+  value = relocateLegacyNotice(value);
   return value.endsWith("\n") ? value : `${value}\n`;
+}
+
+function relocateLegacyNotice(content) {
+  const noticePattern =
+    /(?:^|\n)> \*\*历史博客说明\*\*\n>\n> 本文为 Leroi 的历史博客文章，原发布于 CSDN，现迁移并重新整理到本站。\n>\n> 原博客地址（CSDN）：\[[^\]]+\]\(([^)]+)\)\n*/;
+  const match = content.match(noticePattern);
+  if (!match) return content;
+
+  const article = content.replace(noticePattern, "\n").trim();
+  return `${article}\n\n---\n\n来源：本文迁移自原 CSDN 博客，已重新整理。[查看原文](${match[1]})\n`;
 }
 
 function normalizeTags(tags) {
