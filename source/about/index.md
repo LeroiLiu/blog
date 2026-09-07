@@ -33,6 +33,6 @@ comments:
 ## 联系方式
 
 - GitHub：[leroiliu](https://github.com/leroiliu)
-- Gitee（码云）：[leroiliu 的项目](https://gitee.com/leroiliu/projects)
+- Gitee（码云）：[leroiliu](https://gitee.com/leroiliu)
 - 邮箱：[leroiliu1995@gmail.com](mailto:leroiliu1995@gmail.com)
 - CSDN：[Leroi_Liu](https://blog.csdn.net/Leroi_Liu)
