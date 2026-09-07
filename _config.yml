@@ -93,10 +93,6 @@ marked:
   postAsset: false
   disableNunjucks: true
 
-inject:
-  head:
-    - '<link rel="stylesheet" href="/blog/styles/custom.css">'
-
 theme: stellar
 
 deploy:

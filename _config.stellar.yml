@@ -160,11 +160,11 @@ appearance:
     search_bar: "linear-gradient(to right, #04f3ff, #08ffc6, #ddf730, #ffbd19, #ff1fe0, #c418ff, #3b5bff, #04f3ff)"
   typography:
     font_family:
-      body: 'system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'
-      code: '"SFMono-Regular", Consolas, "Liberation Mono", monospace'
+      body: '"LXGW WenKai Screen", system-ui, "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif'
+      code: 'Menlo, Monaco, Consolas, system-ui, monospace, sans-serif'
     font_size:
       root: 16px
-      inline_code: 88%
+      inline_code: 85%
       code_block: 0.8125rem
     content_align: left
     heading_prefixes:
@@ -237,6 +237,11 @@ features:
     enabled: true
   heti:
     enabled: false
+
+inject:
+  head_end: |
+    <link rel="preconnect" href="https://npm.elemecdn.com" crossorigin>
+    <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
 
 preconnect:
   - https://gcore.jsdelivr.net
