@@ -34,7 +34,9 @@ for (const file of postFiles) {
     continue;
   }
 
-  if (!/^\d+$/.test(id)) errors.push(`${relativeFile}: 文件名必须是数字文章 ID`);
+  if (!/^(?:\d+|[a-z0-9]+(?:-[a-z0-9]+)*)$/.test(id)) {
+    errors.push(`${relativeFile}: 文件名必须是数字 ID 或小写 kebab-case`);
+  }
   if (seenIds.has(id)) errors.push(`${relativeFile}: 文章 ID ${id} 重复`);
   seenIds.add(id);
 
@@ -80,7 +82,7 @@ for (const file of postFiles) {
   }
 }
 
-if (postFiles.length !== 94) errors.push(`文章数量应为 94，实际为 ${postFiles.length}`);
+if (postFiles.length !== 95) errors.push(`文章数量应为 95，实际为 ${postFiles.length}`);
 
 if (errors.length) {
   console.error(`内容检查失败，共 ${errors.length} 项：`);
