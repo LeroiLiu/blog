@@ -82,7 +82,7 @@ for (const file of postFiles) {
   }
 }
 
-if (postFiles.length !== 95) errors.push(`文章数量应为 95，实际为 ${postFiles.length}`);
+if (postFiles.length !== 121) errors.push(`文章数量应为 121，实际为 ${postFiles.length}`);
 
 if (errors.length) {
   console.error(`内容检查失败，共 ${errors.length} 项：`);
