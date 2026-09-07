@@ -5,7 +5,7 @@ layout: page
 active_menu: about
 description: 刘立陈（Leroi）的个人介绍、产品与工程实践及联系方式。
 banner:
-  image: /blog/images/profile/avatar.webp
+  image: /blog/images/about/leroi-neon-banner.webp
   avatar: /blog/images/profile/avatar.webp
   headline: 刘立陈（Leroi）
   tagline: AI 产品与工程实践
