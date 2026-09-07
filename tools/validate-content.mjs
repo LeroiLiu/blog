@@ -57,6 +57,7 @@ for (const file of postFiles) {
   const content = parsed._content ?? "";
   if (!content.trim()) errors.push(`${relativeFile}: 正文为空`);
   validateFences(content, relativeFile);
+  validateMarkdownLayout(content, relativeFile);
 
   const searchableContent = stripFencedCode(content);
   if (/\/blog\/(?:php|frontend|database|ops|architecture|algorithm|tools|other)\/\d+\/?/.test(searchableContent)) {
@@ -103,11 +104,48 @@ function validateFences(content, relativeFile) {
     const match = lines[index].match(/^ {0,3}(`{3,}|~{3,})/);
     if (!match) continue;
     const marker = match[1];
-    if (!openFence) openFence = { char: marker[0], length: marker.length, line: index + 1 };
+    if (!openFence) {
+      const language = lines[index].slice(match[0].length).trim();
+      if (marker[0] !== "`") errors.push(`${relativeFile}:${index + 1}: 代码块应使用反引号围栏`);
+      if (!language) errors.push(`${relativeFile}:${index + 1}: 代码块缺少语言类型`);
+      openFence = { char: marker[0], length: marker.length, line: index + 1 };
+    }
     else if (marker[0] === openFence.char && marker.length >= openFence.length) openFence = null;
   }
 
   if (openFence) errors.push(`${relativeFile}:${openFence.line}: 代码围栏未闭合`);
+}
+
+function validateMarkdownLayout(content, relativeFile) {
+  const lines = stripFencedCode(content).split("\n");
+  let previousHeadingLevel = 1;
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
+    const lineNumber = index + 1;
+    const heading = line.match(/^(#{1,6})\s+(.+)$/);
+
+    if (heading) {
+      const level = heading[1].length;
+      if (level === 1) errors.push(`${relativeFile}:${lineNumber}: 正文不应重复使用一级标题`);
+      if (level > previousHeadingLevel + 1) errors.push(`${relativeFile}:${lineNumber}: 标题层级从 H${previousHeadingLevel} 跳到 H${level}`);
+      if (/!\[[^\]]*\]\(/.test(heading[2])) errors.push(`${relativeFile}:${lineNumber}: 图片不应放在标题中`);
+      if (/\*\*.*\*\*/.test(heading[2])) errors.push(`${relativeFile}:${lineNumber}: 标题不需要额外加粗`);
+      previousHeadingLevel = level;
+    }
+
+    if (/[\u00a0\u3000]/.test(line)) errors.push(`${relativeFile}:${lineNumber}: 含有不可见或全角空格`);
+    if (/!\[\]\(/.test(line) || /在这里插入图片描述/.test(line)) {
+      errors.push(`${relativeFile}:${lineNumber}: 图片缺少有效说明`);
+    }
+    if (/^\s*[-+*]\s{2,}\S/.test(line) || /^\s*\d+\.\s{2,}\S/.test(line)) {
+      errors.push(`${relativeFile}:${lineNumber}: 列表标记后存在多余空格`);
+    }
+    if (/<code>.*<\/code>/i.test(line)) errors.push(`${relativeFile}:${lineNumber}: 行内代码应使用反引号`);
+    if (/^\*\*\\\[(?:php|html|javascript|js|css|sql|json)\\\]\*\*$/i.test(line.trim())) {
+      errors.push(`${relativeFile}:${lineNumber}: 含有旧编辑器语言标记`);
+    }
+  }
 }
 
 function stripFencedCode(content) {
