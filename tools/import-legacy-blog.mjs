@@ -75,7 +75,7 @@ function relocateLegacyNotice(content) {
   if (!match) return content;
 
   const article = content.replace(noticePattern, "\n").trim();
-  return `${article}\n\n---\n\n来源：本文迁移自原 CSDN 博客，已重新整理。[查看原文](${match[1]})\n`;
+  return `${article}\n\n---\n\n本文最初发布于我的 CSDN 博客，现已迁移并重新整理。[查看原文](${match[1]})\n`;
 }
 
 function normalizeTags(tags) {
