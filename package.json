@@ -18,8 +18,7 @@
     "check:theme": "hexo stellar doctor",
     "format:posts": "node tools/format-posts.mjs --write",
     "build": "pnpm run check && hexo generate && node tools/validate-output.mjs",
-    "import:blog": "node tools/import-legacy-blog.mjs",
-    "import:master-articles": "node tools/import-master-articles.mjs"
+    "import:blog": "node tools/import-legacy-blog.mjs"
   },
   "dependencies": {
     "hexo": "8.1.2",

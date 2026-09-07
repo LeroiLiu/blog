@@ -4,7 +4,6 @@ import process from "node:process";
 import frontMatter from "hexo-front-matter";
 
 const postsDir = path.resolve("source/_posts");
-const wikiDir = path.resolve("source/wiki");
 const sourceDir = path.resolve("source");
 const expectedCategories = new Set([
   "后端开发",
@@ -16,14 +15,11 @@ const expectedCategories = new Set([
   "开发工具与效率",
   "计算机基础",
   "产品与行业观察",
-  "安全与逆向工程",
-  "计算机视觉",
 ]);
 const errors = [];
 const seenIds = new Set();
 const referencedAssets = new Set();
 const postFiles = await listMarkdownFiles(postsDir);
-const manualFiles = await listMarkdownFiles(wikiDir);
 
 for (const file of postFiles) {
   const relativeFile = path.relative(process.cwd(), file);
@@ -38,9 +34,7 @@ for (const file of postFiles) {
     continue;
   }
 
-  if (!/^(?:\d+|[a-z0-9]+(?:-[a-z0-9]+)*)$/.test(id)) {
-    errors.push(`${relativeFile}: 文件名必须是数字 ID 或小写 kebab-case`);
-  }
+  if (!/^\d+$/.test(id)) errors.push(`${relativeFile}: 文件名必须是数字文章 ID`);
   if (seenIds.has(id)) errors.push(`${relativeFile}: 文章 ID ${id} 重复`);
   seenIds.add(id);
 
@@ -72,12 +66,6 @@ for (const file of postFiles) {
   if (/\]\(\/images\//.test(searchableContent)) {
     errors.push(`${relativeFile}: 图片路径缺少 /blog 基础路径`);
   }
-  if (/^\s*:{3,}(?:\s|$)/m.test(searchableContent)) {
-    errors.push(`${relativeFile}: 仍含有 VitePress 专用提示容器`);
-  }
-  if (/\]\(\/(?:backend|database|documents|faq|frontend|git|go|iot|observability|ops|php|security|tools|vision)\//.test(searchableContent)) {
-    errors.push(`${relativeFile}: 仍含有迁移前的文档站链接`);
-  }
 
   for (const assetPath of findLocalAssets(searchableContent)) {
     referencedAssets.add(assetPath);
@@ -92,63 +80,7 @@ for (const file of postFiles) {
   }
 }
 
-for (const file of manualFiles) {
-  const relativeFile = path.relative(process.cwd(), file);
-  const relativeManualPath = path.relative(wikiDir, file).replace(/\.md$/, "");
-  const raw = await fs.readFile(file, "utf8");
-  let parsed;
-
-  try {
-    parsed = frontMatter.parse(raw);
-  } catch (error) {
-    errors.push(`${relativeFile}: Front Matter 无法解析：${error.message}`);
-    continue;
-  }
-
-  if (!relativeManualPath.split(path.sep).every(part => /^(?:index|[a-z0-9]+(?:-[a-z0-9]+)*)$/.test(part))) {
-    errors.push(`${relativeFile}: 手册目录与文件名必须使用小写 kebab-case`);
-  }
-  if (typeof parsed.title !== "string" || !parsed.title.trim()) errors.push(`${relativeFile}: title 必须是非空字符串`);
-  if (typeof parsed.description !== "string" || !parsed.description.trim()) errors.push(`${relativeFile}: description 必须是非空字符串`);
-  for (const postOnlyField of ["excerpt", "categories", "category", "tags"]) {
-    if (Object.hasOwn(parsed, postOnlyField)) errors.push(`${relativeFile}: 手册页不应包含文章字段 ${postOnlyField}`);
-  }
-
-  const content = parsed._content ?? "";
-  if (!content.trim()) errors.push(`${relativeFile}: 正文为空`);
-  if (/<!--\s*more\s*-->/i.test(content)) errors.push(`${relativeFile}: 手册页不应包含文章摘要分隔符`);
-  validateFences(content, relativeFile);
-  validateMarkdownLayout(content, relativeFile);
-
-  const searchableContent = stripFencedCode(content);
-  if (/\/blog\/(?:php|frontend|database|ops|architecture|algorithm|tools|other)\/\d+\/?/.test(searchableContent)) {
-    errors.push(`${relativeFile}: 含有迁移前的文章链接`);
-  }
-  if (/\]\(\/images\//.test(searchableContent)) {
-    errors.push(`${relativeFile}: 图片路径缺少 /blog 基础路径`);
-  }
-  if (/^\s*:{3,}(?:\s|$)/m.test(searchableContent)) {
-    errors.push(`${relativeFile}: 仍含有 VitePress 专用提示容器`);
-  }
-  if (/\]\(\/(?:backend|database|documents|faq|frontend|git|go|iot|observability|ops|php|security|tools|vision)\//.test(searchableContent)) {
-    errors.push(`${relativeFile}: 仍含有迁移前的文档站链接`);
-  }
-
-  for (const assetPath of findLocalAssets(searchableContent)) {
-    referencedAssets.add(assetPath);
-    const sourcePath = assetPath.replace(/^\/blog\//, "/");
-    const fullPath = path.join(sourceDir, sourcePath.replace(/^\//, ""));
-    try {
-      const stat = await fs.stat(fullPath);
-      if (!stat.isFile()) errors.push(`${relativeFile}: 资源不是文件 ${assetPath}`);
-    } catch {
-      errors.push(`${relativeFile}: 本地资源不存在 ${assetPath}`);
-    }
-  }
-}
-
-if (postFiles.length !== 118) errors.push(`博客数量应为 118，实际为 ${postFiles.length}`);
-if (manualFiles.length !== 92) errors.push(`手册页面数量应为 92，实际为 ${manualFiles.length}`);
+if (postFiles.length !== 94) errors.push(`文章数量应为 94，实际为 ${postFiles.length}`);
 
 if (errors.length) {
   console.error(`内容检查失败，共 ${errors.length} 项：`);
@@ -156,7 +88,7 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`内容检查通过：${postFiles.length} 篇博客、${manualFiles.length} 个手册页面，${referencedAssets.size} 个正文资源引用。`);
+console.log(`内容检查通过：${postFiles.length} 篇文章，${referencedAssets.size} 个正文资源引用。`);
 
 function isValidDate(value) {
   if (value instanceof Date) return !Number.isNaN(value.valueOf());

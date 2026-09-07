@@ -8,15 +8,6 @@ const errors = [];
 const requiredFiles = [
   "index.html",
   "about/index.html",
-  "projects/index.html",
-  "wiki/index.html",
-  "wiki/engineering/index.html",
-  "wiki/backend/index.html",
-  "wiki/frontend/index.html",
-  "wiki/operations/index.html",
-  "wiki/iot/index.html",
-  "wiki/security/index.html",
-  "wiki/toolbox/index.html",
   "archives/index.html",
   "categories/index.html",
   "tags/index.html",
@@ -34,10 +25,8 @@ for (const relativeFile of requiredFiles) {
 }
 
 const htmlFiles = (await listFiles(outputDir)).filter(file => file.endsWith(".html"));
-const postFiles = htmlFiles.filter(file => /\/posts\/(?:\d+|[a-z0-9]+(?:-[a-z0-9]+)*)\/index\.html$/.test(file));
-const manualFiles = htmlFiles.filter(file => /\/wiki\/(?:engineering|backend|frontend|operations|iot|security|toolbox)(?:\/[^/]+)*\/index\.html$/.test(file));
-if (postFiles.length !== 118) errors.push(`应生成 118 个博客页面，实际为 ${postFiles.length}`);
-if (manualFiles.length !== 92) errors.push(`应生成 92 个手册页面，实际为 ${manualFiles.length}`);
+const postFiles = htmlFiles.filter(file => /\/posts\/\d+\/index\.html$/.test(file));
+if (postFiles.length !== 94) errors.push(`应生成 94 个文章页面，实际为 ${postFiles.length}`);
 
 for (const file of htmlFiles) {
   const relativeFile = path.relative(outputDir, file);
@@ -82,7 +71,7 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`构建产物检查通过：${postFiles.length} 个博客页面、${manualFiles.length} 个手册页面，共 ${htmlFiles.length} 个 HTML 页面。`);
+console.log(`构建产物检查通过：${postFiles.length} 个文章页面，${htmlFiles.length} 个 HTML 页面。`);
 
 async function outputPathExists(relativePath) {
   const directPath = path.join(outputDir, relativePath);
