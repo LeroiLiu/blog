@@ -13,7 +13,8 @@
   "scripts": {
     "clean": "hexo clean",
     "dev": "hexo server",
-    "check": "node tools/validate-content.mjs",
+    "check": "pnpm run check:theme && node tools/validate-content.mjs",
+    "check:theme": "hexo stellar doctor",
     "build": "pnpm run check && hexo generate && node tools/validate-output.mjs",
     "import:blog": "node tools/import-legacy-blog.mjs"
   },

@@ -1,45 +1,39 @@
-topbar:
-  enabled: false
+# Stellar 2.0.0-rc.1 site overrides.
+# Unlisted values inherit directly from the theme's official _config.yml.
 
 leftbar:
   enabled: true
-  default_state: expanded
   brand:
-    style: regular
+    name: Leroi
+    tagline: 技术实践 | 工程笔记
     image:
       src: /blog/images/brand.svg
       variant: avatar
-    name: Leroi
-    tagline: 技术实践 | 工程笔记
-    href: /
   menu:
     - id: post
       title: 文章
       icon: default:documents
       url: /
-      accent: "#0E9F9A"
     - id: categories
       title: 分类
       icon: default:category
       url: /categories/
-      accent: "#2F7DD1"
+      accent: '#3DC550'
     - id: tags
       title: 标签
       icon: default:hashtag
       url: /tags/
-      accent: "#E67828"
+      accent: '#FA6400'
     - id: archives
       title: 归档
       icon: default:calendar
       url: /archives/
-      accent: "#D64B72"
+      accent: '#7C4DFF'
     - id: about
       title: 关于
       icon: default:profile
       url: /about/
-      accent: "#6B62C5"
     - type: search
-  widgets: []
   footer:
     actions:
       - type: link
@@ -51,197 +45,55 @@ leftbar:
         icon: default:rss
         url: /atom.xml
 
-rightbar:
-  enabled: true
-  widgets: []
-
 footer:
   content: |
-    本站由刘立陈使用 [Hexo](https://hexo.io/) 与 [Stellar](https://github.com/xaoxuu/hexo-theme-stellar) 构建。
+    本站由刘立陈使用 [Hexo](https://hexo.io/) 与 [Stellar {theme.version}]({theme.tree}) 构建。
     除特别声明外，文章采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议。
   sections:
     - title: 浏览博客
       items:
-        - { title: 近期发布, url: / }
-        - { title: 分类, url: /categories/ }
-        - { title: 标签, url: /tags/ }
-        - { title: 归档, url: /archives/ }
+        - title: 近期发布
+          url: /
+        - title: 分类
+          url: /categories/
+        - title: 标签
+          url: /tags/
+        - title: 归档
+          url: /archives/
     - title: 个人链接
       items:
-        - { title: GitHub, url: https://github.com/leroiliu }
-        - { title: 原 CSDN 博客, url: https://blog.csdn.net/Leroi_Liu }
+        - title: GitHub
+          url: https://github.com/leroiliu
+        - title: 原 CSDN 博客
+          url: https://blog.csdn.net/Leroi_Liu
 
 profiles:
-  home:
-    active_menu: post
-    leftbar:
-      widgets:
-        - recent
-    rightbar:
-      widgets: []
-    comments:
-      enabled: false
   blog_index:
     path: /
-    active_menu: post
-    leftbar:
-      widgets:
-        - recent
-    rightbar:
-      widgets: []
     listing_nav:
       enabled: true
-      tabs: []
-  post:
-    active_menu: post
-    leftbar:
-      widgets:
-        - recent
-    rightbar:
-      widgets:
-        - toc
   page:
     active_menu: about
-    leftbar:
-      widgets:
-        - recent
-    rightbar:
-      widgets:
-        - toc
-  error:
-    path: /404.html
-    active_menu: post
-    leftbar:
-      widgets:
-        - recent
-    rightbar:
-      widgets: []
 
 article:
-  style: tech
-  paragraph_indent: never
   listing:
-    pinned_layout: carousel
-    card_layout: hero
-    cover_ratio: 2
-    excerpt_length: 160
     show_tags: true
   category_colors:
-    PHP 与 ThinkPHP: "#7756C8"
-    前端与 JavaScript: "#2F7DD1"
-    数据库: "#0E9F9A"
-    服务器与运维: "#4F8F3A"
-    架构与中间件: "#D64B72"
-    算法与基础: "#D99216"
-    开发工具与效率: "#E67828"
-    综合笔记: "#657180"
-  banner:
-    ratio: 2.5
+    PHP 与 ThinkPHP: '#7756C8'
+    前端与 JavaScript: '#2F7DD1'
+    数据库: '#0E9F9A'
+    服务器与运维: '#4F8F3A'
+    架构与中间件: '#D64B72'
+    算法与基础: '#D99216'
+    开发工具与效率: '#E67828'
+    综合笔记: '#657180'
   show_reading_time: true
-  related_posts_limit: 0
   footer:
     license: 本文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。
-    share:
-      - wechat
-      - email
-      - link
-      - system
-    show_tags: true
 
 appearance:
-  preset: glass
-  color_scheme: auto
-  colors:
-    primary: hsl(192 98% 55%)
-    accent: hsl(14 100% 57%)
-    link: hsl(207 90% 54%)
-  gradients:
-    primary_action: linear-gradient(to right, hsl(215, 95%, 64%), hsl(195, 95%, 60%), hsl(165, 95%, 56%), hsl(195, 95%, 60%), hsl(215, 95%, 64%))
-    search_bar: "linear-gradient(to right, #04f3ff, #08ffc6, #ddf730, #ffbd19, #ff1fe0, #c418ff, #3b5bff, #04f3ff)"
-  typography:
-    font_family:
-      body: '"LXGW WenKai Screen", system-ui, "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif'
-      code: 'Menlo, Monaco, Consolas, system-ui, monospace, sans-serif'
-    font_size:
-      root: 16px
-      inline_code: 85%
-      code_block: 0.8125rem
-    content_align: left
-    heading_prefixes:
-      h2: "#"
-      h3: "="
-      h4: "|"
-      h5: ":"
-  shape:
-    corner: superellipse(1.25)
-    radius:
-      card_large: 24px
-      card: 16px
-      card_small: 12px
-      bar: 12px
-      image_large: 24px
-      image: 16px
-      image_small: 8px
-  backgrounds:
-    leftbar:
-      type: gradient
-      image:
-      gradient:
-        light:
-          - hsl(210 32% 84%)
-          - hsl(188 44% 84%)
-          - hsl(12 64% 73%)
-          - hsl(35 100% 82%)
-        dark:
-          - hsl(210 16% 48%)
-          - hsl(188 18% 50%)
-          - hsl(12 30% 42%)
-          - hsl(35 36% 49%)
-      opacity: 1
-      backdrop:
-        radius: 100px
-    page:
-      image:
-      backdrop:
-        radius: 100px
-        overlay: var(--bg-a75)
-        saturation: 300%
-  code_block:
-    scrollbar_width: 4px
-    highlight_stylesheet: https://gcore.jsdelivr.net/gh/highlightjs/cdn-release@11.9/build/styles/atom-one-dark.min.css
-
-search:
-  provider: local
-  local:
-    scope: all
-    include_content: true
-    cache_ttl_seconds: 3600
-
-comments:
-  provider:
+  preset: card
 
 features:
   color_scheme_switch:
     enabled: true
-  lazy_loading:
-    transition: fade
-    auto_aspect_ratio: true
-  lightbox:
-    enabled: true
-    selector: ".md-text img:not([class])"
-  link_prefetch:
-    enabled: true
-  reveal:
-    enabled: true
-  card_hover:
-    enabled: true
-  heti:
-    enabled: false
-
-inject:
-  head_end: |
-    <link rel="preconnect" href="https://npm.elemecdn.com" crossorigin>
-    <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
-
-preconnect:
-  - https://gcore.jsdelivr.net

@@ -16,7 +16,6 @@ const requiredFiles = [
   "sitemap.xml",
   "favicon.svg",
   "images/brand.svg",
-  "styles/custom.css",
 ];
 
 for (const relativeFile of requiredFiles) {
