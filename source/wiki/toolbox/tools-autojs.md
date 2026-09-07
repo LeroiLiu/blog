@@ -134,7 +134,7 @@ Auto.js 原版、Auto.js Pro、AutoX.js 等分支 API 和运行方式可能不�
 - API 是否存在。
 - 权限是否可用。
 
-更完整的版本选择和分支差异见：[Auto.js 版本区别](/blog/wiki/toolbox/tools-autojs-versions/)。
+更完整的版本选择和分支差异见：[Auto.js 版本区别](/blog/posts/tools-autojs-versions/)。
 
 如果使用 VS Code 调试 Auto.js Pro，见：[Auto.js-Pro-Ext](/blog/wiki/toolbox/tools-autojs-pro-ext/)。
 

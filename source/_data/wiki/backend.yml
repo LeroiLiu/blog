@@ -16,15 +16,12 @@ navigation:
       - index
     PHP 与框架:
       - php-faq
-      - php-php-version-history
-      - php-thinkphp-version-guide
       - php-easywechat
       - php-weengine
       - php-swoole
     Go 与 Gin:
       - go-faq
       - go-gin-guide
-      - go-gin-version-guide
     MySQL:
       - database-mysql-install-test
       - database-mysql-indexes

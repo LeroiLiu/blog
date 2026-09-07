@@ -36,8 +36,8 @@ for (const relativeFile of requiredFiles) {
 const htmlFiles = (await listFiles(outputDir)).filter(file => file.endsWith(".html"));
 const postFiles = htmlFiles.filter(file => /\/posts\/(?:\d+|[a-z0-9]+(?:-[a-z0-9]+)*)\/index\.html$/.test(file));
 const manualFiles = htmlFiles.filter(file => /\/wiki\/(?:engineering|backend|frontend|operations|iot|security|toolbox)(?:\/[^/]+)*\/index\.html$/.test(file));
-if (postFiles.length !== 110) errors.push(`应生成 110 个博客页面，实际为 ${postFiles.length}`);
-if (manualFiles.length !== 100) errors.push(`应生成 100 个手册页面，实际为 ${manualFiles.length}`);
+if (postFiles.length !== 118) errors.push(`应生成 118 个博客页面，实际为 ${postFiles.length}`);
+if (manualFiles.length !== 92) errors.push(`应生成 92 个手册页面，实际为 ${manualFiles.length}`);
 
 for (const file of htmlFiles) {
   const relativeFile = path.relative(outputDir, file);

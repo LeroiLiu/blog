@@ -15,14 +15,12 @@ navigation:
     开始阅读:
       - index
     工程基础:
-      - frontend-vue
       - frontend-typescript
       - frontend-vite
       - frontend-tailwindcss
       - frontend-unocss
       - faq-frontend
     组件与后台:
-      - frontend-admin-templates
       - frontend-element-ui-2
       - frontend-element-plus
       - frontend-vue-element-admin

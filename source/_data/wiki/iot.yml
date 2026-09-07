@@ -21,8 +21,8 @@ navigation:
       - iot-mqtt
       - iot-emqx
       - iot-mosquitto
-    机器人与算法:
+    机器人与视觉:
       - iot-ros2-quickstart
-      - iot-slam-algorithms
+      - vision-opencv
 comments:
   enabled: false

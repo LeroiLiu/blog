@@ -1,8 +1,17 @@
 ---
 title: SLAM 算法快速入门与常见问题
 description: 整理 SLAM 同步定位与建图的核心概念、算法分类、视觉 SLAM、激光 SLAM、VIO、后端优化、回环检测、地图表示和常见问题。
+excerpt: 整理 SLAM 同步定位与建图的核心概念、算法分类、视觉 SLAM、激光 SLAM、VIO、后端优化、回环检测、地图表示和常见问题。
 date: '2026-05-29T10:41:59'
+categories:
+  - 物联网与机器人
+tags:
+  - SLAM
+  - 物联网
+  - 嵌入式开发
 ---
+<!-- more -->
+
 SLAM 是 Simultaneous Localization and Mapping，同步定位与建图。它解决的是：机器人或设备在未知环境里，一边估计自己在哪里，一边构建周围环境地图。
 
 SLAM 常见于机器人、无人车、无人机、AR、扫地机、移动测绘、仓储 AGV 和自动驾驶感知定位。

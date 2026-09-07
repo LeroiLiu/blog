@@ -147,8 +147,8 @@ for (const file of manualFiles) {
   }
 }
 
-if (postFiles.length !== 110) errors.push(`博客数量应为 110，实际为 ${postFiles.length}`);
-if (manualFiles.length !== 100) errors.push(`手册页面数量应为 100，实际为 ${manualFiles.length}`);
+if (postFiles.length !== 118) errors.push(`博客数量应为 118，实际为 ${postFiles.length}`);
+if (manualFiles.length !== 92) errors.push(`手册页面数量应为 92，实际为 ${manualFiles.length}`);
 
 if (errors.length) {
   console.error(`内容检查失败，共 ${errors.length} 项：`);

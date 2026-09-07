@@ -6,10 +6,9 @@ description: Auto.js、本地开发环境、编辑器与日常效率工具文档
 
 ## 内容范围
 
-- Auto.js Android 自动化与编辑器扩展
+- Auto.js Android 自动化、编辑器扩展与移动应用入口
 - macOS、MAMP、XAMPP 本地环境
-- IP 信息服务、字体字符集与常用工具
+- 字体字符集与常用工具
 - Sublime Text 问题处理
-- OpenCV 图像处理基础
 
 内容按使用场景组织，便于直接从左侧目录进入目标页面。

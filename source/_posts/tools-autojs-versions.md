@@ -1,8 +1,17 @@
 ---
 title: Auto.js 版本区别
 description: Auto.js、Auto.js Pro、Auto.js Pro 8、Auto.js Pro 9、AutoX.js、Auto.js Pro 增强版等版本和分支区别。
+excerpt: Auto.js、Auto.js Pro、Auto.js Pro 8、Auto.js Pro 9、AutoX.js、Auto.js Pro 增强版等版本和分支区别。
 date: '2026-05-29T10:41:59'
+categories:
+  - 开发工具与效率
+tags:
+  - Auto.js
+  - 开发工具
+  - 效率工具
 ---
+<!-- more -->
+
 Auto.js 生态里经常会看到 Auto.js、Auto.js Pro、Auto.js Pro 8、Auto.js Pro 9、AutoX.js、AutoJs6、Auto.js Pro 增强版等名称。它们不是一个东西，API、引擎、打包、调试方式和兼容性都可能不同。
 
 ## 快速结论

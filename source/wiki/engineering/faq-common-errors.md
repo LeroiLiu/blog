@@ -48,11 +48,11 @@ date: '2026-05-29T10:41:59'
 相关入口：
 
 - [PHP 常见问题](/blog/wiki/backend/php-faq/)
-- [ThinkPHP 3.2](/blog/wiki/backend/php-thinkphp-version-guide/)
-- [ThinkPHP 5.0](/blog/wiki/backend/php-thinkphp-version-guide/)
-- [ThinkPHP 5.1](/blog/wiki/backend/php-thinkphp-version-guide/)
-- [ThinkPHP 6.x](/blog/wiki/backend/php-thinkphp-version-guide/)
-- [ThinkPHP 8.x](/blog/wiki/backend/php-thinkphp-version-guide/)
+- [ThinkPHP 3.2](/blog/posts/php-thinkphp-version-guide/)
+- [ThinkPHP 5.0](/blog/posts/php-thinkphp-version-guide/)
+- [ThinkPHP 5.1](/blog/posts/php-thinkphp-version-guide/)
+- [ThinkPHP 6.x](/blog/posts/php-thinkphp-version-guide/)
+- [ThinkPHP 8.x](/blog/posts/php-thinkphp-version-guide/)
 - [ThinkPHP 8 高并发](/blog/posts/php-thinkphp8-high-concurrency/)
 - [Swoole](/blog/wiki/backend/php-swoole/)
 
@@ -104,10 +104,10 @@ date: '2026-05-29T10:41:59'
 
 | 报错 | 常见原因 | 处理入口 |
 | --- | --- | --- |
-| `No module named cv2` | 当前 Python 环境没有安装 OpenCV，或安装到了另一个虚拟环境 | [OpenCV](/blog/wiki/toolbox/vision-opencv/) |
-| `cv2.imread` 返回 `None` | 文件路径错误、中文路径处理不当、权限不足或图片损坏 | [OpenCV](/blog/wiki/toolbox/vision-opencv/) |
-| OpenCV 颜色发蓝发红 | OpenCV 默认是 BGR，Web、Pillow、Matplotlib 通常是 RGB | [OpenCV](/blog/wiki/toolbox/vision-opencv/) |
-| `cv2.imshow` 无法显示 | 服务器或容器没有桌面环境，或缺少图形库 | [OpenCV](/blog/wiki/toolbox/vision-opencv/) |
+| `No module named cv2` | 当前 Python 环境没有安装 OpenCV，或安装到了另一个虚拟环境 | [OpenCV](/blog/wiki/iot/vision-opencv/) |
+| `cv2.imread` 返回 `None` | 文件路径错误、中文路径处理不当、权限不足或图片损坏 | [OpenCV](/blog/wiki/iot/vision-opencv/) |
+| OpenCV 颜色发蓝发红 | OpenCV 默认是 BGR，Web、Pillow、Matplotlib 通常是 RGB | [OpenCV](/blog/wiki/iot/vision-opencv/) |
+| `cv2.imshow` 无法显示 | 服务器或容器没有桌面环境，或缺少图形库 | [OpenCV](/blog/wiki/iot/vision-opencv/) |
 | InfluxDB `unauthorized access` | token、org、bucket 或权限配置不一致 | [InfluxDB](/blog/wiki/operations/observability-influxdb/) |
 | InfluxDB 查询没有数据 | 时间范围、measurement、tag、bucket 或写入时间戳不对 | [InfluxDB](/blog/wiki/operations/observability-influxdb/) |
 | Elasticsearch `max virtual memory areas vm.max_map_count is too low` | Linux 内核参数没有达到 Elasticsearch 要求 | [Elastic Stack / ELK](/blog/wiki/operations/observability-elastic-stack/) |
@@ -134,16 +134,16 @@ date: '2026-05-29T10:41:59'
 | `No inputs were found in config file` | `tsconfig.json` 的 `include` 范围错误 | [TypeScript](/blog/wiki/frontend/frontend-typescript/) |
 | `431 Request Header Fields Too Large` | Cookie 或请求头过大 | [Vite](/blog/wiki/frontend/frontend-vite/) |
 | `Some chunks are larger than 500 kBs` | 大依赖没有懒加载或分包 | [Vite](/blog/wiki/frontend/frontend-vite/) |
-| `npm ERR! code ERESOLVE` | 老后台模板依赖和新版 npm peer 依赖检查冲突 | [后台模板选型](/blog/wiki/frontend/frontend-admin-templates/) |
+| `npm ERR! code ERESOLVE` | 老后台模板依赖和新版 npm peer 依赖检查冲突 | [后台模板选型](/blog/posts/frontend-admin-templates/) |
 | `Node Sass does not yet support your current environment` | Vue 2、Webpack 老项目的 Node 和 `node-sass` 不匹配 | [vue-element-admin](/blog/wiki/frontend/frontend-vue-element-admin/)、[iview-admin](/blog/wiki/frontend/frontend-iview-admin/) |
 | `error:0308010C:digital envelope routines::unsupported` | Webpack 4 在 Node 17+ 下运行 | [vue-element-admin](/blog/wiki/frontend/frontend-vue-element-admin/) |
-| `Module build failed: TypeError: this.getOptions is not a function` | loader 版本和 Webpack 版本不匹配 | [后台模板选型](/blog/wiki/frontend/frontend-admin-templates/) |
+| `Module build failed: TypeError: this.getOptions is not a function` | loader 版本和 Webpack 版本不匹配 | [后台模板选型](/blog/posts/frontend-admin-templates/) |
 | 后台登录后跳回登录页 | token、用户信息、权限菜单或路由守卫不一致 | [vue-element-admin](/blog/wiki/frontend/frontend-vue-element-admin/)、[Geeker Admin](/blog/wiki/frontend/frontend-geeker-admin/) |
-| 后台菜单不显示 | 用户角色、后端菜单、前端权限路由或 `hidden` 配置问题 | [后台模板选型](/blog/wiki/frontend/frontend-admin-templates/) |
+| 后台菜单不显示 | 用户角色、后端菜单、前端权限路由或 `hidden` 配置问题 | [后台模板选型](/blog/posts/frontend-admin-templates/) |
 | `Unknown custom element: <i-button>` | iView/View UI 未注册或包名混用 | [iView UI v4](/blog/wiki/frontend/frontend-iview-ui-v4/) |
 | `Cannot find module '@element-plus/icons-vue'` | Element Plus 图标包未安装或自动导入配置不完整 | [Geeker Admin](/blog/wiki/frontend/frontend-geeker-admin/)、[Element Plus](/blog/wiki/frontend/frontend-element-plus/) |
 | 跨域 CORS | 后端响应头或预检请求配置错误 | [后端常见报错](/blog/wiki/backend/backend-common-errors/) |
-| 页面样式错乱 | CSS 覆盖、组件版本、暗黑模式颜色变量 | [Vue 总览](/blog/wiki/frontend/frontend-vue/) |
+| 页面样式错乱 | CSS 覆盖、组件版本、暗黑模式颜色变量 | [Vue 总览](/blog/posts/frontend-vue/) |
 | Tailwind/UnoCSS 生产样式丢失 | 动态 class 没被扫描到或入口 CSS 未引入 | [Tailwind CSS](/blog/wiki/frontend/frontend-tailwindcss/)、[UnoCSS](/blog/wiki/frontend/frontend-unocss/) |
 | 小程序真机正常开发者工具异常 | 运行环境差异、基础库、权限 | [微信小程序常见问题](/blog/wiki/frontend/frontend-wechat-miniprogram-issues/) |
 | uni-app 多端表现不一致 | 条件编译、平台 API 差异 | [uni-app 常见问题](/blog/wiki/frontend/frontend-uni-app/) |
@@ -174,7 +174,7 @@ date: '2026-05-29T10:41:59'
 | 本地域名不生效 | hosts 没保存、DNS 缓存、端口错误 | [Mac 本地开发环境](/blog/wiki/toolbox/tools-mac-local-env/) |
 | Auto.js 找不到控件 | 权限、页面未加载、文本变化或控件层级变化 | [Auto.js](/blog/wiki/toolbox/tools-autojs/) |
 | Auto.js 脚本运行一会停止 | 无障碍服务被关闭、省电策略或脚本异常 | [Auto.js](/blog/wiki/toolbox/tools-autojs/) |
-| Auto.js API 对不上教程 | Auto.js、Pro 8、Pro 9、AutoX.js 版本混用 | [Auto.js 版本区别](/blog/wiki/toolbox/tools-autojs-versions/) |
+| Auto.js API 对不上教程 | Auto.js、Pro 8、Pro 9、AutoX.js 版本混用 | [Auto.js 版本区别](/blog/posts/tools-autojs-versions/) |
 | Auto.js-Pro-Ext 无法连接设备 | 局域网、防火墙、ADB、远程调试或后台限制问题 | [Auto.js-Pro-Ext](/blog/wiki/toolbox/tools-autojs-pro-ext/) |
 
 ## Git

@@ -1,8 +1,18 @@
 ---
 title: Vue 2 与 Vue 3 项目维护、选型和迁移指南
 description: 对比 Vue 2 与 Vue 3 的适用场景，整理响应式、组件通信、状态管理、TypeScript、Vite、Element UI 和渐进迁移常见问题。
+excerpt: 对比 Vue 2 与 Vue 3 的适用场景，整理响应式、组件通信、状态管理、TypeScript、Vite、Element UI 和渐进迁移常见问题。
 date: '2026-05-29T10:41:59'
+categories:
+  - 前端开发
+tags:
+  - Vue
+  - Vue 2
+  - Vue 3
+  - 项目维护
 ---
+<!-- more -->
+
 Vue 2 常见于老后台、H5 和 webpack 工程，Vue 3 更适合搭配 Vite、Pinia、TypeScript 与 Element Plus 构建新项目。版本选择应结合现有业务、依赖兼容和团队迁移成本，而不是只看框架新旧。
 
 ## 版本选择

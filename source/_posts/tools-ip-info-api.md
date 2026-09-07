@@ -1,8 +1,16 @@
 ---
 title: IP 信息查询 API 整理
 description: IP 信息查询 API、获取本机 IP、IP 归属地、IPv4、IPv6、Ping0、ip-api、ip.sb、纯真 IP 库 QQWry、ip2region、IP数据云、IPinfo、离线库、本地缓存和失效接口整理。
+excerpt: IP 信息查询 API、获取本机 IP、IP 归属地、IPv4、IPv6、Ping0、ip-api、ip.sb、纯真 IP 库 QQWry、ip2region、IP数据云、IPinfo、离线库、本地缓存和失效接口整理。
 date: '2026-05-29T10:41:59'
+categories:
+  - 开发工具与效率
+tags:
+  - 开发工具
+  - 效率工具
 ---
+<!-- more -->
+
 IP 信息查询通常有三类需求：
 
 - 获取当前访问者公网 IP。

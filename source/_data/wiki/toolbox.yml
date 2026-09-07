@@ -16,18 +16,15 @@ navigation:
       - index
     Android 自动化:
       - tools-autojs
-      - tools-autojs-versions
       - tools-autojs-pro-ext
+      - security-mobile-app-url-schemes
     macOS 开发环境:
       - tools-mac-local-env
       - tools-mamp
       - tools-xampp
     日常工具:
       - tools-useful-tools
-      - tools-ip-info-api
       - tools-font-charset
       - tools-sublime-unsaved-exit
-    图像处理:
-      - vision-opencv
 comments:
   enabled: false

@@ -1,8 +1,19 @@
 ---
 title: 后台管理模板选型
 description: vue-admin-template、vue-element-admin、mall-admin-web、Geeker Admin、iview-admin、iView UI v4 和常见后台管理系统模板问题整理。
+excerpt: vue-admin-template、vue-element-admin、mall-admin-web、Geeker Admin、iview-admin、iView UI v4 和常见后台管理系统模板问题整理。
 date: '2026-05-29T10:41:59'
+categories:
+  - 前端开发
+tags:
+  - vue-element-admin
+  - iView
+  - Vue
+  - 前端开发
+  - Web 开发
 ---
+<!-- more -->
+
 后台管理系统模板不要只看页面是否好看，更要看项目当前的 Vue 版本、构建工具、组件库、权限模型、接口规范和后续维护成本。
 
 ## 常见模板

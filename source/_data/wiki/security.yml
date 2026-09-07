@@ -22,8 +22,7 @@ navigation:
       - security-ghidra-usage-guide
       - security-radare2-usage-guide
       - security-ios-app-analysis-guide
-    网络与应用入口:
+    网络分析:
       - security-wireshark-usage-guide
-      - security-mobile-app-url-schemes
 comments:
   enabled: false

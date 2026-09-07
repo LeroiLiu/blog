@@ -264,7 +264,7 @@ npm ERR! code ERESOLVE
 - 不要直接升级 Webpack、loader、`node-sass` 大版本。
 - npm peer 依赖冲突时可以临时使用 `npm install --legacy-peer-deps`。
 
-完整处理见：[后台管理模板选型](/blog/wiki/frontend/frontend-admin-templates/)。
+完整处理见：[后台管理模板选型](/blog/posts/frontend-admin-templates/)。
 
 ## 后台菜单不显示怎么办
 
