@@ -15,6 +15,8 @@ const expectedCategories = new Set([
   "开发工具与效率",
   "计算机基础",
   "产品与行业观察",
+  "安全与逆向工程",
+  "计算机视觉",
 ]);
 const errors = [];
 const seenIds = new Set();
@@ -82,7 +84,7 @@ for (const file of postFiles) {
   }
 }
 
-if (postFiles.length !== 121) errors.push(`文章数量应为 121，实际为 ${postFiles.length}`);
+if (postFiles.length !== 199) errors.push(`文章数量应为 199，实际为 ${postFiles.length}`);
 
 if (errors.length) {
   console.error(`内容检查失败，共 ${errors.length} 项：`);
