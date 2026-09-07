@@ -8,9 +8,10 @@ keywords:
   - 系统运维
   - 软件架构
 author: 刘立陈
+avatar: https://leroiliu.github.io/blog/images/profile/avatar.webp
 language: zh-CN
 timezone: Asia/Shanghai
-favicon: /favicon.svg
+favicon: /favicon.ico
 
 url: https://leroiliu.github.io/blog
 root: /blog/

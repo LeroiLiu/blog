@@ -7,7 +7,7 @@ leftbar:
     name: Leroi
     tagline: 技术实践 | 工程笔记
     image:
-      src: /blog/images/brand.svg
+      src: /blog/images/profile/avatar.webp
       variant: avatar
   menu:
     - id: post
