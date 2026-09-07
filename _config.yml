@@ -66,14 +66,15 @@ tag_generator:
   per_page: 15
 
 category_map:
-  PHP 与 ThinkPHP: php
-  前端与 JavaScript: frontend
-  数据库: database
+  后端开发: backend
+  前端开发: frontend
+  数据库与存储: data-storage
   服务器与运维: operations
-  架构与中间件: architecture
-  算法与基础: algorithms
+  架构与云原生: architecture
+  物联网与机器人: iot-robotics
   开发工具与效率: tools
-  综合笔记: notes
+  计算机基础: fundamentals
+  产品与行业观察: product-industry
 
 feed:
   type: atom

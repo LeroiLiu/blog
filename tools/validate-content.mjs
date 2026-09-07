@@ -6,14 +6,15 @@ import frontMatter from "hexo-front-matter";
 const postsDir = path.resolve("source/_posts");
 const sourceDir = path.resolve("source");
 const expectedCategories = new Set([
-  "PHP 与 ThinkPHP",
-  "前端与 JavaScript",
-  "数据库",
+  "后端开发",
+  "前端开发",
+  "数据库与存储",
   "服务器与运维",
-  "架构与中间件",
-  "算法与基础",
+  "架构与云原生",
+  "物联网与机器人",
   "开发工具与效率",
-  "综合笔记",
+  "计算机基础",
+  "产品与行业观察",
 ]);
 const errors = [];
 const seenIds = new Set();
@@ -46,7 +47,11 @@ for (const file of postFiles) {
   } else if (!expectedCategories.has(String(parsed.categories[0]))) {
     errors.push(`${relativeFile}: 未知分类 ${String(parsed.categories[0])}`);
   }
-  if (!Array.isArray(parsed.tags)) errors.push(`${relativeFile}: tags 必须是数组`);
+  if (!Array.isArray(parsed.tags) || parsed.tags.length < 2 || parsed.tags.length > 5) {
+    errors.push(`${relativeFile}: tags 必须是包含 2–5 个标签的数组`);
+  } else if (new Set(parsed.tags.map(String)).size !== parsed.tags.length) {
+    errors.push(`${relativeFile}: tags 不应包含重复标签`);
+  }
   if (Object.hasOwn(parsed, "category")) errors.push(`${relativeFile}: 仍在使用旧的 category 字段`);
 
   const content = parsed._content ?? "";

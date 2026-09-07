@@ -79,14 +79,15 @@ article:
   listing:
     show_tags: true
   category_colors:
-    PHP 与 ThinkPHP: '#7756C8'
-    前端与 JavaScript: '#2F7DD1'
-    数据库: '#0E9F9A'
+    后端开发: '#7756C8'
+    前端开发: '#2F7DD1'
+    数据库与存储: '#0E9F9A'
     服务器与运维: '#4F8F3A'
-    架构与中间件: '#D64B72'
-    算法与基础: '#D99216'
+    架构与云原生: '#D64B72'
+    物联网与机器人: '#1B8F6A'
     开发工具与效率: '#E67828'
-    综合笔记: '#657180'
+    计算机基础: '#D99216'
+    产品与行业观察: '#B84786'
   show_reading_time: true
   footer:
     license: 本文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。
