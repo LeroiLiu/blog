@@ -28,11 +28,12 @@ leftbar:
       title: 归档
       icon: default:calendar
       url: /archives/
-      accent: '#7C4DFF'
+      accent: '#F44336'
     - id: about
       title: 关于
       icon: default:profile
       url: /about/
+      accent: '#b92ed1'
     - type: search
   footer:
     actions:
@@ -76,6 +77,7 @@ profiles:
     active_menu: about
 
 article:
+  style: story
   listing:
     show_tags: true
   category_colors:
@@ -92,8 +94,21 @@ article:
     license: 本文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。
 
 appearance:
-  preset: card
+  preset: glass
+  typography:
+    font_family:
+      body: '"LXGW WenKai Screen", system-ui, "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif'
 
 features:
   color_scheme_switch:
     enabled: true
+  card_hover:
+    enabled: true
+
+preconnect:
+  - https://npm.elemecdn.com
+  - https://gcore.jsdelivr.net
+
+inject:
+  head_end: |
+    <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
