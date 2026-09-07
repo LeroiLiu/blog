@@ -47,7 +47,7 @@ leftbar:
         url: /atom.xml
 
 footer:
-  content: ''
+  content: 本站由刘立陈（Leroi）创建并维护。
   sections:
     - title: 浏览博客
       items:
