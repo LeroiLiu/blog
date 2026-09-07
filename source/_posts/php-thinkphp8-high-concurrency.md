@@ -339,7 +339,7 @@ if ($count > 60) {
 
 ## 相关入口
 
-- [ThinkPHP 8.x](/blog/posts/php-thinkphp-8-x/)
+- [ThinkPHP 8.x](/blog/posts/php-thinkphp-version-guide/)
 - [HTTP 轮询任务](/blog/posts/backend-http-cron-polling/)
 - [MySQL 慢查询常见问题](/blog/posts/database-mysql-slow-query/)
 - [MySQL 索引](/blog/posts/database-mysql-indexes/)

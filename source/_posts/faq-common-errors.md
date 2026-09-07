@@ -59,11 +59,11 @@ tags:
 相关入口：
 
 - [PHP 常见问题](/blog/posts/php-faq/)
-- [ThinkPHP 3.2](/blog/posts/php-thinkphp-3-2/)
-- [ThinkPHP 5.0](/blog/posts/php-thinkphp-5-0/)
-- [ThinkPHP 5.1](/blog/posts/php-thinkphp-5-1/)
-- [ThinkPHP 6.x](/blog/posts/php-thinkphp-6-x/)
-- [ThinkPHP 8.x](/blog/posts/php-thinkphp-8-x/)
+- [ThinkPHP 3.2](/blog/posts/php-thinkphp-version-guide/)
+- [ThinkPHP 5.0](/blog/posts/php-thinkphp-version-guide/)
+- [ThinkPHP 5.1](/blog/posts/php-thinkphp-version-guide/)
+- [ThinkPHP 6.x](/blog/posts/php-thinkphp-version-guide/)
+- [ThinkPHP 8.x](/blog/posts/php-thinkphp-version-guide/)
 - [ThinkPHP 8 高并发](/blog/posts/php-thinkphp8-high-concurrency/)
 - [Swoole](/blog/posts/php-swoole/)
 
@@ -156,7 +156,7 @@ tags:
 | 跨域 CORS | 后端响应头或预检请求配置错误 | [后端常见报错](/blog/posts/backend-common-errors/) |
 | 页面样式错乱 | CSS 覆盖、组件版本、暗黑模式颜色变量 | [Vue 总览](/blog/posts/frontend-vue/) |
 | Tailwind/UnoCSS 生产样式丢失 | 动态 class 没被扫描到或入口 CSS 未引入 | [Tailwind CSS](/blog/posts/frontend-tailwindcss/)、[UnoCSS](/blog/posts/frontend-unocss/) |
-| 小程序真机正常开发者工具异常 | 运行环境差异、基础库、权限 | [微信小程序常见问题](/blog/posts/frontend-wechat-miniprogram/) |
+| 小程序真机正常开发者工具异常 | 运行环境差异、基础库、权限 | [微信小程序常见问题](/blog/posts/frontend-wechat-miniprogram-issues/) |
 | uni-app 多端表现不一致 | 条件编译、平台 API 差异 | [uni-app 常见问题](/blog/posts/frontend-uni-app/) |
 | Electron 打开空白 | 静态资源路径、主进程窗口、 preload 报错 | [Electron 常见问题](/blog/posts/frontend-electron/) |
 
@@ -193,7 +193,7 @@ tags:
 | 报错 | 常见原因 | 处理入口 |
 | --- | --- | --- |
 | `Permission denied (publickey)` | SSH key 没配好或账号不对 | [Git 常见问题](/blog/posts/git-troubleshooting/) |
-| `Your branch is behind` | 本地分支落后远程 | [Git 常见操作](/blog/posts/git-common-commands/) |
+| `Your branch is behind` | 本地分支落后远程 | [Git 常见操作](/blog/posts/git-cheat-sheet/) |
 | `CONFLICT` | 合并冲突 | [Git 常见问题](/blog/posts/git-troubleshooting/) |
 | 文件权限反复变化 | `core.filemode` 影响 | [忽略文件权限变化](/blog/posts/git-filemode/) |
 

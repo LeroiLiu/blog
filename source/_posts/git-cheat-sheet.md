@@ -276,6 +276,33 @@ git pull --rebase
 git pull
 ```
 
+## 暂存临时改动
+
+当前工作没有完成，但需要临时切换分支时，可以使用 stash：
+
+```bash
+git stash push -m "work in progress"
+git stash list
+git stash pop
+```
+
+应用指定记录但暂不删除：
+
+```bash
+git stash apply stash@{0}
+```
+
+## 标签
+
+| 场景 | 命令 |
+| --- | --- |
+| 查看标签 | `git tag` |
+| 创建带说明的标签 | `git tag -a v1.0.0 -m "release v1.0.0"` |
+| 推送指定标签 | `git push origin v1.0.0` |
+| 推送全部标签 | `git push --tags` |
+
+标签通常用于标记正式发布版本，创建前应确认目标提交正确。
+
 ## 配置
 
 | 场景 | 命令 |

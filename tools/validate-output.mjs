@@ -26,7 +26,7 @@ for (const relativeFile of requiredFiles) {
 
 const htmlFiles = (await listFiles(outputDir)).filter(file => file.endsWith(".html"));
 const postFiles = htmlFiles.filter(file => /\/posts\/(?:\d+|[a-z0-9]+(?:-[a-z0-9]+)*)\/index\.html$/.test(file));
-if (postFiles.length !== 217) errors.push(`应生成 217 个文章页面，实际为 ${postFiles.length}`);
+if (postFiles.length !== 203) errors.push(`应生成 203 个文章页面，实际为 ${postFiles.length}`);
 
 for (const file of htmlFiles) {
   const relativeFile = path.relative(outputDir, file);

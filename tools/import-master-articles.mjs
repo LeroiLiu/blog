@@ -10,6 +10,30 @@ const sourceDir = path.resolve("source");
 const expectedArticleCount = 123;
 const expectedAssetCount = 87;
 
+const mergedRouteBySourcePath = new Map([
+  ["docs/documents/backend.md", "/blog/posts/engineering-collaboration-standards/"],
+  ["docs/documents/frontend.md", "/blog/posts/engineering-collaboration-standards/"],
+  ["docs/documents/deploy.md", "/blog/posts/engineering-collaboration-standards/"],
+  ["docs/go/gin-1-9.md", "/blog/posts/go-gin-version-guide/"],
+  ["docs/go/gin-1-10.md", "/blog/posts/go-gin-version-guide/"],
+  ["docs/go/gin-1-11.md", "/blog/posts/go-gin-version-guide/"],
+  ["docs/go/gin-1-12.md", "/blog/posts/go-gin-version-guide/"],
+  ["docs/php/thinkphp-3-2.md", "/blog/posts/php-thinkphp-version-guide/"],
+  ["docs/php/thinkphp-5-0.md", "/blog/posts/php-thinkphp-version-guide/"],
+  ["docs/php/thinkphp-5-1.md", "/blog/posts/php-thinkphp-version-guide/"],
+  ["docs/php/thinkphp-6-x.md", "/blog/posts/php-thinkphp-version-guide/"],
+  ["docs/php/thinkphp-8-x.md", "/blog/posts/php-thinkphp-version-guide/"],
+  ["docs/frontend/vue.md", "/blog/posts/frontend-vue/"],
+  ["docs/frontend/vue-2.md", "/blog/posts/frontend-vue/"],
+  ["docs/frontend/vue-3.md", "/blog/posts/frontend-vue/"],
+  ["docs/frontend/wechat-miniprogram.md", "/blog/posts/frontend-wechat-miniprogram-issues/"],
+  ["docs/frontend/wechat-miniprogram-issues.md", "/blog/posts/frontend-wechat-miniprogram-issues/"],
+  ["docs/git/cheat-sheet.md", "/blog/posts/git-cheat-sheet/"],
+  ["docs/git/common-commands.md", "/blog/posts/git-cheat-sheet/"],
+  ["docs/faq/git.md", "/blog/posts/git-troubleshooting/"],
+  ["docs/git/troubleshooting.md", "/blog/posts/git-troubleshooting/"],
+]);
+
 const categoryBySection = {
   backend: "后端开发",
   database: "数据库与存储",
@@ -130,12 +154,17 @@ if (articlePaths.length !== expectedArticleCount) {
 }
 
 const routeBySourcePath = new Map(
-  articlePaths.map(sourcePath => [sourcePathToRoute(sourcePath), `/blog/posts/${sourcePathToSlug(sourcePath)}/`]),
+  articlePaths.map(sourcePath => [
+    sourcePathToRoute(sourcePath),
+    mergedRouteBySourcePath.get(sourcePath) ?? `/blog/posts/${sourcePathToSlug(sourcePath)}/`,
+  ]),
 );
 
 await fs.mkdir(postsDir, { recursive: true });
 
-for (const sourcePath of articlePaths) {
+const standaloneArticlePaths = articlePaths.filter(sourcePath => !mergedRouteBySourcePath.has(sourcePath));
+
+for (const sourcePath of standaloneArticlePaths) {
   const raw = readGitText(sourcePath);
   const parsed = frontMatter.parse(raw);
   const title = String(parsed.title ?? "").trim();
@@ -174,7 +203,10 @@ for (const sourcePath of assetPaths) {
   await fs.writeFile(outputPath, readGitBuffer(sourcePath));
 }
 
-console.log(`已从 ${sourceBranch} 导入 ${articlePaths.length} 篇文章和 ${assetPaths.length} 个资源文件。`);
+console.log(
+  `已从 ${sourceBranch} 导入 ${standaloneArticlePaths.length} 篇独立文章和 ${assetPaths.length} 个资源文件，` +
+    `${mergedRouteBySourcePath.size} 篇源文档由合并文章接管。`,
+);
 
 function isArticlePath(sourcePath) {
   return (

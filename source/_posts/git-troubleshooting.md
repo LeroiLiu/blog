@@ -145,3 +145,15 @@ git pull
 ## 文件权限总是变化
 
 如果 `git status` 反复出现文件权限变化，可以查看：[忽略文件权限变化](/blog/posts/git-filemode/)。
+
+## 提交信息怎么写
+
+提交信息应说明改动完成了什么，而不是描述执行了哪些编辑动作。常见格式是“类型 + 简短结果”：
+
+```text
+feat: add order export
+fix: prevent duplicate payment callback
+docs: update deployment guide
+```
+
+一次提交尽量只表达一个完整意图。修复冲突或误提交时，也应在提交信息中说明最终处理结果。
