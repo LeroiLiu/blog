@@ -1,0 +1,41 @@
+name: 服务器运维手册
+headline: 部署、存储与可观测性
+tagline: Linux、Web 服务、容器和监控
+description: 整理服务器环境、Web 服务、容器平台、对象存储、内网穿透和可观测性工具。
+tags:
+  - 服务器运维
+  - 部署
+  - 可观测性
+audience: 开发者与运维人员
+icon: /blog/images/brand.svg
+route:
+  path: /wiki/operations/
+navigation:
+  tree:
+    开始阅读:
+      - index
+    Linux 与 Web 服务:
+      - ops-linux-commands
+      - ops-ssh-keys
+      - ops-nginx
+      - ops-apache
+      - ops-curl-wget-ssl
+    容器与部署:
+      - ops-docker
+      - ops-kubernetes
+      - ops-lnmp
+      - ops-onepanel
+      - ops-baota
+    存储与网络:
+      - ops-minio
+      - ops-rclone
+      - ops-openlist-alist
+      - ops-intranet-tunnel-ngrok
+      - ops-cloudflare-tunnel
+    日志与监控:
+      - observability-elastic-stack
+      - observability-influxdb
+      - observability-grafana
+      - observability-loki
+comments:
+  enabled: false

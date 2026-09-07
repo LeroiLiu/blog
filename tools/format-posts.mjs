@@ -4,14 +4,23 @@ import process from "node:process";
 import frontMatter from "hexo-front-matter";
 
 const postsDir = path.resolve("source/_posts");
+const wikiDir = path.resolve("source/wiki");
 const shouldWrite = process.argv.includes("--write");
-const postFiles = await listMarkdownFiles(postsDir);
+const contentFiles = [
+  ...(await listMarkdownFiles(postsDir)),
+  ...(await listMarkdownFiles(wikiDir)),
+];
 const changedFiles = [];
 
-for (const file of postFiles) {
+for (const file of contentFiles) {
   const raw = await fs.readFile(file, "utf8");
   const parsed = frontMatter.parse(raw);
-  const formattedContent = formatContent(parsed._content ?? "", String(parsed.title ?? ""));
+  let formattedContent = parsed._content ?? "";
+  for (let pass = 0; pass < 5; pass += 1) {
+    const nextContent = formatContent(formattedContent, String(parsed.title ?? ""));
+    if (nextContent === formattedContent) break;
+    formattedContent = nextContent;
+  }
 
   if (formattedContent === parsed._content) continue;
   changedFiles.push(path.relative(process.cwd(), file));
@@ -28,11 +37,11 @@ for (const file of postFiles) {
 }
 
 if (!changedFiles.length) {
-  console.log(`Markdown 排版检查通过：${postFiles.length} 篇文章。`);
+  console.log(`Markdown 排版检查通过：${contentFiles.length} 篇博客与手册内容。`);
 } else if (shouldWrite) {
-  console.log(`已统一 ${changedFiles.length}/${postFiles.length} 篇文章的 Markdown 排版。`);
+  console.log(`已统一 ${changedFiles.length}/${contentFiles.length} 篇博客与手册内容的 Markdown 排版。`);
 } else {
-  console.error(`Markdown 排版检查失败，${changedFiles.length} 篇文章需要格式化：`);
+  console.error(`Markdown 排版检查失败，${changedFiles.length} 篇博客或手册内容需要格式化：`);
   for (const file of changedFiles) console.error(`- ${file}`);
   console.error("请运行 pnpm run format:posts 后重新检查。");
   process.exit(1);
@@ -500,8 +509,12 @@ function nextNonBlankLine(lines, index) {
 
 async function listMarkdownFiles(directory) {
   const entries = await fs.readdir(directory, { withFileTypes: true });
-  return entries
-    .filter(entry => entry.isFile() && entry.name.endsWith(".md"))
-    .map(entry => path.join(directory, entry.name))
-    .sort();
+  const nestedFiles = await Promise.all(
+    entries.map(async entry => {
+      const entryPath = path.join(directory, entry.name);
+      if (entry.isDirectory()) return listMarkdownFiles(entryPath);
+      return entry.isFile() && entry.name.endsWith(".md") ? [entryPath] : [];
+    }),
+  );
+  return nestedFiles.flat().sort();
 }

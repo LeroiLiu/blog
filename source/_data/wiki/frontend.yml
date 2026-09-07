@@ -1,0 +1,48 @@
+name: 前端与小程序手册
+headline: 前端工程与多端开发
+tagline: Vue、Vite、组件库与小程序
+description: 汇总前端工程、后台模板、图形交互、跨端框架和小程序开发中的常见做法。
+tags:
+  - 前端开发
+  - Vue
+  - 小程序
+audience: 前端与全栈开发者
+icon: /blog/images/brand.svg
+route:
+  path: /wiki/frontend/
+navigation:
+  tree:
+    开始阅读:
+      - index
+    工程基础:
+      - frontend-vue
+      - frontend-typescript
+      - frontend-vite
+      - frontend-tailwindcss
+      - frontend-unocss
+      - faq-frontend
+    组件与后台:
+      - frontend-admin-templates
+      - frontend-element-ui-2
+      - frontend-element-plus
+      - frontend-vue-element-admin
+      - frontend-mall-admin-web
+      - frontend-geeker-admin
+      - frontend-iview-ui-v4
+      - frontend-iview-admin
+    跨端与小程序:
+      - frontend-uni-app
+      - frontend-uview-ui
+      - frontend-vk-uview-ui
+      - frontend-uview-plus
+      - frontend-colorui
+      - frontend-wechat-miniprogram-issues
+      - frontend-alipay-miniprogram-issues
+      - frontend-douyin-miniprogram-issues
+      - frontend-electron
+    图形与画布:
+      - frontend-canvas
+      - frontend-konva
+      - frontend-fabric
+comments:
+  enabled: false

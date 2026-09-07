@@ -17,8 +17,13 @@ leftbar:
     - id: projects
       title: 项目
       icon: site:project
-      url: /wiki/
+      url: /projects/
       accent: '#3DC550'
+    - id: manuals
+      title: 手册
+      icon: default:documents
+      url: /wiki/
+      accent: '#2F7DD1'
     - id: explore
       title: 探索
       icon: site:explore
@@ -53,6 +58,10 @@ footer:
       items:
         - title: 近期发布
           url: /
+        - title: 技术手册
+          url: /wiki/
+        - title: 项目实践
+          url: /projects/
         - title: 分类
           url: /categories/
         - title: 标签
@@ -75,6 +84,11 @@ profiles:
     path: /
     listing_nav:
       enabled: true
+  wiki_index:
+    path: /wiki/
+    active_menu: manuals
+  wiki:
+    active_menu: null
   page:
     active_menu: null
 

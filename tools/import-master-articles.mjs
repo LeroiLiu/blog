@@ -11,28 +11,140 @@ const expectedArticleCount = 123;
 const expectedAssetCount = 87;
 
 const mergedRouteBySourcePath = new Map([
-  ["docs/documents/backend.md", "/blog/posts/engineering-collaboration-standards/"],
-  ["docs/documents/frontend.md", "/blog/posts/engineering-collaboration-standards/"],
-  ["docs/documents/deploy.md", "/blog/posts/engineering-collaboration-standards/"],
-  ["docs/go/gin-1-9.md", "/blog/posts/go-gin-version-guide/"],
-  ["docs/go/gin-1-10.md", "/blog/posts/go-gin-version-guide/"],
-  ["docs/go/gin-1-11.md", "/blog/posts/go-gin-version-guide/"],
-  ["docs/go/gin-1-12.md", "/blog/posts/go-gin-version-guide/"],
-  ["docs/php/thinkphp-3-2.md", "/blog/posts/php-thinkphp-version-guide/"],
-  ["docs/php/thinkphp-5-0.md", "/blog/posts/php-thinkphp-version-guide/"],
-  ["docs/php/thinkphp-5-1.md", "/blog/posts/php-thinkphp-version-guide/"],
-  ["docs/php/thinkphp-6-x.md", "/blog/posts/php-thinkphp-version-guide/"],
-  ["docs/php/thinkphp-8-x.md", "/blog/posts/php-thinkphp-version-guide/"],
-  ["docs/frontend/vue.md", "/blog/posts/frontend-vue/"],
-  ["docs/frontend/vue-2.md", "/blog/posts/frontend-vue/"],
-  ["docs/frontend/vue-3.md", "/blog/posts/frontend-vue/"],
-  ["docs/frontend/wechat-miniprogram.md", "/blog/posts/frontend-wechat-miniprogram-issues/"],
-  ["docs/frontend/wechat-miniprogram-issues.md", "/blog/posts/frontend-wechat-miniprogram-issues/"],
-  ["docs/git/cheat-sheet.md", "/blog/posts/git-cheat-sheet/"],
-  ["docs/git/common-commands.md", "/blog/posts/git-cheat-sheet/"],
-  ["docs/faq/git.md", "/blog/posts/git-troubleshooting/"],
-  ["docs/git/troubleshooting.md", "/blog/posts/git-troubleshooting/"],
+  ["docs/documents/backend.md", "/blog/wiki/engineering/engineering-collaboration-standards/"],
+  ["docs/documents/frontend.md", "/blog/wiki/engineering/engineering-collaboration-standards/"],
+  ["docs/documents/deploy.md", "/blog/wiki/engineering/engineering-collaboration-standards/"],
+  ["docs/go/gin-1-9.md", "/blog/wiki/backend/go-gin-version-guide/"],
+  ["docs/go/gin-1-10.md", "/blog/wiki/backend/go-gin-version-guide/"],
+  ["docs/go/gin-1-11.md", "/blog/wiki/backend/go-gin-version-guide/"],
+  ["docs/go/gin-1-12.md", "/blog/wiki/backend/go-gin-version-guide/"],
+  ["docs/php/thinkphp-3-2.md", "/blog/wiki/backend/php-thinkphp-version-guide/"],
+  ["docs/php/thinkphp-5-0.md", "/blog/wiki/backend/php-thinkphp-version-guide/"],
+  ["docs/php/thinkphp-5-1.md", "/blog/wiki/backend/php-thinkphp-version-guide/"],
+  ["docs/php/thinkphp-6-x.md", "/blog/wiki/backend/php-thinkphp-version-guide/"],
+  ["docs/php/thinkphp-8-x.md", "/blog/wiki/backend/php-thinkphp-version-guide/"],
+  ["docs/frontend/vue.md", "/blog/wiki/frontend/frontend-vue/"],
+  ["docs/frontend/vue-2.md", "/blog/wiki/frontend/frontend-vue/"],
+  ["docs/frontend/vue-3.md", "/blog/wiki/frontend/frontend-vue/"],
+  ["docs/frontend/wechat-miniprogram.md", "/blog/wiki/frontend/frontend-wechat-miniprogram-issues/"],
+  ["docs/frontend/wechat-miniprogram-issues.md", "/blog/wiki/frontend/frontend-wechat-miniprogram-issues/"],
+  ["docs/git/cheat-sheet.md", "/blog/wiki/engineering/git-cheat-sheet/"],
+  ["docs/git/common-commands.md", "/blog/wiki/engineering/git-cheat-sheet/"],
+  ["docs/faq/git.md", "/blog/wiki/engineering/git-troubleshooting/"],
+  ["docs/git/troubleshooting.md", "/blog/wiki/engineering/git-troubleshooting/"],
 ]);
+
+const manualCollectionBySlug = new Map(
+  Object.entries({
+    engineering: [
+      "engineering-collaboration-standards",
+      "git-cheat-sheet",
+      "git-troubleshooting",
+      "git-filemode",
+      "faq-common-errors",
+      "faq-deploy",
+    ],
+    backend: [
+      "backend-common-errors",
+      "backend-lua",
+      "backend-websocket",
+      "database-mysql-install-test",
+      "database-mysql-indexes",
+      "database-mysql-slow-query",
+      "database-mysql-join",
+      "go-faq",
+      "go-gin-guide",
+      "go-gin-version-guide",
+      "php-faq",
+      "php-php-version-history",
+      "php-thinkphp-version-guide",
+      "php-easywechat",
+      "php-weengine",
+      "php-swoole",
+    ],
+    frontend: [
+      "faq-frontend",
+      "frontend-admin-templates",
+      "frontend-alipay-miniprogram-issues",
+      "frontend-canvas",
+      "frontend-colorui",
+      "frontend-douyin-miniprogram-issues",
+      "frontend-electron",
+      "frontend-element-plus",
+      "frontend-element-ui-2",
+      "frontend-fabric",
+      "frontend-geeker-admin",
+      "frontend-iview-admin",
+      "frontend-iview-ui-v4",
+      "frontend-konva",
+      "frontend-mall-admin-web",
+      "frontend-tailwindcss",
+      "frontend-typescript",
+      "frontend-uni-app",
+      "frontend-unocss",
+      "frontend-uview-plus",
+      "frontend-uview-ui",
+      "frontend-vite",
+      "frontend-vk-uview-ui",
+      "frontend-vue-element-admin",
+      "frontend-vue",
+      "frontend-wechat-miniprogram-issues",
+    ],
+    operations: [
+      "ops-apache",
+      "ops-baota",
+      "ops-cloudflare-tunnel",
+      "ops-curl-wget-ssl",
+      "ops-docker",
+      "ops-intranet-tunnel-ngrok",
+      "ops-kubernetes",
+      "ops-linux-commands",
+      "ops-lnmp",
+      "ops-minio",
+      "ops-nginx",
+      "ops-onepanel",
+      "ops-openlist-alist",
+      "ops-rclone",
+      "ops-ssh-keys",
+      "observability-elastic-stack",
+      "observability-grafana",
+      "observability-influxdb",
+      "observability-loki",
+    ],
+    iot: [
+      "iot-arduino",
+      "iot-emqx",
+      "iot-mosquitto",
+      "iot-mqtt",
+      "iot-openwrt",
+      "iot-ros2-quickstart",
+      "iot-slam-algorithms",
+    ],
+    security: [
+      "security-frida-practical-recipes",
+      "security-frida-usage-guide",
+      "security-ghidra-usage-guide",
+      "security-ios-app-analysis-guide",
+      "security-mobile-app-url-schemes",
+      "security-radare2-usage-guide",
+      "security-reverse-engineering-basics",
+      "security-wireshark-usage-guide",
+    ],
+    toolbox: [
+      "tools-autojs-pro-ext",
+      "tools-autojs-versions",
+      "tools-autojs",
+      "tools-font-charset",
+      "tools-ip-info-api",
+      "tools-mac-local-env",
+      "tools-mamp",
+      "tools-sublime-unsaved-exit",
+      "tools-useful-tools",
+      "tools-xampp",
+      "vision-opencv",
+    ],
+  }).flatMap(([collection, slugs]) => slugs.map(slug => [slug, collection])),
+);
 
 const categoryBySection = {
   backend: "后端开发",
@@ -154,15 +266,22 @@ if (articlePaths.length !== expectedArticleCount) {
 }
 
 const routeBySourcePath = new Map(
-  articlePaths.map(sourcePath => [
-    sourcePathToRoute(sourcePath),
-    mergedRouteBySourcePath.get(sourcePath) ?? `/blog/posts/${sourcePathToSlug(sourcePath)}/`,
-  ]),
+  articlePaths.map(sourcePath => {
+    const slug = sourcePathToSlug(sourcePath);
+    const collection = manualCollectionBySlug.get(slug);
+    return [
+      sourcePathToRoute(sourcePath),
+      mergedRouteBySourcePath.get(sourcePath) ??
+        (collection ? `/blog/wiki/${collection}/${slug}/` : `/blog/posts/${slug}/`),
+    ];
+  }),
 );
 
 await fs.mkdir(postsDir, { recursive: true });
 
 const standaloneArticlePaths = articlePaths.filter(sourcePath => !mergedRouteBySourcePath.has(sourcePath));
+let importedPostCount = 0;
+let importedManualCount = 0;
 
 for (const sourcePath of standaloneArticlePaths) {
   const raw = readGitText(sourcePath);
@@ -172,22 +291,40 @@ for (const sourcePath of standaloneArticlePaths) {
   if (!title || !description) throw new Error(`${sourcePath}: 缺少 title 或 description`);
 
   const section = sourcePathToSection(sourcePath);
+  const slug = sourcePathToSlug(sourcePath);
+  const collection = manualCollectionBySlug.get(slug);
   const content = transformContent(parsed._content ?? "", title);
-  const post = {
-    title,
-    description,
-    excerpt: description,
-    date: readCreatedDate(sourcePath),
-    categories: [categoryBySection[section]],
-    tags: createTags(title, description, section),
-    _content: `<!-- more -->\n\n${content.trim()}\n`,
-  };
-  const outputPath = path.join(postsDir, `${sourcePathToSlug(sourcePath)}.md`);
+  const document = collection
+    ? {
+        title,
+        description,
+        date: readCreatedDate(sourcePath),
+        _content: `${content.trim()}\n`,
+      }
+    : {
+        title,
+        description,
+        excerpt: description,
+        date: readCreatedDate(sourcePath),
+        categories: [categoryBySection[section]],
+        tags: createTags(title, description, section),
+        _content: `<!-- more -->\n\n${content.trim()}\n`,
+      };
+  const outputPath = collection
+    ? path.join(sourceDir, "wiki", collection, `${slug}.md`)
+    : path.join(postsDir, `${slug}.md`);
+  await fs.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.writeFile(
     outputPath,
-    frontMatter.stringify(post, { prefixSeparator: true, lineWidth: -1, noRefs: true }),
+    frontMatter.stringify(document, { prefixSeparator: true, lineWidth: -1, noRefs: true }),
     "utf8",
   );
+  if (collection) {
+    await fs.rm(path.join(postsDir, `${slug}.md`), { force: true });
+    importedManualCount += 1;
+  } else {
+    importedPostCount += 1;
+  }
 }
 
 const assetPaths = listGitFiles("docs/public/images").filter(sourcePath =>
@@ -204,8 +341,8 @@ for (const sourcePath of assetPaths) {
 }
 
 console.log(
-  `已从 ${sourceBranch} 导入 ${standaloneArticlePaths.length} 篇独立文章和 ${assetPaths.length} 个资源文件，` +
-    `${mergedRouteBySourcePath.size} 篇源文档由合并文章接管。`,
+  `已从 ${sourceBranch} 导入 ${importedPostCount} 篇博客、${importedManualCount} 篇手册和 ${assetPaths.length} 个资源文件，` +
+    `${mergedRouteBySourcePath.size} 篇源文档由合并内容接管。`,
 );
 
 function isArticlePath(sourcePath) {

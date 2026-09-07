@@ -1,0 +1,29 @@
+name: 安全分析工具手册
+headline: 移动端与二进制分析基础
+tagline: Frida、Ghidra、radare2 与 Wireshark
+description: 整理授权测试场景下的静态分析、动态调试、网络抓包和常用分析工具。
+tags:
+  - 安全分析
+  - 逆向工程
+  - 调试工具
+audience: 安全研究与开发人员
+icon: /blog/images/brand.svg
+route:
+  path: /wiki/security/
+navigation:
+  tree:
+    开始阅读:
+      - index
+      - security-reverse-engineering-basics
+    动态分析:
+      - security-frida-usage-guide
+      - security-frida-practical-recipes
+    静态分析:
+      - security-ghidra-usage-guide
+      - security-radare2-usage-guide
+      - security-ios-app-analysis-guide
+    网络与应用入口:
+      - security-wireshark-usage-guide
+      - security-mobile-app-url-schemes
+comments:
+  enabled: false

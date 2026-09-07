@@ -1,0 +1,27 @@
+name: 工程协作手册
+headline: 工程协作与问题排查
+tagline: Git、研发规范与通用故障处理
+description: 汇总日常研发协作、版本控制、部署检查和常见错误排查方法。
+tags:
+  - 工程实践
+  - Git
+  - 故障排查
+audience: 开发者与研发团队
+icon: /blog/images/brand.svg
+route:
+  path: /wiki/engineering/
+navigation:
+  tree:
+    开始阅读:
+      - index
+    Git 与版本控制:
+      - git-cheat-sheet
+      - git-troubleshooting
+      - git-filemode
+    团队协作:
+      - engineering-collaboration-standards
+    问题排查:
+      - faq-common-errors
+      - faq-deploy
+comments:
+  enabled: false

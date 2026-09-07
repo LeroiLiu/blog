@@ -1,0 +1,38 @@
+name: 后端与数据库手册
+headline: 后端开发与数据维护
+tagline: PHP、Go、MySQL 与服务端通信
+description: 整理后端语言、框架、数据库和服务端通信中的常用配置与维护方法。
+tags:
+  - 后端开发
+  - PHP
+  - MySQL
+audience: 后端与全栈开发者
+icon: /blog/images/brand.svg
+route:
+  path: /wiki/backend/
+navigation:
+  tree:
+    开始阅读:
+      - index
+    PHP 与框架:
+      - php-faq
+      - php-php-version-history
+      - php-thinkphp-version-guide
+      - php-easywechat
+      - php-weengine
+      - php-swoole
+    Go 与 Gin:
+      - go-faq
+      - go-gin-guide
+      - go-gin-version-guide
+    MySQL:
+      - database-mysql-install-test
+      - database-mysql-indexes
+      - database-mysql-slow-query
+      - database-mysql-join
+    服务端基础:
+      - backend-websocket
+      - backend-lua
+      - backend-common-errors
+comments:
+  enabled: false
