@@ -57,7 +57,7 @@ function relocateLegacyNotice(content) {
   if (!match) return content;
 
   const article = content.replace(noticePattern, "\n").trim();
-  return `${article}\n\n---\n\n本文最初发布于我的 CSDN 博客，现已迁移并重新整理。[查看原文](${match[1]})\n`;
+  return `${article}\n\n---\n\n本文早期发布于个人 CSDN 博客：[查看原文](${match[1]})\n`;
 }
 
 function normalizeLines(lines) {
@@ -93,8 +93,8 @@ function normalizeLines(lines) {
     if (/^\\={3,}$/.test(line.trim())) continue;
 
     line = line.replace(
-      /^来源：本文迁移自原 CSDN 博客，已重新整理。(\[查看原文\]\([^)]+\))$/,
-      "本文最初发布于我的 CSDN 博客，现已迁移并重新整理。$1",
+      /^(?:来源：本文迁移自原 CSDN 博客，已重新整理。|本文最初发布于我的 CSDN 博客，现已迁移并重新整理。)(\[查看原文\]\([^)]+\))$/,
+      "本文早期发布于个人 CSDN 博客：$1",
     );
     line = line.replace(/<code>([^<>`\n]+)<\/code>/gi, (_, code) => `\`${code.trim()}\``);
     line = line.replace(/\*\*([^*\n]+?)([，。；：！？]+)\*\*/g, "**$1**$2");
